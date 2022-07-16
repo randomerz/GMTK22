@@ -429,7 +429,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5922058186837854914}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2645915957526855899}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: SetCueBallColor
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: blue
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1049207634208454160
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +473,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7145067773404742727}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2392,7 +2404,7 @@ RectTransform:
   m_Children:
   - {fileID: 3635997342319966349}
   m_Father: {fileID: 7145067773404742727}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2480,7 +2492,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6459796503703847140}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2645915957526855899}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: SetCueBallColor
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: red
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7717566926618321409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,7 +2705,7 @@ RectTransform:
   m_Children:
   - {fileID: 482714881765003756}
   m_Father: {fileID: 7145067773404742727}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2769,7 +2793,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7515559524181877280}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2645915957526855899}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: SetCueBallColor
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: green
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8442221331439990076
 GameObject:
   m_ObjectHideFlags: 0
@@ -3031,6 +3067,7 @@ GameObject:
   - component: {fileID: 1278503197006089630}
   - component: {fileID: 2672167974222902079}
   - component: {fileID: 241656840510924629}
+  - component: {fileID: 2645915957526855899}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -3138,6 +3175,21 @@ MonoBehaviour:
   mainPanel: {fileID: 3944426857371636855}
   subtitleText: {fileID: 1293095916}
   subtitleFadeInSpeed: 8
+--- !u!114 &2645915957526855899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811128961301590200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cde7b17188b29d4e87c4b3d3df8d0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cueBallMaterial: {fileID: 2100000, guid: 0027d85430c83a243999413eeac8ac4d, type: 2}
+  colorChangeCost: 10
+  stockCost: 0
 --- !u!1 &8823636383623905819
 GameObject:
   m_ObjectHideFlags: 0
@@ -3166,9 +3218,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6826088471646390215}
   - {fileID: 9107682993052164811}
   - {fileID: 3347997137747093896}
+  - {fileID: 6826088471646390215}
   - {fileID: 6946573297683538654}
   m_Father: {fileID: 5857748594199256387}
   m_RootOrder: 1

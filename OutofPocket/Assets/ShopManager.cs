@@ -4,29 +4,52 @@ using UnityEngine;
 
 public class ShopManager : Singleton<ShopManager>
 {
+    [Header("References")]
     [SerializeField] private Material cueBallMaterial;
+
+    [Header("Properties")]
+    [SerializeField] private int colorChangeCost;
+    [SerializeField] private int stockCost;
+
+    private int stocksOwned = 0;
 
     private void Start()
     {
-        SetCueBallColor(CueBallColor.Green);
+        InvokeRepeating("GetStockIncome", 0, 15);
     }
 
-    public void SetCueBallColor(CueBallColor newColor)
+    private void GetStockIncome()
     {
-        cueBallMaterial.color = newColor switch
-        {
-            CueBallColor.Red => Color.red,
-            CueBallColor.Blue => Color.blue,
-            CueBallColor.Green => Color.green,
-            _ => Color.white
-        };
+        ScoreManager.Score += Random.Range(0, stocksOwned);
     }
-}
 
-public enum CueBallColor
-{
-    White,
-    Red,
-    Blue,
-    Green
+    public void SetCueBallColor(string color)
+    {
+        if (ScoreManager.Score >= colorChangeCost)
+        {
+            ScoreManager.Score -= colorChangeCost;
+
+            cueBallMaterial.color = color.ToLower() switch
+            {
+                "red" => Color.red,
+                "blue" => Color.blue,
+                "green" => Color.green,
+                _ => Color.white
+            };
+        }
+    }
+
+    public void BuyStocks()
+    {
+        if (ScoreManager.Score >= stockCost)
+        {
+            ScoreManager.Score -= stockCost;
+            stocksOwned++;
+        }
+    }
+
+    public void SaveForRetirement()
+    {
+        ScoreManager.Score = 0; // ehlmao
+    }
 }
