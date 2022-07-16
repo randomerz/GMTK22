@@ -1,10 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CueBall : PoolBall
 {
+    public class BallShotEventArgs
+    {
+        public CueBall ball;
+    }
     [SerializeField] private Rigidbody rb;
+
+    public static event System.EventHandler<BallShotEventArgs> ballShot;
+
+    private void OnEnable()
+    {
+        ballShot += DefaultShotEventHandler;
+    }
+
+    private void OnDisable()
+    {
+        ballShot -= DefaultShotEventHandler;
+    }
+
+    private void DefaultShotEventHandler(object sender, BallShotEventArgs e)
+    {
+        Debug.Log($"Ball Shot: {e.ball}");
+    }
 
     private void Update()
     {
@@ -20,6 +42,11 @@ public class CueBall : PoolBall
     {
         Vector3 force = shotPower * new Vector3(dir.x, 0, dir.y);
         rb.AddForce(force, ForceMode.VelocityChange);   //Independent of mass.
+
+        ballShot?.Invoke(this, new BallShotEventArgs()
+        {
+            ball = this
+        });
     }
 
     public void ShootBall(float shotPower, float angle)

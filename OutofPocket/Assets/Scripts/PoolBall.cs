@@ -5,35 +5,60 @@ using UnityEngine;
 //Or Cube or whatever it may be.
 public class PoolBall : MonoBehaviour
 {
-    public class BallInPocketEventArgs
+    public class BallHitEventArgs
     {
-        public PoolBall ballSunk;
+        public PoolBall ball;
+        public GameObject hitBy;
     }
-    public static event System.EventHandler<BallInPocketEventArgs> ballInPocketEvent;
+    public class BallEventArgs
+    {
+        public PoolBall ball;
+    }
+    public static event System.EventHandler<BallHitEventArgs> ballHitEvent;
+    public static event System.EventHandler<BallEventArgs> ballInPocketEvent;
 
     private void OnEnable()
     {
-        ballInPocketEvent += DefaultEventHandler;
+        ballHitEvent += DefaultHitEventHandler;
+        ballInPocketEvent += DefaultSunkEventHandler;
     }
 
     private void OnDisable()
     {
-        ballInPocketEvent -= DefaultEventHandler;
+        ballHitEvent -= DefaultHitEventHandler;
+        ballInPocketEvent -= DefaultSunkEventHandler;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("PoolBall"))
+        {
+            ballHitEvent?.Invoke(this, new BallHitEventArgs
+            {
+                ball = this,
+                hitBy = collision.gameObject
+            }); ;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Pocket"))
         {
-            ballInPocketEvent.Invoke(this, new BallInPocketEventArgs
+            ballInPocketEvent?.Invoke(this, new BallEventArgs
             {
-                ballSunk = this
+                ball = this
             });
         }
     }
 
-    private void DefaultEventHandler(object sender, BallInPocketEventArgs e)
+    private void DefaultHitEventHandler(object sender, BallHitEventArgs e)
     {
-        Debug.Log($"{e.ballSunk.gameObject.name} Sunk!");
+        Debug.Log($"{e.ball.gameObject.name} Hit by {e.hitBy.gameObject.name}");
+    }
+
+    private void DefaultSunkEventHandler(object sender, BallEventArgs e)
+    {
+        Debug.Log($"{e.ball.gameObject.name} Sunk!");
     }
 }

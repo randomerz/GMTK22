@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c5aac1b8c7af64292501125f670db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startGameImmediately: 1
   cueBall: {fileID: 0}
   screenDeltaToPower: 0.03
   minShotPower: 1

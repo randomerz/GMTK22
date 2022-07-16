@@ -6,6 +6,9 @@ using UnityEngine;
 //Call StartGame() to start the pool game (make sure everything is set in inspector)
 public class PoolStateManager : Singleton<PoolStateManager>
 {
+
+    public bool startGameImmediately;
+
     public CueBall cueBall;
 
     [Header("Cue Ball Shot Power")]
@@ -40,7 +43,14 @@ public class PoolStateManager : Singleton<PoolStateManager>
         _emptyState = new PoolStateIdle(this);
         _playerTurnState = new PoolStatePlayerTurn(this);
         _waitingForEndOfTurnState = new PoolStateWaitingForEndOfTurn(this);
-        SwitchState(_emptyState);
+
+        if (startGameImmediately)
+        {
+            StartGame();
+        } else
+        {
+            SwitchState(_emptyState);
+        }
     }
 
     private void Update()
