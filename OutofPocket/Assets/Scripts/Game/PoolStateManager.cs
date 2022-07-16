@@ -15,6 +15,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
     public float screenDeltaToPower;
     public float minShotPower;
     public float maxShotPower;
+    public float popUpForce;
 
     [Header("Ending Turn")]
     public float minDelayBetweenShots;

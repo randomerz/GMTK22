@@ -9,23 +9,34 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
     public override void EnterState()
     {
         Debug.Log("Player's Turn");
+        OOPInput.mouseDragOngoing += HandleMouseDrag;
         OOPInput.mouseDragEnd += HandleMouseDragEnd;
     }
 
     public override void ExitState()
     {
+        OOPInput.mouseDragOngoing += HandleMouseDrag;
         OOPInput.mouseDragEnd -= HandleMouseDragEnd;
+    }
+
+    private void HandleMouseDrag(object sender, OOPInput.MouseDragEventArgs e)
+    {
+        //Set UI Indicators
     }
 
     private void HandleMouseDragEnd(object sender, OOPInput.MouseDragEventArgs e)
     {
+        //Disable UI
+
+
         //Debug.Log($"Mouse Drag Ended! startPos: {e.startPos} endPos: {e.endPos}");
         EnableBallPhysics();
 
+        //Calculate shot trajectory from mouse position and shoot ball.
         Vector2 currMouseDelta = e.startPos - e.endPos;
         float power = Mathf.Clamp(currMouseDelta.magnitude * context.screenDeltaToPower, context.minShotPower, context.maxShotPower);
         Vector2 direction = currMouseDelta.normalized;
-        context.cueBall.ShootBall(power, direction);
+        context.cueBall.ShootBall(power, context.popUpForce, direction);
         context.SwitchState(context.WaitingForEndOfTurnState);
     }
 

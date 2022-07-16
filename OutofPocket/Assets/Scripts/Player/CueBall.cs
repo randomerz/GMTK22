@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CueBall : PoolBall
+public class CueBall : MonoBehaviour
 {
     public class BallShotEventArgs
     {
         public CueBall ball;
     }
+    [SerializeField] private Transform shotSpot;
+    [SerializeField] private Transform popUpSpot;
     [SerializeField] private Rigidbody rb;
 
     public static event System.EventHandler<BallShotEventArgs> ballShot;
@@ -25,7 +27,7 @@ public class CueBall : PoolBall
 
     private void DefaultShotEventHandler(object sender, BallShotEventArgs e)
     {
-        Debug.Log($"Ball Shot: {e.ball}");
+        //Debug.Log($"Ball Shot: {e.ball}");
     }
 
     private void Update()
@@ -38,10 +40,11 @@ public class CueBall : PoolBall
 
     }
 
-    public void ShootBall(float shotPower, Vector2 dir)
+    public void ShootBall(float shotPower, float popUpForce, Vector2 dir)
     {
         Vector3 force = shotPower * new Vector3(dir.x, 0, dir.y);
-        rb.AddForce(force, ForceMode.VelocityChange);   //Independent of mass.
+        rb.AddForceAtPosition(force, shotSpot.position, ForceMode.VelocityChange);   //Independent of mass.
+        rb.AddForceAtPosition(popUpForce * Vector3.up, popUpSpot.position, ForceMode.VelocityChange);
 
         ballShot?.Invoke(this, new BallShotEventArgs()
         {
@@ -49,9 +52,9 @@ public class CueBall : PoolBall
         });
     }
 
-    public void ShootBall(float shotPower, float angle)
+    public void ShootBall(float shotPower, float popUpForce, float angle)
     {
         float angleInRadians = angle * Mathf.Deg2Rad;
-        ShootBall(shotPower, new Vector2(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians)));
+        ShootBall(shotPower, popUpForce, new Vector2(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians)));
     }
 }

@@ -51,7 +51,7 @@ public class PoolStateWaitingForEndOfTurn : State<PoolStateManager>
             if (rb != null)
             {
                 //Disable physics
-                Debug.Log($"Setting rb velocity to zero for {rb.gameObject.name}");
+                //Debug.Log($"Setting rb velocity to zero for {rb.gameObject.name}");
                 rb.isKinematic = true;
                 rb.velocity = Vector3.zero;
             }
