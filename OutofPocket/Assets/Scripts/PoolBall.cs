@@ -5,6 +5,19 @@ using UnityEngine;
 //Or Cube or whatever it may be.
 public class PoolBall : MonoBehaviour
 {
+    public enum Shape
+    {
+        Cube, 
+        Sphere
+    }
+
+    [System.Serializable] 
+    public class ShapeMesh
+    {
+        public Shape type;
+        public GameObject gameObject;
+    }
+
     public class BallHitEventArgs
     {
         public PoolBall ball;
@@ -14,8 +27,23 @@ public class PoolBall : MonoBehaviour
     {
         public PoolBall ball;
     }
+    [SerializeField] private Shape shapeAtStart;
+    [SerializeField] private List<ShapeMesh> shapeMeshes;
+    private Dictionary<Shape, GameObject> shapeMeshesDict;
+
     public static event System.EventHandler<BallHitEventArgs> ballHitEvent;
     public static event System.EventHandler<BallEventArgs> ballInPocketEvent;
+
+    private void Awake()
+    {
+        shapeMeshesDict = new Dictionary<Shape, GameObject>();
+        shapeMeshes.ForEach(mesh =>
+        {
+            shapeMeshesDict[mesh.type] = mesh.gameObject;
+        });
+
+        ChangeShape(shapeAtStart);
+    }
 
     private void OnEnable()
     {
@@ -50,6 +78,20 @@ public class PoolBall : MonoBehaviour
                 ball = this
             });
         }
+    }
+
+    public void ChangeShape(Shape shape)
+    {
+        shapeMeshes.ForEach(mesh =>
+        {
+            if (mesh.type == shape)
+            {
+                mesh.gameObject.SetActive(true);
+            } else
+            {
+                mesh.gameObject.SetActive(false);
+            }
+        });
     }
 
     private void DefaultHitEventHandler(object sender, BallHitEventArgs e)
