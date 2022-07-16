@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
   _subtitle: Hello, welcome to my Minecraft Let's Play!!!!!111
-  _color: {r: 1, g: 1, b: 1, a: 0}
+  _color: {r: 0.6839622, g: 0.81581104, b: 1, a: 1}
