@@ -880,7 +880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cueBall: {fileID: 194431339}
-  screenDeltaToPower: 0.1
+  screenDeltaToPower: 0.03
   minShotPower: 1
   maxShotPower: 20
 --- !u!4 &808293033
