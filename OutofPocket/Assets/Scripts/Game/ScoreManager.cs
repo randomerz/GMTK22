@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ScoreManager : Singleton<ScoreManager>
 {
-    [SerializeField] private int _score;
-    public int Score { get => _score; set => _score = value; }
+    [SerializeField] private static int _score;
+    public static int Score { get => _score; set => _score = value; }
 
     /// <summary>
     /// Adds 0-6 score.
     /// </summary>
     /// <returns>The amount of score added</returns>
-    public int AddRandomAmountOfScore()
+    public static int AddRandomAmountOfScore()
     {
         int r = Random.Range(0, 7);
         _score += Random.Range(0, 7);
