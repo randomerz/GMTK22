@@ -883,6 +883,9 @@ MonoBehaviour:
   screenDeltaToPower: 0.03
   minShotPower: 1
   maxShotPower: 20
+  minDelayBetweenShots: 2
+  maxDelayBetweenShots: 10
+  ballVelStopThreshold: 0.2
 --- !u!4 &808293033
 Transform:
   m_ObjectHideFlags: 0
