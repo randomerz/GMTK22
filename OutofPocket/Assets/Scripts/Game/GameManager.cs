@@ -14,16 +14,13 @@ public class GameManager : Singleton<GameManager>
     private void Awake()
     {
         InitializeSingleton();
-    }
 
-    private void Start()
-    {
         defaultState = new DefaultState(this);
     }
 
     private void Update()
     {
-        this.currentState?.UpdateState();
+        currentState?.UpdateState();
     }
 
     public void SwitchState(GameState a_gameState)
@@ -35,7 +32,6 @@ public class GameManager : Singleton<GameManager>
                 break;
         }
     }
-
     private void SwitchState(State<GameManager> a_state)
     {
         if (this.currentState != null)
