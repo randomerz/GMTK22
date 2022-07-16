@@ -31,7 +31,7 @@ public class PoolStateWaitingForEndOfTurn : State<PoolStateManager>
 
     private bool BallsStoppedMoving()
     {
-        foreach (GameObject ball in context.PoolBalls)
+        foreach (PoolBall ball in context.PoolBalls)
         {
             Rigidbody rb = ball.GetComponent<Rigidbody>();
             if (rb != null && rb.velocity.magnitude > context.ballVelStopThreshold) {
@@ -45,7 +45,7 @@ public class PoolStateWaitingForEndOfTurn : State<PoolStateManager>
 
     private void StopAllBalls()
     {
-        foreach (GameObject ball in context.PoolBalls)
+        foreach (PoolBall ball in context.PoolBalls)
         {
             Rigidbody rb = ball.GetComponent<Rigidbody>();
             if (rb != null)

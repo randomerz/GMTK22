@@ -31,7 +31,7 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
 
     private void EnableBallPhysics()
     {
-        foreach (GameObject ball in context.PoolBalls)
+        foreach (PoolBall ball in context.PoolBalls)
         {
             Rigidbody rb = ball.GetComponent<Rigidbody>();
             if (rb != null)

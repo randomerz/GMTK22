@@ -8,15 +8,17 @@ public class PoolStateManager : Singleton<PoolStateManager>
 {
     public CueBall cueBall;
 
+    [Header("Cue Ball Shot Power")]
     public float screenDeltaToPower;
     public float minShotPower;
     public float maxShotPower;
 
+    [Header("Ending Turn")]
     public float minDelayBetweenShots;
     public float maxDelayBetweenShots;
     public float ballVelStopThreshold;
 
-    private GameObject[] _poolBalls;
+    private PoolBall[] _poolBalls;
     private PoolStateIdle _emptyState;
     private PoolStatePlayerTurn _playerTurnState;
     private PoolStateWaitingForEndOfTurn _waitingForEndOfTurnState;
@@ -25,7 +27,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
     public PoolStatePlayerTurn PlayerTurnState => _playerTurnState;
     public PoolStateWaitingForEndOfTurn WaitingForEndOfTurnState => _waitingForEndOfTurnState;
 
-    public GameObject[] PoolBalls => _poolBalls;
+    public PoolBall[] PoolBalls => _poolBalls;
 
     private State<PoolStateManager> currState;
 
@@ -33,7 +35,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
     {
         InitializeSingleton();
 
-        _poolBalls = GameObject.FindGameObjectsWithTag("PoolBall");
+        _poolBalls = GameObject.FindObjectsOfType<PoolBall>();
 
         _emptyState = new PoolStateIdle(this);
         _playerTurnState = new PoolStatePlayerTurn(this);
