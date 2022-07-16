@@ -13,6 +13,19 @@ public class NarrationManagerDemo : MonoBehaviour
         NarrationManager.OnVoiceClipStarted += OnStartEvent;
         NarrationManager.OnVoiceClipFinished += OnEndEvent;
 
+        Invoke("Test", 1.5f);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Test();
+        }
+    }
+
+    void Test()
+    {
         NarrationManager.PlayVoiceClip("Optimist/HelloWelcomeTo", Three, new CallbackWithDelay(One, 1.0f), new CallbackWithDelay(Two, 2.0f));
     }
 
