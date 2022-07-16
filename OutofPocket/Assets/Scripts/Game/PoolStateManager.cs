@@ -11,9 +11,11 @@ public class PoolStateManager : Singleton<PoolStateManager>
     public float minShotPower;
     public float maxShotPower;
 
+    public float maxDelayBetweenShots;
+
     public PoolStateIdle emptyState;
     public PoolStatePlayerTurn playerTurnState;
-    public PoolStateDidShot didShotState;
+    public PoolStateWaitingForEndOfTurn didShotState;
 
     private State<PoolStateManager> currState;
 
@@ -23,7 +25,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
 
         emptyState = new PoolStateIdle(this);
         playerTurnState = new PoolStatePlayerTurn(this);
-        didShotState = new PoolStateDidShot(this);
+        didShotState = new PoolStateWaitingForEndOfTurn(this);
         SwitchState(emptyState);
     }
 
