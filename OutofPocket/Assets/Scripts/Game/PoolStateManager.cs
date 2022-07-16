@@ -22,6 +22,10 @@ public class PoolStateManager : Singleton<PoolStateManager>
     public float maxDelayBetweenShots;
     public float ballVelStopThreshold;
 
+    [Header("READ ONLY, DON'T NEED TO SET")]
+    public Vector3 cueBallInitPos;
+
+
     private PoolBall[] _poolBalls;
     private PoolStateIdle _emptyState;
     private PoolStatePlayerTurn _playerTurnState;
@@ -32,6 +36,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
     public PoolStateWaitingForEndOfTurn WaitingForEndOfTurnState => _waitingForEndOfTurnState;
 
     public PoolBall[] PoolBalls => _poolBalls;
+    public bool CueBallSunk { get; private set; }
 
     private State<PoolStateManager> currState;
 
@@ -45,6 +50,8 @@ public class PoolStateManager : Singleton<PoolStateManager>
         _playerTurnState = new PoolStatePlayerTurn(this);
         _waitingForEndOfTurnState = new PoolStateWaitingForEndOfTurn(this);
 
+        cueBallInitPos = cueBall.transform.position;
+
         if (startGameImmediately)
         {
             StartGame();
@@ -52,6 +59,16 @@ public class PoolStateManager : Singleton<PoolStateManager>
         {
             SwitchState(_emptyState);
         }
+    }
+
+    private void OnEnable()
+    {
+        PoolBall.ballInPocketEvent += BallInPocketHandler;
+    }
+
+    private void OnDisable()
+    {
+        PoolBall.ballInPocketEvent -= BallInPocketHandler;
     }
 
     private void Update()
@@ -85,6 +102,15 @@ public class PoolStateManager : Singleton<PoolStateManager>
         foreach (var ball in _poolBalls)
         {
             ball.ChangeShape(shape);
+        }
+    }
+
+    private void BallInPocketHandler(object sender, PoolBall.BallEventArgs e)
+    {
+        //Reset the cue ball if it goes out of bounds
+        if (e.ball == cueBall)
+        {
+            CueBallSunk = true;
         }
     }
 }

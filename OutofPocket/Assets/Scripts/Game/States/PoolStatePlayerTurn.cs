@@ -9,6 +9,11 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
     public override void EnterState()
     {
         Debug.Log("Player's Turn");
+
+        if (context.CueBallSunk)
+        {
+
+        }
         OOPInput.mouseDragOngoing += HandleMouseDrag;
         OOPInput.mouseDragEnd += HandleMouseDragEnd;
     }
@@ -22,6 +27,11 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
     private void HandleMouseDrag(object sender, OOPInput.MouseDragEventArgs e)
     {
         //Set UI Indicators
+    }
+
+    public void ResetCueBall()
+    {
+        context.cueBall.transform.position = context.cueBallInitPos;
     }
 
     private void HandleMouseDragEnd(object sender, OOPInput.MouseDragEventArgs e)
