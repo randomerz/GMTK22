@@ -79,4 +79,12 @@ public class PoolStateManager : Singleton<PoolStateManager>
         Debug.Log("Game Started");
         SwitchState(_playerTurnState);
     }
+
+    public void ChangeAllToShape(PoolBall.Shape shape)
+    {
+        foreach (var ball in _poolBalls)
+        {
+            ball.ChangeShape(shape);
+        }
+    }
 }
