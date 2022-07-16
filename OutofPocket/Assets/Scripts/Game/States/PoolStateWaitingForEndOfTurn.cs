@@ -14,6 +14,10 @@ public class PoolStateWaitingForEndOfTurn : State<PoolStateManager>
         elapsedTimeSinceEnter = 0;
     }
 
+    public override void ExitState()
+    {
+    }
+
     public override void UpdateState()
     {
         elapsedTimeSinceEnter += Time.deltaTime;
