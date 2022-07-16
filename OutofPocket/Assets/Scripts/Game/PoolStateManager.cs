@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Call StartGame() to start the pool game (make sure everything is set in inspector)
 public class PoolStateManager : Singleton<PoolStateManager>
 {
     public CueBall cueBall;
@@ -10,6 +11,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
     public float minShotPower;
     public float maxShotPower;
 
+    public PoolStateIdle emptyState;
     public PoolStatePlayerTurn playerTurnState;
     public PoolStateDidShot didShotState;
 
@@ -19,9 +21,10 @@ public class PoolStateManager : Singleton<PoolStateManager>
     {
         InitializeSingleton();
 
+        emptyState = new PoolStateIdle(this);
         playerTurnState = new PoolStatePlayerTurn(this);
         didShotState = new PoolStateDidShot(this);
-        SwitchState(playerTurnState);
+        SwitchState(emptyState);
     }
 
     private void Update()
@@ -37,5 +40,11 @@ public class PoolStateManager : Singleton<PoolStateManager>
         }
         currState = nextState;
         nextState.EnterState();
+    }
+
+    public void StartGame()
+    {
+        Debug.Log("Game Started");
+        SwitchState(playerTurnState);
     }
 }
