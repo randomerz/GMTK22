@@ -36,5 +36,4 @@ public class ScoreManager : Singleton<ScoreManager>
         return r;
     }
 
-    public 
 }
