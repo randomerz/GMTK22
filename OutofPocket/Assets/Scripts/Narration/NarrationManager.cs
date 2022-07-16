@@ -22,6 +22,8 @@ public class NarrationManager : Singleton<NarrationManager>
 
     /// <summary>
     /// Plays the VoiceClip found at the passed in path and triggers callbacks as appropriate.
+    /// If there is already a voice clip playing, this interrupts it immediately without triggering 
+    /// any of its callbacks.
     /// </summary>
     /// <param name="path">The path to the VoiceClip, ex: "Optimist/WelcomeToMyMinecraftLetsPlay"</param>
     /// <param name="onComplete">A callback to execute when the clip finishes playing</param>
@@ -29,6 +31,7 @@ public class NarrationManager : Singleton<NarrationManager>
     /// than the length of the clip, it will not be triggered. Sucks to suck.</param>
     public static void PlayVoiceClip(string path, Action onComplete = null, params CallbackWithDelay[] afterDelay)
     {
+        _instance.StopAllCoroutines();
         if (_instance.audioSource == null)
         {
             _instance.audioSource = _instance.GetComponent<AudioSource>();
@@ -47,6 +50,8 @@ public class NarrationManager : Singleton<NarrationManager>
         OnVoiceClipStarted?.Invoke();
         audioSource.clip = voiceClip.AudioClip;
         audioSource.Play();
+
+        UIManager.SetSubtitle(voiceClip.Subtitle, voiceClip.Color, voiceClip.AudioClip.length * 1.25f);
 
         float timeElapsed = 0;
         while (audioSource.isPlaying)

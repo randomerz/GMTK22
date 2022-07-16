@@ -55,9 +55,49 @@ PrefabInstance:
       propertyPath: m_AngularDrag
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2174989043426052366, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2694418472582591219, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0027d85430c83a243999413eeac8ac4d, type: 2}
+    - target: {fileID: 3137791850242898178, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0027d85430c83a243999413eeac8ac4d, type: 2}
+    - target: {fileID: 3760139732713262419, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4119790037302139388, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314459339610293692, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0027d85430c83a243999413eeac8ac4d, type: 2}
     - target: {fileID: 7085611921539370746, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
       propertyPath: m_Name
-      value: CueBall Variant
+      value: CueCube Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819256739123396584, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985821546101086961, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985821546101086961, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1654
+      objectReference: {fileID: 0}
+    - target: {fileID: 9033777116687017758, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
@@ -78,9 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e676d84c442917941b0f2c227b21a926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenDeltaToPower: 0.1
-  minShotPower: 1
-  maxShotPower: 20
+  shotSpot: {fileID: 0}
+  popUpSpot: {fileID: 0}
   rb: {fileID: 8305369203753904634}
 --- !u!54 &8305369203753904634 stripped
 Rigidbody:
