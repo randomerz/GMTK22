@@ -3,28 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
     private State<GameManager> currentState;
 
-    #region Singleton
-    private static GameManager instance;
-    public static GameManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<GameManager>();
-            }
-
-            return instance;
-        }
-    }
-    #endregion
-    #region States
+    #region State Definitions
     private DefaultState defaultState;
     #endregion
+
+    private void Awake()
+    {
+        InitializeSingleton();
+    }
 
     private void Start()
     {
@@ -33,20 +23,20 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        this.currentState.UpdateState();
+        this.currentState?.UpdateState();
     }
 
-    public void TransitionState(GameState a_gameState)
+    public void SwitchState(GameState a_gameState)
     {
         switch (a_gameState) 
         {
             case GameState.Default:
-                TransitionState(defaultState);
+                SwitchState(defaultState);
                 break;
         }
     }
 
-    private void TransitionState(State<GameManager> a_state)
+    private void SwitchState(State<GameManager> a_state)
     {
         if (this.currentState != null)
         {
@@ -57,7 +47,7 @@ public class GameManager : MonoBehaviour
         this.currentState.EnterState();
     }
 
-    #region States
+    #region State Classes
     public class DefaultState : State<GameManager>
     {
         public DefaultState(GameManager ctx) : base(ctx)
@@ -67,6 +57,7 @@ public class GameManager : MonoBehaviour
     #endregion
 }
 
+//For naming convention 
 public enum GameState
 {
     Default
