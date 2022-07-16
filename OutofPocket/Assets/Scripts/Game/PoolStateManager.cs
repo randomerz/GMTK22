@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PoolStateManager : Singleton<PoolStateManager>
 {
+    public CueBall cueBall;
+
+    public float screenDeltaToPower;
+    public float minShotPower;
+    public float maxShotPower;
+
     private State<PoolStateManager> currState;
 
     private void Awake()

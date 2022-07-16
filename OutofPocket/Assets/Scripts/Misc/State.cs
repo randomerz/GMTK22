@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class State<T> where T : MonoBehaviour
 {
-    private T context;
+    protected T context;
 
     public State(T ctx)
     {
