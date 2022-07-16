@@ -48,6 +48,8 @@ public class NarrationManager : Singleton<NarrationManager>
         audioSource.clip = voiceClip.AudioClip;
         audioSource.Play();
 
+        UIManager.SetSubtitle(voiceClip.Subtitle, voiceClip.Color, voiceClip.AudioClip.length * 1.25f);
+
         float timeElapsed = 0;
         while (audioSource.isPlaying)
         {
