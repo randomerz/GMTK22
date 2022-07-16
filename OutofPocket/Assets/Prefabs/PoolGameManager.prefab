@@ -47,8 +47,8 @@ MonoBehaviour:
   startGameImmediately: 1
   cueBall: {fileID: 0}
   screenDeltaToPower: 0.03
-  minShotPower: 1
-  maxShotPower: 20
+  minShotPower: 5
+  maxShotPower: 50
   minDelayBetweenShots: 2
   maxDelayBetweenShots: 10
   ballVelStopThreshold: 0.2

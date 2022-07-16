@@ -7,8 +7,9 @@ public class PoolBall : MonoBehaviour
 {
     public enum Shape
     {
-        Cube, 
-        Sphere
+        Sphere,
+        Cube,
+        Dice
     }
 
     [System.Serializable] 
@@ -96,11 +97,11 @@ public class PoolBall : MonoBehaviour
 
     private void DefaultHitEventHandler(object sender, BallHitEventArgs e)
     {
-        Debug.Log($"{e.ball.gameObject.name} Hit by {e.hitBy.gameObject.name}");
+        //Debug.Log($"{e.ball.gameObject.name} Hit by {e.hitBy.gameObject.name}");
     }
 
     private void DefaultSunkEventHandler(object sender, BallEventArgs e)
     {
-        Debug.Log($"{e.ball.gameObject.name} Sunk!");
+        //Debug.Log($"{e.ball.gameObject.name} Sunk!");
     }
 }

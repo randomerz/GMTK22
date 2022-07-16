@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7085611921539370746, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
       propertyPath: m_Name
-      value: CueBall Variant
+      value: CueCube Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
@@ -78,9 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e676d84c442917941b0f2c227b21a926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenDeltaToPower: 0.1
-  minShotPower: 1
-  maxShotPower: 20
+  torqueOffset: 0.1
   rb: {fileID: 8305369203753904634}
 --- !u!54 &8305369203753904634 stripped
 Rigidbody:
