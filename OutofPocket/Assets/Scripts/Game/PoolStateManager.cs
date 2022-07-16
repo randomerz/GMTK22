@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class PoolStateManager : Singleton<PoolStateManager>
 {
+    public CueBall cueBall;
+
+    public float screenDeltaToPower;
+    public float minShotPower;
+    public float maxShotPower;
+
+    public PoolStatePlayerTurn playerTurnState;
+    public PoolStateDidShot didShotState;
+
     private State<PoolStateManager> currState;
 
     private void Awake()
     {
         InitializeSingleton();
 
-        SwitchState(new PoolStatePreparingShot(this));
+        playerTurnState = new PoolStatePlayerTurn(this);
+        didShotState = new PoolStateDidShot(this);
+        SwitchState(playerTurnState);
     }
 
     private void Update()
@@ -27,6 +38,4 @@ public class PoolStateManager : Singleton<PoolStateManager>
         currState = nextState;
         nextState.EnterState();
     }
-
-
 }
