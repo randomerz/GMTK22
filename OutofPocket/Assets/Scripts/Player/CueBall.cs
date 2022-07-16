@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class CueBall : MonoBehaviour
 {
-    [SerializeField] private float forceMag;
+    [SerializeField] private float shotPower;
     [SerializeField] private Rigidbody rb;
 
-    private float horizontalInput;
-    private float verticalInput;
+    private bool shotBall;
 
     private void Update()
     {
-        PollInput();
-        rb.AddForce(new Vector3(horizontalInput, 0, verticalInput) * forceMag * Time.deltaTime);
+        if (OOPInput.horizontal > 0 && !shotBall)
+        {
+            ShootBall(shotPower, 10f);
+            shotBall = true;
+        }
+
     }
 
-    private void PollInput()
+    public void ShootBall(float shotPower, float angle)
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        float angleInRadians = angle * Mathf.Deg2Rad;
+        Vector3 force = shotPower * new Vector3(Mathf.Cos(angleInRadians), 0f, Mathf.Sin(angleInRadians));
+        rb.AddForce(force, ForceMode.VelocityChange);   //Independent of mass.
     }
 }
