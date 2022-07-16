@@ -691,6 +691,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 241656840510924629, guid: db15a05028f095d47b7bbb2f3fa80d9f, type: 3}
+      propertyPath: subtitleText
+      value: 
+      objectReference: {fileID: 1293095916}
+    - target: {fileID: 241656840510924629, guid: db15a05028f095d47b7bbb2f3fa80d9f, type: 3}
       propertyPath: subtitlesText
       value: 
       objectReference: {fileID: 1293095916}
