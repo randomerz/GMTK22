@@ -15,6 +15,8 @@ public class CueBall : MonoBehaviour
 
     public static event System.EventHandler<BallShotEventArgs> ballShot;
 
+    [SerializeField] private static Material meshRendererMaterial;
+
     private void OnEnable()
     {
         ballShot += DefaultShotEventHandler;
