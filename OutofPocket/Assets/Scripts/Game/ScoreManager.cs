@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -10,11 +8,17 @@ public class ScoreManager : Singleton<ScoreManager>
 
     public TextMeshProUGUI scoreText;
 
-    private bool isMoneyTime;
+    private static bool _isMoneyTime;
+
+    // Use IsMoneyTime to toggle the score setting from Score to Money
+    public static bool IsMoneyTime { get => _isMoneyTime; set => _isMoneyTime = value; }
+
+
+
 
     void Update()
     {
-        if (isMoneyTime)
+        if (_isMoneyTime)
         {
             scoreText.text = "Money: $" + _score.ToString();
         }
@@ -23,6 +27,7 @@ public class ScoreManager : Singleton<ScoreManager>
             scoreText.text = "Score: " + _score.ToString();
 
         }
+        
     }
 
     /// <summary>
@@ -31,8 +36,8 @@ public class ScoreManager : Singleton<ScoreManager>
     /// <returns>The amount of score added</returns>
     public static int AddRandomAmountOfScore()
     {
-        int r = Random.Range(0, 7);
-        _score += Random.Range(0, 7);
+        int r = UnityEngine.Random.Range(0, 7);
+        _score += UnityEngine.Random.Range(0, 7);
         return r;
     }
 
