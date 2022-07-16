@@ -1,11 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ScoreManager : Singleton<ScoreManager>
 {
     [SerializeField] private int _score;
     public int Score { get => _score; set => _score = value; }
+
+    public TextMeshProUGUI scoreText;
+
+    private bool isMoneyTime;
+
+    void Update()
+    {
+        if (isMoneyTime)
+        {
+            scoreText.text = "Money: $" + _score.ToString();
+        }
+        else
+        {
+            scoreText.text = "Score: " + _score.ToString();
+
+        }
+    }
 
     /// <summary>
     /// Adds 0-6 score.
@@ -17,4 +35,6 @@ public class ScoreManager : Singleton<ScoreManager>
         _score += Random.Range(0, 7);
         return r;
     }
+
+    public 
 }
