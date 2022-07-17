@@ -194,6 +194,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
             if (currState == WaitingForEndOfTurnState)
             {
                 TurnEnded?.Invoke(this, null);
+                holdClickAnnotation.enabled = false;
             }
         }
         currState = nextState;

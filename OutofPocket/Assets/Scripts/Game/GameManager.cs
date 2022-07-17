@@ -16,6 +16,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject cueBall;
     public GameObject inGameUI;
     public Juicer joooooooooooooooooooooos;
+    public FadeScript fade;
 
     public TextMeshProUGUI pauseAnnotation;
 
@@ -823,6 +824,8 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             yield return  new WaitForSeconds(0.5f);
+            context.fade.FadeOut();
+            yield return new WaitForSeconds(1);
             SceneManager.LoadSceneAsync("Credits");
  
             
