@@ -33,8 +33,8 @@ public class CameraShake : MonoBehaviour
         Vector3 originalPos = transform.position;
         float elapsed = 0.0f;
         while (elapsed < 0.2f * (1f+juiceLevel) * shakeActionMod) {
-            float x = Random.Range(-1f, 1f) * 0.3f * (1f+juiceLevel) * shakeActionMod;
-            float z = Random.Range(-1f, 1f) * 0.3f * (1f+juiceLevel) * shakeActionMod;
+            float x = Random.Range(-1f, 1f) * 0.3f * (juiceLevel) * shakeActionMod;
+            float z = Random.Range(-1f, 1f) * 0.3f * (juiceLevel) * shakeActionMod;
             transform.position = new Vector3(x, originalPos.y, z);
 
             elapsed += Time.deltaTime;
