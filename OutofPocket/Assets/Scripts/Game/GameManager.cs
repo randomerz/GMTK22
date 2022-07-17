@@ -91,7 +91,7 @@ public class GameManager : Singleton<GameManager>
             context.inGameUI.SetActive(false);
 
             //Oppy … and I’ve already got someone playtesting it right now!
-            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //context.DoNarrationAndSetFlag("Act1/Oppy/001Playtest");
             //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             ////Cynic already?
@@ -99,28 +99,30 @@ public class GameManager : Singleton<GameManager>
             //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             ////Oppy Crazy, right? Okay, so picture this…*elevator ding sound*
-            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //context.DoNarrationAndSetFlag("Act1/Oppy/003PictureThis");
             //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            context.floor.SetActive(true);  //Turn on lights
+            //Turn on lights
+            context.floor.SetActive(true);  
 
             //Oppy A pool table
             //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
+            //Turn on pool table
             context.poolTable.SetActive(true);
 
             //Oppy and, and it’s like your standard pool game you know
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Enable the pool game
             context.poolBallTriangle.SetActive(true);
             context.cueBall.SetActive(true);
 
             //Oppy …except, they’re not actually balls, they’re dice!
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Change all balls to dice
             PoolStateManager.ChangeAllToShape(PoolBall.Shape.Dice);
@@ -128,107 +130,107 @@ public class GameManager : Singleton<GameManager>
             context.poolGameManager.gameObject.SetActive(true);            //Enable the game and the controls.
             context.inGameUI.SetActive(true);
 
-            playerPutBallInPocket = false;
-            PoolBall.ballInPocketEvent += PutBallInPocket;  //Start keeping track of if the player pocketed the die.
+            //playerPutBallInPocket = false;
+            //PoolBall.ballInPocketEvent += PutBallInPocket;  //Start keeping track of if the player pocketed the die.
 
             //Cynic: Dice?
-            context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Oppy: Yeah, so I got to thinking about making a pool game with a twist ...
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Wait until ball in pocket.
-            yield return new WaitUntil(() => playerPutBallInPocket);
-            PoolBall.ballInPocketEvent -= PutBallInPocket;
+            //yield return new WaitUntil(() => playerPutBallInPocket);
+            //PoolBall.ballInPocketEvent -= PutBallInPocket;
 
             //Cynic: That’s stupid.
-            context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Oppy: *pause for a moment* what?
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Cynic: I said that’s stupid. How does changing them from balls to cubes make the game more about skill?
-            context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Oppy: Well…
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Cynic: Weren’t pool balls made to be balls for a reason?
-            context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Oppy: Yeah, but this is new!
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Cynic: Just because something is new doesn’t make it better. You can’t just mash two ideas together and expect it to be fun.
-            context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Oppy: But I haven’t even told you about the numbers!
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Cynic: You mean the numbers on the dice?
-            context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Oppy: There are so many possibilities! We could make the numbers add more balls to the table, or maybe only odd numbers give you points, or something else.
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Cynic: Okay I really need to stop you there. Having “possibilities” is not the same as having “ideas”. *upbeat * Be decisive and pick one!Can you settle on one for christ’s sake ?
-            context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Oppy : Ok, ok.When you pocket something, you earn however many points are on the top face of the die!
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Enable Score
             PoolStateManager._instance.ScoreEnabled = true;
             PoolStateManager.scoreMode = PoolStateManager.ScoreMode.ONLY_ONES;
 
-            playerPutBallInPocket = false;
-            PoolBall.ballInPocketEvent += PutBallInPocket;  //Start keeping track of if the player pocketed the die.
+            //playerPutBallInPocket = false;
+            //PoolBall.ballInPocketEvent += PutBallInPocket;  //Start keeping track of if the player pocketed the die.
 
-            //Cynic: So its like a random chance to get 1 - 6 points…
-            context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            ////Cynic: So its like a random chance to get 1 - 6 points…
+            //context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Oppy: No! Watch, the playtester will get a 6 in soon!
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            ////Oppy: No! Watch, the playtester will get a 6 in soon!
+            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //*Wait until ball in pocket.
-            yield return new WaitUntil(() => playerPutBallInPocket);
-            PoolBall.ballInPocketEvent -= PutBallInPocket;
+            ////*Wait until ball in pocket.
+            //yield return new WaitUntil(() => playerPutBallInPocket);
+            //PoolBall.ballInPocketEvent -= PutBallInPocket;
 
             //Oppy:
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: Okay, I still don’t think there’s enough control here. You’re just hitting the cube and praying for a 6.
-            context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            ////Cynic: Okay, I still don’t think there’s enough control here. You’re just hitting the cube and praying for a 6.
+            //context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Oppy: Hmm… I have an idea
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            ////Oppy: Hmm… I have an idea
+            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: Oh boy Oh good, I love it when you get those
-            context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            ////Cynic: Oh boy Oh good, I love it when you get those
+            //context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Oppy: I was thinking about this time I played pool with my friends ...
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            ////Oppy: I was thinking about this time I played pool with my friends ...
+            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Cynic: So… tilt controls ?
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");

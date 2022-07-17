@@ -121,6 +121,7 @@ public class PoolBall : MonoBehaviour
 
     public void ResetBall()
     {
+        Debug.Log("Reset Ball");
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         transform.position = initialPos;
