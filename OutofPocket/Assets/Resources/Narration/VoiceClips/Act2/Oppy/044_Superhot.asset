@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 044_Superhot
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bb377650dcca8f34f9eea83f9fbe8dd8, type: 3}
-  _subtitle: "We\u2019ll combine this game\u2026 with superhot!"
+  _subtitle: "We\u2019ll combine this game\u2026 with Superhot!"
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

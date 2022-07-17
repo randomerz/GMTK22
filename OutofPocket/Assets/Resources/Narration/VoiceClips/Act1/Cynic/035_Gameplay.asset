@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 035_Gameplay
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 995e932cfa785b34eb9ec8f938edfed3, type: 3}
-  _subtitle: "I\u2019m sure that\u2019ll do wonders for the gameplay"
+  _subtitle: "I\u2019m sure that\u2019ll do wonders for the gameplay."
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

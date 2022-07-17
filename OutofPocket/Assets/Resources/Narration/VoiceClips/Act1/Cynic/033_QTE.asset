@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 033_QTE
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 7806b51be6efeb04bb2c8e8e7ba42d4a, type: 3}
-  _subtitle: "Sigh, That\u2019s not exciting! You completely removed any semblance
-    of strategy your \u201Cgame\u201D once had. Now it\u2019s just a QTE of a bunch
-    of cubes falling into holes. "
+  _subtitle: "That\u2019s not exciting! You completely removed any semblance of strategy
+    your \u201Cgame\u201D once had. Now it\u2019s just a QTE of a bunch of cubes
+    falling into holes. "
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

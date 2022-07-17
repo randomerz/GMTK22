@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 6de945b2daadcc04fb156ac3919f8d2c, type: 3}
   _subtitle: "Okay I really need to stop you there. Having \u201Cpossibilities\u201D
-    is not the same as having \u201Cideas\u201D. *upbeat* Be decisive and pick one!"
+    is not the same as having \u201Cideas\u201D. Be decisive and pick one!"
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

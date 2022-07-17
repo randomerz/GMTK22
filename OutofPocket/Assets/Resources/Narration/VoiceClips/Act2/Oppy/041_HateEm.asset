@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 041_HateEm
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 5f7d8857ba62fb94995497a3bf6b0c42, type: 3}
-  _subtitle: "Well, maybe they\u2019ll grow on ya."
+  _subtitle: "Well, maybe it\u2019ll grow on ya."
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

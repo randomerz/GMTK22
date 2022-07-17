@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 028_DidntThinkAbout
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: fe69887dc8a79a142870e5afb608f3da, type: 3}
-  _subtitle: "Ya know, I didn\u2019t think about that one."
+  _subtitle: "Ya know, I didn\u2019t think about that."
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

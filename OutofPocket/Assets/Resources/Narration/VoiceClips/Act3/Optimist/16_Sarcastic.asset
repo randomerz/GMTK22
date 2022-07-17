@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: de755c8dc548faa47a2ff4c285f00cd5, type: 3}
   _subtitle: Oh, so I should just copy what other people do all the time and never
-    try to innovate at all?
+    try to innovate?
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 021_Random
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: f2c752b80656a7b468c1fe24e60ac9ee, type: 3}
-  _subtitle: "So its like a random chance to get 1-6 points\u2026"
+  _subtitle: So its like a random chance to get 1-6 points?
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

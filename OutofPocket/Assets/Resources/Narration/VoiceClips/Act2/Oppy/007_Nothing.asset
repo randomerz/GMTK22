@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 007_Nothing
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 5dd6f5521338a1b409b215b2b841ed7a, type: 3}
-  _subtitle: Nothing? Ahh, cmon, you can see the potential! I bet this would work
-    great with a branching story.
+  _subtitle: Nothing? Ahh, cmon, can't you see the potential here? I bet this would
+    work great with a branching story.
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

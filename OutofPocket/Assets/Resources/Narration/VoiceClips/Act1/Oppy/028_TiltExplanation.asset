@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 028_TiltExplanation
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 83a12fa89cf3e3e4592d1939919038a4, type: 3}
-  _subtitle: "I was thinking about this time I played pool with my friends. We had
-    this crappy little pool table in the college rec room. It was ridiculously unstable.
-    Whenever the other person wasn\u2019t looking, you could tilt the table to roll
-    the balls."
+  _subtitle: "Yeah, I was thinking about this time I played pool with my friends.
+    We had this crappy little pool table in the college rec room. It was ridiculously
+    unstable. Whenever the other person wasn\u2019t looking, you could tilt the table
+    to roll the balls."
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

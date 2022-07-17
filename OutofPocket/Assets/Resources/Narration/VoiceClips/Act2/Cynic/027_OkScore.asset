@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 027_OkScore
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 3a89f19e16a46f34795d7fa20cbd4320, type: 3}
-  _subtitle: Ok, I want to talk about the score. Does it affect gameplay, or is it
-    just for brownie points?
+  _subtitle: 'Anyways, I wanna talk about the score. Does it affect gameplay or is
+    it just for brownie points? '
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

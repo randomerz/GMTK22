@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 020_Yes2
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: b3f6cb5eb28f23344a0fd06e118f4530, type: 3}
-  _subtitle: "Hmm. well if you\u2019re sure. A lot of improvements that seem huge
+  _subtitle: "Hmm. Well if you\u2019re sure. A lot of improvements that seem huge
     to you go unnoticed by almost every player."
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

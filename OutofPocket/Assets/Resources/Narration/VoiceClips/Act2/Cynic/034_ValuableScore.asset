@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 9a516a531d955b242bc634443c4534bd, type: 3}
   _subtitle: "You\u2019ve succeeded in making the score valuable, but only superficially.
-    I really think you should make some changes to the gameplay."
+    I really think you should've made some more gameplay changes to this."
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 022_WatchFor6
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 145fa880a2e4b2443a0978cc7c5c7cb8, type: 3}
-  _subtitle: 'No! Watch, the playtester will get a 6 in soon! '
+  _subtitle: 'No, it''s skill! Watch, the playtester will get a 6 in soon! '
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}
