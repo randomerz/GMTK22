@@ -5,17 +5,36 @@ using UnityEngine;
 public class ShopManager : Singleton<ShopManager>
 {
     [Header("References")]
-    [SerializeField] private Material cueBallMaterial;
+    [SerializeField] private Material cueBallRed;
+    [SerializeField] private Material cueBallGreen;
+    [SerializeField] private Material cueBallBlue;
+    [SerializeField] private Material cueBallWhite;
+    [SerializeField] private Material cueBallSuperHot;
+
+    [SerializeField] private Material normalBallMaterial;
+    [SerializeField] private Material normalBallMaterialSuperHot;
+
+    [SerializeField] private Material feltNormal;
+    [SerializeField] private Material feltSuperHot;
 
     [Header("Properties")]
     [SerializeField] private int colorChangeCost;
     [SerializeField] private int stockCost;
 
     private int stocksOwned = 0;
+    private Material currentlySelectedCueBallMaterial;
+
+    private bool superHotIsEnabled;
+
+    private void Awake()
+    {
+        InitializeSingleton();
+    }
 
     private void Start()
     {
         InvokeRepeating("GetStockIncome", 0, 15);
+        currentlySelectedCueBallMaterial = cueBallWhite;
     }
 
     private void GetStockIncome()
@@ -29,13 +48,41 @@ public class ShopManager : Singleton<ShopManager>
         {
             ScoreManager.Score -= colorChangeCost;
 
-            cueBallMaterial.color = color.ToLower() switch
+            Material newMaterial = color.ToLower() switch
             {
-                "red" => Color.red,
-                "blue" => Color.blue,
-                "green" => Color.green,
-                _ => Color.white
+                "red" => cueBallRed,
+                "blue" => cueBallBlue,
+                "green" => cueBallGreen,
+                _ => cueBallWhite
             };
+
+            if (!superHotIsEnabled)
+            {
+                PoolStateManager._instance.cueBall.GetComponent<MeshRenderer>().material = newMaterial;
+            }
+            currentlySelectedCueBallMaterial = newMaterial;
+        }
+    }
+
+    private void UpdatePoolBallsMaterial(Material newMaterial)
+    {
+        foreach (PoolBall ball in PoolStateManager._instance.PoolBalls)
+        {
+            if (ball.GetComponent<CueBall>() == null)
+            {
+                foreach (MeshRenderer meshRenderer in ball.GetComponentsInChildren<MeshRenderer>())
+                {
+                    meshRenderer.material = newMaterial;
+                }
+            }
+        }
+    }
+
+    private void UpdateCueBallMaterial(Material newMaterial)
+    {
+        foreach (MeshRenderer meshRenderer in PoolStateManager._instance.cueBall.GetComponentsInChildren<MeshRenderer>())
+        {
+            meshRenderer.material = newMaterial;
         }
     }
 
@@ -51,5 +98,20 @@ public class ShopManager : Singleton<ShopManager>
     public void SaveForRetirement()
     {
         ScoreManager.Score = 0; // ehlmao
+    }
+
+    public static void SetSuperhotMode(bool enabled)
+    {
+        Debug.Log(_instance.currentlySelectedCueBallMaterial);
+        _instance.superHotIsEnabled = enabled;
+        if (enabled)
+        {
+            _instance.UpdateCueBallMaterial(_instance.cueBallSuperHot);
+            _instance.UpdatePoolBallsMaterial(_instance.normalBallMaterialSuperHot);
+        } else
+        {
+            _instance.UpdateCueBallMaterial(_instance.currentlySelectedCueBallMaterial);
+            _instance.UpdatePoolBallsMaterial(_instance.normalBallMaterial);
+        }
     }
 }
