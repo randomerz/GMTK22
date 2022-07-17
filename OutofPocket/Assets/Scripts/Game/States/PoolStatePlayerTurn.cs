@@ -12,6 +12,18 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
     {
         Debug.Log("Player's Turn");
 
+        if (!context.hasThisStartedYet)
+        {
+            // Enable tutorial stuff here
+            context.holdClickAnnotation.enabled = true;
+        }
+
+        if (context.triggerTilting)
+        {
+            context.tiltingAnnotation.enabled = true;
+            context.tiltingTable.TiltingEnabled = true;
+        }
+
         if (context.CueBallSunk)
         {
             context.ResetCueBall();
@@ -26,9 +38,24 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
         OOPInput.mouseDragEnd -= HandleMouseDragEnd;
     }
 
+    //private void HandleMouseDragStart()
+    //{
+        /**
+         * If we're in the tutorial this should go to i guess the next stage of it
+         */
+
+    //}
+
     private void HandleMouseDrag(object sender, OOPInput.MouseDragEventArgs e)
     {
         //Set UI Indicators
+        if (!context.hasThisStartedYet)
+        {
+            // This is where we would remove the click-and-drag prompt and
+            // begin showing a release-mouse prompt
+            context.holdClickAnnotation.text = "Drag to aim and release to fire";
+        }
+        
         if (!dragging)
         {
             dragging = true;
@@ -39,8 +66,8 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
         line.SetActive(true);
         LineRenderer lr = line.GetComponent<LineRenderer>();
         lr.material = new Material(Shader.Find("Sprites/Default"));
-        lr.startWidth = .1f;
-        lr.endWidth = .1f;
+        lr.startWidth = .05f;
+        lr.endWidth = .05f;
 
         //Get the difference we need for startPos
         Ray ray = Camera.main.ScreenPointToRay(e.startPos);
@@ -65,6 +92,15 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
     private void HandleMouseDragEnd(object sender, OOPInput.MouseDragEventArgs e)
     {
         //Disable UI
+
+        // Clear the Cue Ball drag tutorial if needed and start the next part of
+        // the tutorial
+        if (!context.hasThisStartedYet)
+        {
+            context.holdClickAnnotation.enabled = false;
+            context.hasThisStartedYet = true;
+        }
+
         line.SetActive(false);
 
         //Debug.Log($"Mouse Drag Ended! startPos: {e.startPos} endPos: {e.endPos}");
