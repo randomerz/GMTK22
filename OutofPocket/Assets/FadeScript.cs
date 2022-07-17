@@ -37,6 +37,10 @@ public class FadeScript : MonoBehaviour
             else {alph=Mathf.Lerp(1f, 0f, t);}
             GetComponent<Image>().color = new Color(0f, 0f, 0f, alph);
         }
+        else
+        {
+            GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
+        }
     }
     public void FadeOut()
     {
