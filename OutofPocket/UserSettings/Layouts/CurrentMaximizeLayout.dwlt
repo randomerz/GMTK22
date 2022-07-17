@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 28154
+  controlID: 29675
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 28155
+  controlID: 29658
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 28156
+  controlID: 29659
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -227,7 +227,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6e29ffff822cffff8258ffff8a6dffff948dffffd48dffff288effff2c8effff3e91ffff4097ffff709effff9ea8ffff16adffff62adffffe8b3ffff96b8ffffaebdfffff6cfffff58d0ffff00e5ffff0ce5ffffd4e5ffff34f1ffff96f8ffff72f9ffffc6f9ffff34fbffffd05700002c580000aa5800000659000016620000726200000a780000948e0000b08e0000e4a9000000aa000064c9000080c900006ef10000
+      m_ExpandedIDs: 2ce2feff00eafeff32eafeff06effeff50f5feff6e29ffff822cffff8258ffff8a6dffff948dffffd48dffff288effff2c8effff3e91ffff4097ffff709effff9ea8ffff16adffff62adffffe8b3ffff96b8ffffaebdfffff6cfffff58d0ffff00e5ffff0ce5ffffd4e5ffff34f1ffff96f8ffff72f9ffffc6f9ffff34fbffffd05700002c580000aa5800000659000016620000726200000a780000948e0000b08e0000e4a9000000aa000064c9000080c900006ef1000086400100a4400100dc410100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -627,8 +627,8 @@ MonoBehaviour:
     y: 643
     width: 1466
     height: 304
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -676,22 +676,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\agree\OneDrive\Documents\VGDevSummer2022\GMTK2022\GMTK22\OutofPocket
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 101}
-    m_SelectedIDs: 62510000
-    m_LastClickedID: 20834
-    m_ExpandedIDs: 00000000fc50000000ca9a3b
+    scrollPos: {x: 0, y: 237}
+    m_SelectedIDs: 66510000
+    m_LastClickedID: 20838
+    m_ExpandedIDs: 00000000fc5000006651000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -719,7 +719,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fc50000000ca9a3b
+    m_ExpandedIDs: 00000000fc5000006651000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -744,8 +744,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 8e20ffff
-    m_LastClickedInstanceID: -57202
+    m_SelectedInstanceIDs: 08e1feff
+    m_LastClickedInstanceID: -73464
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -863,7 +863,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -57202
+  m_LastInspectedObjectInstanceID: -73464
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
