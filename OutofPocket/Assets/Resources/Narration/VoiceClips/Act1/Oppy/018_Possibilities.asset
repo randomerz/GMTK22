@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
-  m_Name: 038_mwa
+  m_Name: 018_Possibilities
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
-  _subtitle: mwa! Magnifique!
+  _subtitle: There are so many possibilities! We could make the numbers add more
+    balls to the table, or maybe only odd numbers give you points, or something else.
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}
