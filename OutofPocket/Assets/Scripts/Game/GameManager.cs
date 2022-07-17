@@ -155,7 +155,7 @@ public class GameManager : Singleton<GameManager>
 
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            ShopManager.SetSuperhotMode(true);
+            //ShopManager.SetSuperhotMode(true);
 
             //Cynic: Dice?
             context.DoNarrationAndSetFlag("Act1/Cynic/007_Dice");

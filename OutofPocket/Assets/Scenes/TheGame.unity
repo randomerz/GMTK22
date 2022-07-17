@@ -3125,6 +3125,10 @@ PrefabInstance:
       propertyPath: pocketSuperHot
       value: 
       objectReference: {fileID: 2100000, guid: d28efcf6ad11b9c4287d92f1f462354a, type: 2}
+    - target: {fileID: 2735263671158665599, guid: db15a05028f095d47b7bbb2f3fa80d9f, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3300748243792436582, guid: db15a05028f095d47b7bbb2f3fa80d9f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
