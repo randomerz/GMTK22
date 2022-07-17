@@ -18,12 +18,6 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
             context.holdClickAnnotation.enabled = true;
         }
 
-        if (context.triggerTilting)
-        {
-            context.tiltingAnnotation.enabled = true;
-            context.tiltingTable.TiltingEnabled = true;
-        }
-
         if (context.CueBallSunk)
         {
             context.ResetCueBall();

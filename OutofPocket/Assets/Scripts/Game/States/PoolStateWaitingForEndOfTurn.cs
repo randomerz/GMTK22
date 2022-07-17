@@ -27,7 +27,6 @@ public class PoolStateWaitingForEndOfTurn : State<PoolStateManager>
             ball.ResetBall();
         }
         ballsOutsideArena.Clear();
-        context.triggerTilting = true;
     }
 
     public override void UpdateState()
