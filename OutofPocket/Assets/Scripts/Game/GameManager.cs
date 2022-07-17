@@ -19,6 +19,7 @@ public class GameManager : Singleton<GameManager>
     public FadeScript fade;
 
     public TextMeshProUGUI pauseAnnotation;
+    public TextMeshProUGUI powerupAnnotation;
 
     private State<GameManager> currentState;
 
@@ -39,6 +40,7 @@ public class GameManager : Singleton<GameManager>
         act3 = new Act3State(this);
 
         pauseAnnotation.enabled = false;
+        powerupAnnotation.enabled = false;
     }
 
     public void Start()
@@ -359,6 +361,8 @@ public class GameManager : Singleton<GameManager>
         private bool madeDecision;
         private bool wasDecisionLeft;
 
+        private bool playerPutBallInPocket;
+
         public Act2State(GameManager ctx) : base(ctx)
         {
         }
@@ -598,6 +602,14 @@ public class GameManager : Singleton<GameManager>
                 BigCue._instance.AbilityEnabled = true;
             }
 
+            context.pauseAnnotation.enabled = false;
+            context.powerupAnnotation.enabled = true;
+
+            //Player needs to pocket ball w/ powerups to progress.
+            playerPutBallInPocket = false;
+            PoolBall.ballInPocketEvent += PutBallInPocket;
+            yield return new WaitUntil(() => playerPutBallInPocket);
+            PoolBall.ballInPocketEvent -= PutBallInPocket;
 
             // Cynic: What a surprise. The powerups do nothing to change the gameplay. In fact, they�re really annoying to use! You should -
             context.DoNarrationAndSetFlag("Act2/Cynic/036_WhatASurprise");
@@ -678,6 +690,11 @@ public class GameManager : Singleton<GameManager>
                 madeDecision = true;
                 wasDecisionLeft = e.choice;
             };
+        }
+
+        private void PutBallInPocket(object sender, PoolBall.BallEventArgs e)
+        {
+            playerPutBallInPocket = true;
         }
     }
     #endregion

@@ -25,6 +25,7 @@ public class BigCue : Singleton<BigCue> {
             if (Input.GetKey(KeyCode.Space))
             {
                 scale += acceleration * Time.fixedDeltaTime;
+                GameManager._instance.powerupAnnotation.enabled = false;
             }
             else
             {

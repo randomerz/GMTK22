@@ -19,6 +19,7 @@ public class BulletTime : Singleton<BulletTime> {
             if (Input.GetKey(KeyCode.Space))
             {
                 Time.timeScale -= acceleration * Time.fixedDeltaTime;
+                GameManager._instance.powerupAnnotation.enabled = false;
             }
             else
             {
