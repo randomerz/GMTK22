@@ -121,7 +121,6 @@ public class GameManager : Singleton<GameManager>
             //Oppy Crazy, right? Okay, so picture this�*elevator ding sound*
             context.DoNarrationAndSetFlag("Act1/Oppy/003_PictureThis");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
-            
 
             //Turn on pool table
             context.poolTable.SetActive(true);
