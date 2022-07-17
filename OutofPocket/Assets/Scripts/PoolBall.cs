@@ -79,11 +79,24 @@ public class PoolBall : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PoolBall"))
         {
+            if (collision.relativeVelocity.magnitude > 2){
+                Debug.Log("Big Hit");
+                AudioManager.PlaySound("BallHitHard");
+            }else{
+                Debug.Log("Normal Hit");
+                AudioManager.PlaySound("BallHit");
+            }
+
+            
             ballHitEvent?.Invoke(this, new BallHitEventArgs
             {
                 ball = this,
                 hitBy = collision.gameObject
             }); ;
+        }
+        else if (collision.gameObject.CompareTag("Wall")){
+            Debug.Log("Wall Hit");
+            AudioManager.PlaySound("BallHitWall");
         }
     }
 
@@ -91,6 +104,8 @@ public class PoolBall : MonoBehaviour
     {
         if (other.CompareTag("Pocket"))
         {
+            Debug.Log("Ball Pocketed");
+            AudioManager.PlaySound("BallPocketed");
             ballInPocketEvent?.Invoke(this, new BallEventArgs
             {
                 ball = this,
