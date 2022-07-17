@@ -812,7 +812,8 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Act3/Optimist/28_Final2");    
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-
+            yield return  new WaitForSeconds(0.5);
+            SceneManager.LoadSceneAsync("Credits");
  
             
             yield return null;   
