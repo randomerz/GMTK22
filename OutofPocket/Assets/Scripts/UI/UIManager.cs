@@ -8,6 +8,7 @@ public class UIManager : Singleton<UIManager>
     [Header("References")]
     [SerializeField] private GameObject mainPanel;
     [SerializeField] private TextMeshProUGUI subtitleText;
+    [SerializeField] private CanvasGroup subtitleCanvasGroup;
     [Header("Properties")]
     [SerializeField] private float subtitleFadeInSpeed;
 
@@ -21,6 +22,8 @@ public class UIManager : Singleton<UIManager>
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             mainPanel.SetActive(!mainPanel.activeInHierarchy);
+
+            GameManager._instance.pauseAnnotation.enabled = false;
         }
     }
 
@@ -40,16 +43,17 @@ public class UIManager : Singleton<UIManager>
 
         subtitleText.text = "";
         subtitleText.color = Color.white;
-        subtitleText.alpha = 0;
+        subtitleCanvasGroup.alpha = 0;
     }
 
     private IEnumerator IFadeInAndMoveUpText()
     {
-        subtitleText.alpha = 0;
-        while (subtitleText.alpha < 0.99f)
+        subtitleCanvasGroup.alpha = 0;
+        subtitleText.alpha = 1;
+        while (subtitleCanvasGroup.alpha < 0.99f)
         {
-            subtitleText.alpha = Mathf.Lerp(subtitleText.alpha, 1, subtitleFadeInSpeed * Time.deltaTime);
-            subtitleText.rectTransform.position = new Vector2(subtitleText.rectTransform.position.x, -50 + subtitleText.alpha * 100);
+            subtitleCanvasGroup.alpha = Mathf.Lerp(subtitleCanvasGroup.alpha, 1, subtitleFadeInSpeed * Time.deltaTime);
+            subtitleText.rectTransform.position = new Vector2(subtitleText.rectTransform.position.x, -50 + subtitleCanvasGroup.alpha * 50);
             yield return null;
         }
     }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0eb87a0a-b6a1-48a7-99b0-f6e176855fa7}">
+		<property name="assetPath">
+			<value>gmtk22_Act_1_tilt_base.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>12.09469387755102</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8f2e1481-4274-4210-ad94-da0eb1090cf7}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -15,7 +15,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
     }
     public static ScoreMode scoreMode;
 
-    public bool hasThisStartedYet = false;
+    public bool playerHitBallForFirstTime = false;
 
     public bool startGameImmediately;
 
@@ -55,6 +55,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
     public static event System.EventHandler TurnEnded;
 
     public PoolBall[] PoolBalls => _poolBalls;
+    private int resetTimer = 0;
     public bool CueBallSunk { get; set; }
 
     public bool ScoreEnabled
@@ -115,6 +116,8 @@ public class PoolStateManager : Singleton<PoolStateManager>
         _emptyState = new PoolStateIdle(this);
         _playerTurnState = new PoolStatePlayerTurn(this);
         _waitingForEndOfTurnState = new PoolStateWaitingForEndOfTurn(this);
+
+        ScoreEnabled = false;
     }
 
     private void OnEnable()
@@ -152,6 +155,23 @@ public class PoolStateManager : Singleton<PoolStateManager>
 
     private void FixedUpdate()
     {
+        resetTimer = (resetTimer + 1) % 200;
+        if(resetTimer == 0)
+        {
+            int c = 0;
+            foreach(PoolBall pb in _poolBalls)
+            {
+                if(pb.sunk)
+                {
+                    c++;
+                }
+
+            }
+            if(c>=_poolBalls.Length-1)
+            {
+                ResetGame();
+            }
+        }
         currState?.FixedUpdateState();
     }
 
@@ -174,6 +194,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
             if (currState == WaitingForEndOfTurnState)
             {
                 TurnEnded?.Invoke(this, null);
+                holdClickAnnotation.enabled = false;
             }
         }
         currState = nextState;
@@ -204,6 +225,8 @@ public class PoolStateManager : Singleton<PoolStateManager>
         CueBallSunk = false;
         PoolBall pb = cueBall.GetComponent<PoolBall>();
         cueBall.transform.position = pb.initialPos;
+        cueBall.transform.rotation =  Quaternion.identity;
+        cueBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
     public static void ChangeAllToShape(PoolBall.Shape shape)

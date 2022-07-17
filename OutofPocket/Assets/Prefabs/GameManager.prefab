@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2464254980495208279}
   - component: {fileID: 2464254980495208278}
+  - component: {fileID: 8017974101590799740}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -44,8 +45,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92e749b791947f4f8cd73472d1c6843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floor: {fileID: 0}
   poolTable: {fileID: 0}
   poolGameManager: {fileID: 0}
   poolBallTriangle: {fileID: 0}
   cueBall: {fileID: 0}
+  inGameUI: {fileID: 0}
   currNarrationFinished: 0
+--- !u!114 &8017974101590799740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2464254980495208273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820e832346a3034078badb5144ff5a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomMats:
+  - {fileID: 13400000, guid: a837bd84060e92d59b00f50697983374, type: 2}
+  - {fileID: 13400000, guid: d0aae5bd7c1dac65b9f4aed8b6e29fa1, type: 2}
+  - {fileID: 13400000, guid: 4441f52b9fbb279ed98b98a290db2abe, type: 2}
+  colors:
+  - {fileID: 2100000, guid: e6a18042e1e693a0bb13ede4b4a62672, type: 2}
+  - {fileID: 2100000, guid: 46b7bd1a25e679180ae28a1fcc1876b6, type: 2}
+  - {fileID: 2100000, guid: 71072e57ba1a920edae10837e0422c3f, type: 2}
