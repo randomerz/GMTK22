@@ -353,7 +353,7 @@ public class GameManager : Singleton<GameManager>
         public IEnumerator DoAct2()
         {
             // Oppy: Well, looks like it�s just you and me for a little bit. I guess now�s a good time to get some feedback on the game! It�s not over or anything, I just thought it�d be nice right now.
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Oppy/001_AloneTime");
             AudioManager.SetMusicParameter("High Rollers", "Base", 3);
             AudioManager.SetMusicParameter("High Rollers", "Juice", 0);
             AudioManager.SetMusicParameter("High Rollers", "Bass", 0);
@@ -362,7 +362,7 @@ public class GameManager : Singleton<GameManager>
 
 
             // Oppy: Okay, how about this. Shoot a dice into the far left pocket there to say �yes�, and the far right pocket to say �no�
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Oppy/002_YesNo");
             SetUpChoice("Yes", "No");
             yield return new WaitUntil(() => { return madeDecision; });
 
