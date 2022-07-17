@@ -204,6 +204,8 @@ public class PoolStateManager : Singleton<PoolStateManager>
         CueBallSunk = false;
         PoolBall pb = cueBall.GetComponent<PoolBall>();
         cueBall.transform.position = pb.initialPos;
+        cueBall.transform.rotation =  Quaternion.identity;
+        cueBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
     public static void ChangeAllToShape(PoolBall.Shape shape)
