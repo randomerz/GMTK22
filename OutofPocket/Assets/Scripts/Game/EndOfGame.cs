@@ -6,6 +6,7 @@ public class EndOfGame : MonoBehaviour
 {
     private GameObject triangle;
     public PhysicMaterial[] randomMats = new PhysicMaterial[3];
+    public Material[] colors = new Material[3];
     private System.Random random;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class EndOfGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if(Time.time > 1 && Time.time < 1.25)
+        // if(Time.time > 1 && Time.time < 1.05)
         // {
         //     EndOfGameify();
         // }
@@ -30,7 +31,9 @@ public class EndOfGame : MonoBehaviour
         {
 
             GameObject shape = poolBall.GetComponent<PoolBall>().GetCurShape();
-            shape.GetComponent<Collider>().material = randomMats[random.Next(0, 3)];
+            int r = random.Next(0, 3);
+            shape.GetComponent<Collider>().material = randomMats[r];
+            shape.GetComponent<MeshRenderer>().materials =  new Material[] {colors[r]};
         }
     }
 }

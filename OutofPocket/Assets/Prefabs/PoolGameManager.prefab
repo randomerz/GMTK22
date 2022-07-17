@@ -46,9 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c5aac1b8c7af64292501125f670db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasThisStartedYet: 0
+  triggerTilting: 0
   startGameImmediately: 1
   cueBall: {fileID: 0}
   gameArenaCollider: {fileID: 7797360326942420700}
+  tiltingTable: {fileID: 0}
   screenDeltaToPower: 0.03
   minShotPower: 5
   maxShotPower: 50
@@ -57,6 +60,8 @@ MonoBehaviour:
   maxDelayBetweenShots: 10
   ballVelStopThreshold: 0.2
   numBallsSunk: 0
+  holdClickAnnotation: {fileID: 0}
+  tiltingAnnotation: {fileID: 0}
 --- !u!114 &2688643780886133568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +78,10 @@ MonoBehaviour:
   - {fileID: 13400000, guid: a837bd84060e92d59b00f50697983374, type: 2}
   - {fileID: 13400000, guid: d0aae5bd7c1dac65b9f4aed8b6e29fa1, type: 2}
   - {fileID: 13400000, guid: 4441f52b9fbb279ed98b98a290db2abe, type: 2}
+  colors:
+  - {fileID: 2100000, guid: e6a18042e1e693a0bb13ede4b4a62672, type: 2}
+  - {fileID: 2100000, guid: 46b7bd1a25e679180ae28a1fcc1876b6, type: 2}
+  - {fileID: 2100000, guid: 71072e57ba1a920edae10837e0422c3f, type: 2}
 --- !u!1 &7893254962264068823
 GameObject:
   m_ObjectHideFlags: 0
