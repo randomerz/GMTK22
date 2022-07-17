@@ -94,6 +94,7 @@ public class GameManager : Singleton<GameManager>
 
         public IEnumerator DoAct1()
         {
+
             Juicer jooooooooooooooooooooos = context.joooooooooooooooooooooos;
             context.floor.SetActive(false);
             context.poolTable.SetActive(false);
