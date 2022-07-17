@@ -133,6 +133,7 @@ public class GameManager : Singleton<GameManager>
             context.poolTable.SetActive(true);
 
             //Oppy and, and it�s like your standard pool game you know
+            yield return new WaitForSeconds(0.5f);
             context.DoNarrationAndSetFlag("Act1/Oppy/005_PoolGame");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
@@ -213,7 +214,7 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Act1/Oppy/018_Possibilities");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: Okay I really need to stop you there. Having �possibilities� is not the same as having �ideas�. *upbeat * Be decisive and pick one!Can you settle on one for christ�s sake ?
+            //Cynic: Okay I really need to stop you there. Having �possibilities� is not the same as having �ideas�. Be decisive and pick one!Can you settle on one for christ�s sake ?
             context.DoNarrationAndSetFlag("Act1/Cynic/019_PossibilitiesNotIdeas");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
@@ -243,12 +244,13 @@ public class GameManager : Singleton<GameManager>
 
 
             //Cynic:
-            context.DoNarrationAndSetFlag("Act1/Cynic/023_Empty");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Act1/Cynic/023_Empty");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Oppy:
-            context.DoNarrationAndSetFlag("Act1/Oppy/024_Empty");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Act1/Oppy/024_Empty");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            yield return new WaitForSeconds(7);
 
             //Cynic: Okay, I still don�t think there�s enough control here. You�re just hitting the cube and praying for a 6.
             context.DoNarrationAndSetFlag("Act1/Cynic/025_Praying");
