@@ -45,9 +45,9 @@ public class Choices : Singleton<Choices>
     {
         InitializeSingleton();
         PoolBall.ballInPocketEvent += WaitForChoice;
-        choiceEvent += DefaultListener;
-        SetChoiceText("Choice 1", "Choice 2");
-        Activate();
+        //choiceEvent += DefaultListener;
+        //SetChoiceText("Choice 1", "Choice 2");
+        //Activate();
     }
 
     // Update is called once per frame
@@ -88,6 +88,10 @@ public class Choices : Singleton<Choices>
         else if(Array.IndexOf(choice2Pockets, e.pocket) != -1)
         {
             choiceEvent?.Invoke(this, new choiceEventArgs{choice=false});
+        }
+        else 
+        {
+            return;
         }
         Deactivate();
         foreach (var d in choiceEvent.GetInvocationList())
