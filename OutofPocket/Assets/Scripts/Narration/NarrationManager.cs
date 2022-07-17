@@ -78,10 +78,10 @@ public class NarrationManager : Singleton<NarrationManager>
 /// </summary>
 public struct CallbackWithDelay
 {
-    public Action callback;
     public float delayInSeconds;
+    public Action callback;
 
-    public CallbackWithDelay(Action callback, float delayInSeconds)
+    public CallbackWithDelay(float delayInSeconds, Action callback)
     {
         this.callback = callback;
         this.delayInSeconds = delayInSeconds;

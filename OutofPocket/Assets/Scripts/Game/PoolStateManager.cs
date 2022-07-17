@@ -41,7 +41,6 @@ public class PoolStateManager : Singleton<PoolStateManager>
     [Header("Tutorial Annotations")]
     public TextMeshProUGUI holdClickAnnotation;
     public TextMeshProUGUI tiltingAnnotation;
-
     public PoolStateIdle EmptyState => _emptyState;
     public PoolStatePlayerTurn PlayerTurnState => _playerTurnState;
     public PoolStateWaitingForEndOfTurn WaitingForEndOfTurnState => _waitingForEndOfTurnState;

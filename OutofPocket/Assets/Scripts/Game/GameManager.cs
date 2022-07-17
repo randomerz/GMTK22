@@ -6,10 +6,12 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     [Header("References")]
+    public GameObject floor;
     public GameObject poolTable;
     public PoolStateManager poolGameManager;
     public GameObject poolBallTriangle;
     public GameObject cueBall;
+    public GameObject inGameUI;
 
 
 
@@ -54,7 +56,7 @@ public class GameManager : Singleton<GameManager>
         this.currentState.EnterState();
     }
 
-    public void DoNarrationAndSetFlag(string path)
+    public void DoNarrationAndSetFlag(string path, params CallbackWithDelay[] afterDelay)
     {
         currNarrationFinished = false;
         NarrationManager.PlayVoiceClip(path, () => {
@@ -67,23 +69,73 @@ public class GameManager : Singleton<GameManager>
     #region Act1
     public class Act1State : State<GameManager>
     {
+        private bool playerPutBallInPocket;
+        private bool turnCompleted;
         public Act1State(GameManager ctx) : base(ctx)
         {
         }
 
         public override void EnterState()
         {
+
             context.StartCoroutine(DoAct1());
         }
 
         public IEnumerator DoAct1()
         {
-            NarrationManager.PlayVoiceClip("Optimist/HelloWelcomeTo.asset");
-            yield return new WaitUntil(() =>
-            {
-                return context.currNarrationFinished;
-            });
-            Debug.Log("Narration Finished!");
+            context.floor.SetActive(false);
+            context.poolTable.SetActive(false);
+            context.poolBallTriangle.SetActive(false);
+            context.cueBall.SetActive(false);
+            context.poolGameManager.gameObject.SetActive(false);
+            context.inGameUI.SetActive(false);
+
+            //Oppy … and I’ve already got someone playtesting it right now!
+            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
+            ////Cynic already?
+            //context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
+            ////Oppy Crazy, right? Okay, so picture this…*elevator ding sound*
+            //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
+            context.floor.SetActive(true);  //Turn on lights
+
+            //Oppy A pool table
+            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
+            context.poolTable.SetActive(true);
+
+            //Oppy and, and it’s like your standard pool game you know
+            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
+            context.poolBallTriangle.SetActive(true);
+            context.cueBall.SetActive(true);
+            context.poolGameManager.gameObject.SetActive(true);
+            context.inGameUI.SetActive(true);
+
+            yield return new WaitUntil(() => { return turnCompleted; })
+
+            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
+
+            playerPutBallInPocket = false;
+            yield return new WaitUntil(())
+
+
+            //Cynic
+
+            //Oppy
+
+
+
+
         }
     }
     #endregion
