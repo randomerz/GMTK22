@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4513998, g: 0.5008927, b: 0.5723167, a: 1}
+  m_IndirectSpecularColor: {r: 0.45139956, g: 0.5008922, b: 0.5723164, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1633,7 +1633,7 @@ PrefabInstance:
     - target: {fileID: 2464254980495208278, guid: 9ce62ef2c17cb5e488b1fc24b6cb2336, type: 3}
       propertyPath: inGameUI
       value: 
-      objectReference: {fileID: 274241036}
+      objectReference: {fileID: 1154084688}
     - target: {fileID: 2464254980495208278, guid: 9ce62ef2c17cb5e488b1fc24b6cb2336, type: 3}
       propertyPath: poolTable
       value: 
@@ -2719,6 +2719,11 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6985500486298694421, guid: e89c4cdcc12138e479110045d4cd8b99, type: 3}
   m_PrefabInstance: {fileID: 4299062914018792538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1154084688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3282920145397080540, guid: f1e242086a6399c49a1ffc82c68de040, type: 3}
+  m_PrefabInstance: {fileID: 54681496}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1166061034
 GameObject:
