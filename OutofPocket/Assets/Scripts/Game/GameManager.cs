@@ -530,7 +530,7 @@ public class GameManager : Singleton<GameManager>
             AudioManager.SetMusicParameter("High Rollers", "Act2_Interlude", 1);
 
             // Oppy: Ah, see how nice it looks?
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Oppy/032_SeeNice");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Cynic: It�s the visual equivalent of stepping on a lego brick. And nothing you can buy here is useful! It�s just cosmetics! 
@@ -542,7 +542,7 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Oppy: Ok then, we�ll add powerups! What do you think would be cooler, a slow-mo cue ball, or a giant one?
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Oppy/035_Powerups");
             SetUpChoice("Slow-Mo Ball", "Giant Ball");
             yield return new WaitUntil(() => { return madeDecision; });
 
@@ -561,11 +561,11 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Oppy: Excuse you! This is my game; I�ll put in whatever I want. How are you so sure this won�t work?
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Oppy/037_ExcuseYou");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Oppy: You say I�m not the one listening, but you can never hear the benefits of any of my ideas! You�ve never even played a game like this!
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Oppy/038_NotListening");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Cynic: *exasperated* That�s true! Let�s ask the one who�s actually playing. What do you think about the mechanic?
@@ -576,18 +576,18 @@ public class GameManager : Singleton<GameManager>
             if (wasDecisionLeft)
             {
                 // Oppy: Hah! I knew it!
-                context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                context.DoNarrationAndSetFlag("Act2/Oppy/040_LikeEm");
                 yield return new WaitUntil(() => { return context.currNarrationFinished; });
             }
             else
             {
                 // Oppy: Well, maybe they�ll grow on ya.
-                context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                context.DoNarrationAndSetFlag("Act2/Oppy/041_HateEm");
                 yield return new WaitUntil(() => { return context.currNarrationFinished; });
             }
 
             // Oppy: We�ll keep 'em for now. But I do agree the gameplay could use a little facelift. We need something dramatic. And flashy! Something already tried, tested, and proven to be fun!
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Oppy/042_KeepEm");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Cynic: Everybody shush he�s about to make a breakthrough
@@ -595,7 +595,7 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Oppy: We�ll combine this game� with superhot!
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Oppy/044_Superhot");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // SUPER HOT ####################################################################
@@ -605,12 +605,12 @@ public class GameManager : Singleton<GameManager>
             AudioManager.SetMusicParameter("High Rollers", "Act2_Interlude", 0);
 
             // Oppy: Now, time will only move when the cue ball moves! I�ve finally cracked the code
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Oppy/045_TimeOnlyMoves");
 
             yield return new WaitForSeconds(15f);
 
-            // Oppy: We�ll combine this game� with superhot!
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            // Oppy: Wait a minute
+            context.DoNarrationAndSetFlag("Act2/Oppy/046_WaitAMinute");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Cynic: I can�t say I didn�t see this coming. You haven�t actually addressed the core issues of the game, so none of your problems were solved. You just created new ones!
