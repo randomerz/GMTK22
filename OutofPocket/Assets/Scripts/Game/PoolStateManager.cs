@@ -47,6 +47,8 @@ public class PoolStateManager : Singleton<PoolStateManager>
     public PoolStatePlayerTurn PlayerTurnState => _playerTurnState;
     public PoolStateWaitingForEndOfTurn WaitingForEndOfTurnState => _waitingForEndOfTurnState;
 
+    public static event System.EventHandler TurnEnded;
+
     public PoolBall[] PoolBalls => _poolBalls;
     public bool CueBallSunk { get; set; }
 
@@ -141,6 +143,11 @@ public class PoolStateManager : Singleton<PoolStateManager>
         if (currState != null)
         {
             currState.ExitState();
+
+            if (currState == WaitingForEndOfTurnState)
+            {
+                TurnEnded?.Invoke(this, null);
+            }
         }
         currState = nextState;
         nextState.EnterState();
@@ -172,9 +179,9 @@ public class PoolStateManager : Singleton<PoolStateManager>
         cueBall.transform.position = pb.initialPos;
     }
 
-    public void ChangeAllToShape(PoolBall.Shape shape)
+    public static void ChangeAllToShape(PoolBall.Shape shape)
     {
-        foreach (var ball in _poolBalls)
+        foreach (var ball in _instance._poolBalls)
         {
             ball.ChangeShape(shape);
         }

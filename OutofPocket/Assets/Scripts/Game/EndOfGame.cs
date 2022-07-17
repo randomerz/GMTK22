@@ -25,7 +25,7 @@ public class EndOfGame : MonoBehaviour
     public void EndOfGameify()
     {
         Debug.Log("END OF GAME");
-        GetComponent<PoolStateManager>().ChangeAllToShape(PoolBall.Shape.Sphere);
+        PoolStateManager.ChangeAllToShape(PoolBall.Shape.Sphere);
         foreach (Transform poolBall in triangle.transform) 
         {
 

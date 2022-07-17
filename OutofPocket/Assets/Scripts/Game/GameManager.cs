@@ -122,12 +122,15 @@ public class GameManager : Singleton<GameManager>
 
             //Wait until player made a turn.
             turnCompleted = false;
-            CueBall.ballShot += BallHitFirstTime;   //Scuffy me Luffy 
+            PoolStateManager.TurnEnded += SetTurnCompleted;   //Scuffy me Luffy 
             yield return new WaitUntil(() => { return turnCompleted; });
-            CueBall.ballShot -= BallHitFirstTime;
+            PoolStateManager.TurnEnded -= SetTurnCompleted;
 
+            //Oppy …except, they’re not actually balls, they’re dice!
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
+            PoolStateManager.ChangeAllToShape(PoolBall.Shape.Dice);
 
 
             playerPutBallInPocket = false;
@@ -143,7 +146,7 @@ public class GameManager : Singleton<GameManager>
 
         }
 
-        private void BallHitFirstTime(object sender, CueBall.BallShotEventArgs e)
+        private void SetTurnCompleted(object sender, System.EventArgs e)
         {
             turnCompleted = true;
         }
