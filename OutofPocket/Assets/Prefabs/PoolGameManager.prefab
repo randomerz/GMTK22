@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 981231797711066854}
   - component: {fileID: 981231797711066855}
+  - component: {fileID: 2688643780886133568}
   m_Layer: 0
   m_Name: PoolGameManager
   m_TagString: Untagged
@@ -28,7 +29,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8638011991296664798}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44,11 +46,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c5aac1b8c7af64292501125f670db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasThisStartedYet: 0
+  triggerTilting: 0
   startGameImmediately: 1
   cueBall: {fileID: 0}
+  gameArenaCollider: {fileID: 7797360326942420700}
+  tiltingTable: {fileID: 0}
   screenDeltaToPower: 0.03
   minShotPower: 5
   maxShotPower: 50
+  popUpForce: 0
   minDelayBetweenShots: 2
   maxDelayBetweenShots: 10
   ballVelStopThreshold: 0.2
+  numBallsSunk: 0
+  holdClickAnnotation: {fileID: 0}
+  tiltingAnnotation: {fileID: 0}
+--- !u!114 &2688643780886133568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981231797711066856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820e832346a3034078badb5144ff5a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomMats:
+  - {fileID: 13400000, guid: a837bd84060e92d59b00f50697983374, type: 2}
+  - {fileID: 13400000, guid: d0aae5bd7c1dac65b9f4aed8b6e29fa1, type: 2}
+  - {fileID: 13400000, guid: 4441f52b9fbb279ed98b98a290db2abe, type: 2}
+  colors:
+  - {fileID: 2100000, guid: e6a18042e1e693a0bb13ede4b4a62672, type: 2}
+  - {fileID: 2100000, guid: 46b7bd1a25e679180ae28a1fcc1876b6, type: 2}
+  - {fileID: 2100000, guid: 71072e57ba1a920edae10837e0422c3f, type: 2}
+--- !u!1 &7893254962264068823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8638011991296664798}
+  - component: {fileID: 7797360326942420700}
+  m_Layer: 0
+  m_Name: InPlaySphere
+  m_TagString: GameArena
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8638011991296664798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7893254962264068823}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 981231797711066854}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7797360326942420700
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7893254962264068823}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 5.234681
+  m_Height: 17.25151
+  m_Direction: 0
+  m_Center: {x: 0.7863543, y: -1.7653189, z: 0}

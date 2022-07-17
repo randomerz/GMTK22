@@ -26,7 +26,7 @@ public class NarrationManagerDemo : MonoBehaviour
 
     void Test()
     {
-        NarrationManager.PlayVoiceClip("Optimist/HelloWelcomeTo", Three, new CallbackWithDelay(One, 1.0f), new CallbackWithDelay(Two, 2.0f));
+        NarrationManager.PlayVoiceClip("Optimist/HelloWelcomeTo", Three, new CallbackWithDelay(1.0f, One), new CallbackWithDelay(2.0f, Two));
     }
 
     void OnStartEvent() // Happens when any clip starts

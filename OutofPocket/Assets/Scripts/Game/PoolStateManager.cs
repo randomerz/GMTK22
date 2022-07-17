@@ -2,15 +2,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 //Controls all of the logic for running pool games.
 //Call StartGame() to start the pool game (make sure everything is set in inspector)
 public class PoolStateManager : Singleton<PoolStateManager>
 {
 
+    public bool hasThisStartedYet = false;
+    public bool triggerTilting = false;
+
     public bool startGameImmediately;
 
+    [Header("References")]
     public CueBall cueBall;
+    public Collider gameArenaCollider;
+    public TiltingTable tiltingTable;
 
     [Header("Cue Ball Shot Power")]
     public float screenDeltaToPower;
@@ -32,9 +39,15 @@ public class PoolStateManager : Singleton<PoolStateManager>
     private PoolStatePlayerTurn _playerTurnState;
     private PoolStateWaitingForEndOfTurn _waitingForEndOfTurnState;
 
+    [Header("Tutorial Annotations")]
+    public TextMeshProUGUI holdClickAnnotation;
+    public TextMeshProUGUI tiltingAnnotation;
+
     public PoolStateIdle EmptyState => _emptyState;
     public PoolStatePlayerTurn PlayerTurnState => _playerTurnState;
     public PoolStateWaitingForEndOfTurn WaitingForEndOfTurnState => _waitingForEndOfTurnState;
+
+    public static event System.EventHandler TurnEnded;
 
     public PoolBall[] PoolBalls => _poolBalls;
     public bool CueBallSunk { get; set; }
@@ -53,7 +66,8 @@ public class PoolStateManager : Singleton<PoolStateManager>
             {
                 ScoreManager._instance.ShowScore();
                 ScoreManager.Score = 0;
-            } else
+            }
+            else
             {
                 ScoreManager._instance.HideScore();
                 ScoreManager.Score = 0;
@@ -96,11 +110,17 @@ public class PoolStateManager : Singleton<PoolStateManager>
             SwitchState(_emptyState);
         }
         ScoreEnabled = true;    //For Testing
+        tiltingAnnotation.enabled = false;
     }
 
     private void Update()
     {
         currState?.UpdateState();
+        if (OOPInput.vertical != 0 || OOPInput.horizontal != 0)
+        {
+            tiltingAnnotation.gameObject.SetActive(false);
+            triggerTilting = false;
+        }
     }
 
     private void FixedUpdate()
@@ -108,17 +128,32 @@ public class PoolStateManager : Singleton<PoolStateManager>
         currState?.FixedUpdateState();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        currState?.OnTriggerEnter(other);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        currState?.OnTriggerExit(other);
+    }
+
     public void SwitchState(State<PoolStateManager> nextState)
     {
         if (currState != null)
         {
             currState.ExitState();
+
+            if (currState == WaitingForEndOfTurnState)
+            {
+                TurnEnded?.Invoke(this, null);
+            }
         }
         currState = nextState;
         nextState.EnterState();
     }
 
-    public void StartGame()
+    public static void StartGame()
     {
         //foreach (PoolBall pb in _poolBalls)
         //{
@@ -127,16 +162,14 @@ public class PoolStateManager : Singleton<PoolStateManager>
         ResetGame();
     }
 
-    public void ResetGame()
+    public static void ResetGame()
     {
-        numBallsSunk = 0;
-        foreach (PoolBall pb in _poolBalls)
+        _instance.numBallsSunk = 0;
+        foreach (PoolBall pb in _instance._poolBalls)
         {
-            pb.transform.position = pb.initialPos;
-            pb.gameObject.SetActive(true);
-            pb.sunk = false;
+            pb.ResetBall();
         }
-        SwitchState(_playerTurnState);
+        _instance.SwitchState(_instance._playerTurnState);
     }
 
     public void ResetCueBall()
@@ -146,9 +179,9 @@ public class PoolStateManager : Singleton<PoolStateManager>
         cueBall.transform.position = pb.initialPos;
     }
 
-    public void ChangeAllToShape(PoolBall.Shape shape)
+    public static void ChangeAllToShape(PoolBall.Shape shape)
     {
-        foreach (var ball in _poolBalls)
+        foreach (var ball in _instance._poolBalls)
         {
             ball.ChangeShape(shape);
         }

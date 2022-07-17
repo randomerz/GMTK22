@@ -29,13 +29,13 @@ public class PoolBall : MonoBehaviour
         public PoolBall ball;
         public GameObject pocket;
     }
-    public bool sunk;
 
     [SerializeField] private Shape shapeAtStart;
     [SerializeField] private List<ShapeMesh> shapeMeshes;
 
     [Header("READ ONLY, DON'T NEED TO SET")]
     public Vector3 initialPos;
+    public bool sunk;
 
     private Dictionary<Shape, GameObject> shapeMeshesDict;
 
@@ -79,11 +79,30 @@ public class PoolBall : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PoolBall"))
         {
+            if (collision.relativeVelocity.magnitude > 10) {
+                AudioManager.PlaySound("BallHitHard");
+            } else {
+                AudioManager.PlaySound("BallHit");
+            }
+
+
             ballHitEvent?.Invoke(this, new BallHitEventArgs
             {
                 ball = this,
                 hitBy = collision.gameObject
-            }); ;
+            });
+        }
+        else if (collision.gameObject.CompareTag("Wall"))
+        {
+            float volume = collision.relativeVelocity.magnitude / 15;
+            volume = Mathf.Clamp(volume, 0, 1);
+            AudioManager.PlaySound("BallHitWall", volume);
+        }
+        else if (collision.gameObject.CompareTag("Floor"))
+        {
+            float volume = collision.relativeVelocity.magnitude / 15;
+            volume = Mathf.Clamp(volume, 0, 1);
+            AudioManager.PlaySound("BallHitTable", volume);
         }
     }
 
@@ -91,12 +110,22 @@ public class PoolBall : MonoBehaviour
     {
         if (other.CompareTag("Pocket"))
         {
+            AudioManager.PlaySound("BallPocketed");
             ballInPocketEvent?.Invoke(this, new BallEventArgs
             {
                 ball = this,
-                pocket = other.gameObject
+                pocket = other.gameObject.transform.parent.gameObject
             });
         }
+    }
+
+    public void ResetBall()
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        transform.position = initialPos;
+        gameObject.SetActive(true);
+        sunk = false;
     }
 
     public void ChangeShape(Shape shape)
@@ -125,5 +154,16 @@ public class PoolBall : MonoBehaviour
             sunk = true;
         }
         //Debug.Log($"{e.ball.gameObject.name} Sunk!");
+    }
+    public GameObject GetCurShape()
+    {
+        foreach(ShapeMesh mesh in shapeMeshes)
+        {
+            if(mesh.gameObject.activeSelf)
+            {
+                return mesh.gameObject;
+            }
+        }
+        return null;
     }
 }
