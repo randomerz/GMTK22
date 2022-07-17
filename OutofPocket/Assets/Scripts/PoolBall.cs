@@ -27,6 +27,7 @@ public class PoolBall : MonoBehaviour
     public class BallEventArgs
     {
         public PoolBall ball;
+        public GameObject pocket;
     }
     [SerializeField] private Shape shapeAtStart;
     [SerializeField] private List<ShapeMesh> shapeMeshes;
@@ -76,7 +77,8 @@ public class PoolBall : MonoBehaviour
         {
             ballInPocketEvent?.Invoke(this, new BallEventArgs
             {
-                ball = this
+                ball = this,
+                pocket = other.gameObject.transform.parent.gameObject
             });
         }
     }
