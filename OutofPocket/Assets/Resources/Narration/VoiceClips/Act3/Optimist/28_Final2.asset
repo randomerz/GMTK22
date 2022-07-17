@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 28_Final2
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
-  _subtitle: Yes! You can give feedback.
+  _subtitle: "Yeah, I like how this plays. But which one should be worth the most?
+    What if we\u2026"
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

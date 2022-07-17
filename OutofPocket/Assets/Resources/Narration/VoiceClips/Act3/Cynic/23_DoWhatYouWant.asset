@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 23_DoWhatYouWant
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
-  _subtitle: "Hey, I\u2019m back. What\u2019d I miss?"
+  _subtitle: "You do what you want. But I don\u2019t want to help you if you\u2019re
+    not going to listen to me."
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

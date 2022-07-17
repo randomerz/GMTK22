@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 02_CoreProblem
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
-  _subtitle: Yes! You can give feedback.
+  _subtitle: "but none of them have actually solved the core problem of \u201Chow
+    do we make dice with pool work.\u201D"
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

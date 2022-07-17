@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 13_GameTerrible
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
-  _subtitle: "Hey, I\u2019m back. What\u2019d I miss?"
+  _subtitle: "That game performed terribly! Look, it\u2019s not like I hate procedural
+    generation or anything. It can work great when done correctly."
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

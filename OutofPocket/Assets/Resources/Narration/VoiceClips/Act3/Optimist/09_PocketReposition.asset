@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 09_PocketReposition
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
-  _subtitle: Yes! You can give feedback.
+  _subtitle: The pockets could get repositioned randomly every time you play-
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

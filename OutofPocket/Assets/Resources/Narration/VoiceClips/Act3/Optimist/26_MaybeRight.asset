@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 26_MaybeRight
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
-  _subtitle: Yes! You can give feedback.
+  _subtitle: "But maybe he was right. He\u2019s got tons of time in the industry\u2026
+    maybe I should try out his advice."
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

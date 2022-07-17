@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 15_DuctTape
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
-  _subtitle: "Hey, I\u2019m back. What\u2019d I miss?"
+  _subtitle: Sticking everything together with a bit of duct tape and praying for
+    a hit is a recipe for disaster.
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

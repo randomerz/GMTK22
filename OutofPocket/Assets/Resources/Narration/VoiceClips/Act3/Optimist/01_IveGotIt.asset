@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 01_IveGotIt
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
-  _subtitle: Yes! You can give feedback.
+  _subtitle: "Alright, I\u2019ve got it. So I\u2019ve tried adding a bunch of different
+    mechanics to the game,"
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}
