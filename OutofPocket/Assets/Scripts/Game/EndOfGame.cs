@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-public class EndOfGame : MonoBehaviour
+public class EndOfGame : Singleton<EndOfGame>
 {
     private GameObject triangle;
     public PhysicMaterial[] randomMats = new PhysicMaterial[3];

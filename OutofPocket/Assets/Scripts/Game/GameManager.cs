@@ -765,7 +765,7 @@ public class GameManager : Singleton<GameManager>
 
 
             //The game becomes regular pool except with different physics on all the balls.
-            context.GetComponent<EndOfGame>().EndOfGameify();
+            EndOfGame._instance.EndOfGameify();
 
             //Oppy: It’s something I came up with when we were talking. All the balls have slightly different interactions with everything.
             context.DoNarrationAndSetFlag("Act3/Optimist/27_Final1");
