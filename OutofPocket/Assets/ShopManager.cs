@@ -23,13 +23,16 @@ public class ShopManager : Singleton<ShopManager>
     [SerializeField] private Material pocketNormal;
 
     [Header("Properties")]
-    [SerializeField] private int colorChangeCost;
+    [SerializeField] private int redCost;
+    [SerializeField] private int greenCost;
+    [SerializeField] private int blueCost;
     [SerializeField] private int stockCost;
 
     private int stocksOwned = 0;
     private Material currentlySelectedCueBallMaterial;
 
     private bool superHotIsEnabled;
+
 
     private void Awake()
     {
@@ -50,17 +53,24 @@ public class ShopManager : Singleton<ShopManager>
 
     public void SetCueBallColor(string color)
     {
-        if (ScoreManager.Score >= colorChangeCost)
+        Material newMaterial = color.ToLower() switch
         {
-            ScoreManager.Score -= colorChangeCost;
+            "red" => cueBallRed,
+            "blue" => cueBallBlue,
+            "green" => cueBallGreen,
+            _ => cueBallWhite
+        };
+        int cost = color.ToLower() switch
+        {
+            "red" => redCost,
+            "blue" => blueCost,
+            "green" => greenCost,
+            _ => 0
+        };
 
-            Material newMaterial = color.ToLower() switch
-            {
-                "red" => cueBallRed,
-                "blue" => cueBallBlue,
-                "green" => cueBallGreen,
-                _ => cueBallWhite
-            };
+        if (ScoreManager.Score >= cost)
+        {
+            ScoreManager.Score -= cost;
 
             if (!superHotIsEnabled)
             {
