@@ -26,7 +26,7 @@ public class GameManager : Singleton<GameManager>
     private Act3State act3;
     #endregion
 
-    private void Awake()
+    public void Awake()
     {
         InitializeSingleton();
 
@@ -35,11 +35,13 @@ public class GameManager : Singleton<GameManager>
         act3 = new Act3State(this);
     }
 
-    private void Start()
+    public void Start()
     {
         // TEMP! Move it to main menu!!!
-        AudioManager.PlayMusic("High Rollers");
+        Debug.Log("Switching act 1");
 
+        AudioManager.PlayMusic("High Rollers");
+        Debug.Log("Switching act 1");
         SwitchState(act1);
     }
 

@@ -154,7 +154,7 @@ public class PoolBall : MonoBehaviour
         {
             sunk = true;
         }
-        //Debug.Log($"{e.ball.gameObject.name} Sunk!");
+        Debug.Log($"{e.ball.gameObject.name} Sunk! Pokcet {e.pocket.gameObject.name}");
     }
     public GameObject GetCurShape()
     {

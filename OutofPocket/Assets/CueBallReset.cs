@@ -25,8 +25,17 @@ public class CueBallReset : MonoBehaviour
         //Debug.Log(other.gameObject.name);
         if(other.transform.parent.gameObject == cueBall)
         {
+            StartCoroutine(resetCB(other));
+        }
+    }
+    IEnumerator resetCB(Collider other)
+    {
+        yield return new WaitForSeconds(3);
+        if(other.transform.parent.transform.position.y < -3.5)
+        {
             Debug.Log("reset cue ball from outside");
             manager.ResetCueBall();
         }
     }
 }
+

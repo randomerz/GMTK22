@@ -154,9 +154,14 @@ public class AudioManager : Singleton<AudioManager>
                 music.emitter.Stop();
             }
         }
-
+        try {
         Debug.Log("Playing music!");
         m.emitter.Play();
+        }
+        catch (Exception e)
+        {
+            
+        }
     }
 
     public static void SetMusicParameter(string name, string parameterName, float value)

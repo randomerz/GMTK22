@@ -11,7 +11,8 @@ public class EndOfGame : Singleton<EndOfGame>
     // Start is called before the first frame update
     void Start()
     {
-        triangle = GameObject.Find("/Triangle");
+        InitializeSingleton();
+        triangle = GameObject.Find("/PoolTable/Triangle");
         random = new System.Random(); 
     }
 
