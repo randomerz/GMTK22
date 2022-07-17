@@ -15,7 +15,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
     }
     public static ScoreMode scoreMode;
 
-    public bool hasThisStartedYet = false;
+    public bool playerHitBallForFirstTime = false;
 
     public bool startGameImmediately;
 
@@ -194,6 +194,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
             if (currState == WaitingForEndOfTurnState)
             {
                 TurnEnded?.Invoke(this, null);
+                holdClickAnnotation.enabled = false;
             }
         }
         currState = nextState;

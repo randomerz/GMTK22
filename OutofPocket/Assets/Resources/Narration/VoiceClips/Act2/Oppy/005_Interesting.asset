@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 005_Interesting
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
-  _subtitle: "No? Well you kinda just did what I said. So I\u2019ll take that as
-    a yes."
+  _subtitle: "Hmmm, this could actually be a pretty interesting mechanic. I bet there\u2019s
+    something we could do with it\u2026 "
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}
