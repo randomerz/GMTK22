@@ -2272,6 +2272,10 @@ PrefabInstance:
       propertyPath: popUpForce
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 981231797711066855, guid: 8e1481ac2e3f201478a831cebc3a3e5c, type: 3}
+      propertyPath: holdClickAnnotation
+      value: 
+      objectReference: {fileID: 1164514877}
     - target: {fileID: 981231797711066856, guid: 8e1481ac2e3f201478a831cebc3a3e5c, type: 3}
       propertyPath: m_Name
       value: PoolGameManager
