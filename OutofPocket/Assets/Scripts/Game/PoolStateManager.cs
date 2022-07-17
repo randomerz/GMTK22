@@ -116,8 +116,6 @@ public class PoolStateManager : Singleton<PoolStateManager>
         _emptyState = new PoolStateIdle(this);
         _playerTurnState = new PoolStatePlayerTurn(this);
         _waitingForEndOfTurnState = new PoolStateWaitingForEndOfTurn(this);
-
-        ScoreEnabled = false;
     }
 
     private void OnEnable()
@@ -141,6 +139,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
             SwitchState(_emptyState);
         }
         tiltingAnnotation.enabled = false;
+        ScoreEnabled = false;
     }
 
     private void Update()

@@ -25,6 +25,10 @@ public class SuperHotAudio : Singleton<SuperHotAudio>
             targetPitch = (cueBody.velocity.magnitude / 3f) + 0.5f;
             targetPitch = Mathf.Clamp(targetPitch, 0.5f, 1);
         }
+        else
+        {
+            targetPitch = 1;
+        }
 
         if (currentPitch != targetPitch)
         {

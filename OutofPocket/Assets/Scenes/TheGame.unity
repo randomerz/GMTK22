@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45139956, g: 0.5008922, b: 0.5723164, a: 1}
+  m_IndirectSpecularColor: {r: 0.4513998, g: 0.5008927, b: 0.5723167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4414,7 +4414,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hit the cube and Press Space to use powerup.
+  m_text: Hold Space to use powerup.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 682f7bde09facdb428b202cf65659159, type: 2}
   m_sharedMaterial: {fileID: -2696181309096767554, guid: 682f7bde09facdb428b202cf65659159, type: 2}

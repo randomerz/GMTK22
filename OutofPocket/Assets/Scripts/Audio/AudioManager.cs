@@ -100,7 +100,7 @@ public class AudioManager : Singleton<AudioManager>
         }
         else
         {
-            NarrationVolume = 0.5f;
+            NarrationVolume = 1f;
             SfxVolume = 0.5f;
             MusicVolume = 0.5f;
         }
