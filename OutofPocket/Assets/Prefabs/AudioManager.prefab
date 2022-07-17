@@ -108,7 +108,7 @@ MonoBehaviour:
         Data2: 1204930576
         Data3: 2005477529
         Data4: 490070583
-      Path: event:/High Rollers
+      Path: event:/Music/High Rollers
     emitter: {fileID: 0}
   narrationSlider: {fileID: 0}
   sfxSlider: {fileID: 0}

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 14_TryAddFeature
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
-  _subtitle: "Hey, I\u2019m back. What\u2019d I miss?"
+  _subtitle: "But when you try to add in a feature without considering how it\u2019ll
+    impact all the other parts of the design, you\u2019re almost guaranteed to fail."
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

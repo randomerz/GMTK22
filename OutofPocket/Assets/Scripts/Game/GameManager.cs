@@ -37,6 +37,9 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+        // TEMP! Move it to main menu!!!
+        AudioManager.PlayMusic("High Rollers");
+
         SwitchState(act1);
     }
 
@@ -93,6 +96,7 @@ public class GameManager : Singleton<GameManager>
             //Oppy ... and I've already got someone playtesting it right now!
             context.DoNarrationAndSetFlag("Act1/Oppy/001_Playtest");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            AudioManager.SetMusicParameter("High Rollers", "Base", 1);
 
             //Cynic already?
             context.DoNarrationAndSetFlag("Act1/Cynic/002_already");
@@ -108,6 +112,7 @@ public class GameManager : Singleton<GameManager>
 
             //Turn on pool table
             context.poolTable.SetActive(true);
+            AudioManager.SetMusicParameter("High Rollers", "Bass", 1);
 
             //Oppy A pool table
             context.DoNarrationAndSetFlag("Act1/Oppy/004_PoolTable");
@@ -115,15 +120,15 @@ public class GameManager : Singleton<GameManager>
 
             //Oppy and, and it�s like your standard pool game you know
             context.DoNarrationAndSetFlag("Act1/Oppy/005_PoolGame");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Enable the pool game
             context.poolBallTriangle.SetActive(true);
             context.cueBall.SetActive(true);
 
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
             //Oppy �except, they�re not actually balls, they�re dice!
             context.DoNarrationAndSetFlag("Act1/Oppy/006_DICE");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Change all balls to dice
             PoolStateManager.ChangeAllToShape(PoolBall.Shape.Dice);
@@ -133,6 +138,8 @@ public class GameManager : Singleton<GameManager>
 
             playerPutBallInPocket = false;
             PoolBall.ballInPocketEvent += PutBallInPocket;  //Start keeping track of if the player pocketed the die.
+
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Cynic: Dice?
             context.DoNarrationAndSetFlag("Act1/Cynic/007_Dice");
@@ -162,6 +169,7 @@ public class GameManager : Singleton<GameManager>
 
             //Oppy: Well�
             context.DoNarrationAndSetFlag("Act1/Oppy/012_Well");
+            AudioManager.SetMusicParameter("High Rollers", "Mel", 1);
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Cynic: Weren�t pool balls made to be balls for a reason?
@@ -245,6 +253,9 @@ public class GameManager : Singleton<GameManager>
 
             //Enable Tilting
             PoolStateManager._instance.TiltingEnabled = true;
+            AudioManager.SetMusicParameter("High Rollers", "Base", 2);
+            AudioManager.SetMusicParameter("High Rollers", "Bass", 0);
+            AudioManager.SetMusicParameter("High Rollers", "Mel", 0);
 
             //Oppy: Exactly! Now the player has control over where the balls� *erm * dice go
             context.DoNarrationAndSetFlag("Act1/Oppy/030_TiltActivate");
@@ -256,6 +267,7 @@ public class GameManager : Singleton<GameManager>
 
             //[Cut off if player tilts a bunch of dice in, else skip]
             yield return new WaitUntil(() => { return PoolStateManager._instance.numBallsSunk > 5; });
+            AudioManager.SetMusicParameter("High Rollers", "Mel", 2);
 
             //Cynic: No no no! You see how many they just got in? That�s not skill
             context.DoNarrationAndSetFlag("Act1/Cynic/031a_NotSkill");
@@ -282,12 +294,14 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Screenshake is added (ADD THIS!!!!!!!!!!!!!!)
+            AudioManager.SetMusicParameter("High Rollers", "Juice", 1);
 
             //Oppy: and now, the cherry on top: , and just a little bitta particle effects as the cherry on top!
             context.DoNarrationAndSetFlag("Act1/Oppy/037_ParticleEffects");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Particle effects added (ADD THIS!!!!!!!!!!!!!!)
+            AudioManager.SetMusicParameter("High Rollers", "Juice", 2);
 
             //Oppy: mwa! Magnifique!
             context.DoNarrationAndSetFlag("Act1/Oppy/038_Magnifique");
@@ -340,6 +354,10 @@ public class GameManager : Singleton<GameManager>
         {
             // Oppy: Well, looks like it�s just you and me for a little bit. I guess now�s a good time to get some feedback on the game! It�s not over or anything, I just thought it�d be nice right now.
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            AudioManager.SetMusicParameter("High Rollers", "Base", 3);
+            AudioManager.SetMusicParameter("High Rollers", "Juice", 0);
+            AudioManager.SetMusicParameter("High Rollers", "Bass", 0);
+            AudioManager.SetMusicParameter("High Rollers", "Mel", 0);
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
 
@@ -365,6 +383,7 @@ public class GameManager : Singleton<GameManager>
             // Oppy: Hmmm, this could actually be a pretty interesting mechanic. I bet there�s something we could do with it�
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             SetUpChoice("Tell a Story", "Not really");
+            AudioManager.SetMusicParameter("High Rollers", "Bass", 2);
             yield return new WaitUntil(() => { return madeDecision; });
 
             if (wasDecisionLeft)
@@ -388,6 +407,7 @@ public class GameManager : Singleton<GameManager>
             // Oppy: Oh uh
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             SetUpChoice("Truth", "Lie");
+            AudioManager.SetMusicParameter("High Rollers", "Act2_Plucks", 1);
             yield return new WaitUntil(() => { return madeDecision; });
 
             if (wasDecisionLeft)
@@ -504,6 +524,10 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // TODO: SHOP STUFF ####################################################################################
+            AudioManager.SetMusicParameter("High Rollers", "Act2_Plucks", 0);
+            AudioManager.SetMusicParameter("High Rollers", "Base", 0);
+            AudioManager.SetMusicParameter("High Rollers", "Bass", 0);
+            AudioManager.SetMusicParameter("High Rollers", "Act2_Interlude", 1);
 
             // Oppy: Ah, see how nice it looks?
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
@@ -575,6 +599,10 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // SUPER HOT ####################################################################
+            AudioManager.SetMusicParameter("High Rollers", "Act2_Plucks", 1);
+            AudioManager.SetMusicParameter("High Rollers", "Base", 3);
+            AudioManager.SetMusicParameter("High Rollers", "Bass", 2);
+            AudioManager.SetMusicParameter("High Rollers", "Act2_Interlude", 0);
 
             // Oppy: Now, time will only move when the cue ball moves! I�ve finally cracked the code
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");

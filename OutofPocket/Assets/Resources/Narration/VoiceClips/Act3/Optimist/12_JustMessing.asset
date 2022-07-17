@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 12_JustMessing
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
-  _subtitle: Yes! You can give feedback.
+  _subtitle: "Relax. I\u2019m just messing around. Wait, didn\u2019t you put procedural
+    generation in one of your first games?"
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

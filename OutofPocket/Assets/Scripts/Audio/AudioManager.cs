@@ -155,6 +155,7 @@ public class AudioManager : Singleton<AudioManager>
             }
         }
 
+        Debug.Log("Playing music!");
         m.emitter.Play();
     }
 
