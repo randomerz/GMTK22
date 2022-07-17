@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 981231797711066854}
   - component: {fileID: 981231797711066855}
+  - component: {fileID: 2688643780886133568}
   m_Layer: 0
   m_Name: PoolGameManager
   m_TagString: Untagged
@@ -49,6 +50,24 @@ MonoBehaviour:
   screenDeltaToPower: 0.03
   minShotPower: 5
   maxShotPower: 50
+  popUpForce: 0
   minDelayBetweenShots: 2
   maxDelayBetweenShots: 10
   ballVelStopThreshold: 0.2
+  numBallsSunk: 0
+--- !u!114 &2688643780886133568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981231797711066856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820e832346a3034078badb5144ff5a78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomMats:
+  - {fileID: 13400000, guid: a837bd84060e92d59b00f50697983374, type: 2}
+  - {fileID: 13400000, guid: d0aae5bd7c1dac65b9f4aed8b6e29fa1, type: 2}
+  - {fileID: 13400000, guid: 4441f52b9fbb279ed98b98a290db2abe, type: 2}

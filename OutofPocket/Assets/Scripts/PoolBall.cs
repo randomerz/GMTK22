@@ -140,4 +140,15 @@ public class PoolBall : MonoBehaviour
         }
         //Debug.Log($"{e.ball.gameObject.name} Sunk!");
     }
+    public GameObject GetCurShape()
+    {
+        foreach(ShapeMesh mesh in shapeMeshes)
+        {
+            if(mesh.gameObject.active)
+            {
+                return mesh.gameObject;
+            }
+        }
+        return null;
+    }
 }

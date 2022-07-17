@@ -22,13 +22,12 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
 
     public override void ExitState()
     {
-        OOPInput.mouseDragOngoing += HandleMouseDrag;
+        OOPInput.mouseDragOngoing -= HandleMouseDrag;
         OOPInput.mouseDragEnd -= HandleMouseDragEnd;
     }
 
     private void HandleMouseDrag(object sender, OOPInput.MouseDragEventArgs e)
     {
-
         //Set UI Indicators
         if (!dragging)
         {
@@ -40,8 +39,8 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
         line.SetActive(true);
         LineRenderer lr = line.GetComponent<LineRenderer>();
         lr.material = new Material(Shader.Find("Sprites/Default"));
-        lr.startWidth = .1f;
-        lr.endWidth = .1f;
+        lr.startWidth = .05f;
+        lr.endWidth = .05f;
 
         //Get the difference we need for startPos
         Ray ray = Camera.main.ScreenPointToRay(e.startPos);
