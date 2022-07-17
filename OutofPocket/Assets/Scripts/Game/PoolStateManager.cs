@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 //Controls all of the logic for running pool games.
 //Call StartGame() to start the pool game (make sure everything is set in inspector)
 public class PoolStateManager : Singleton<PoolStateManager>
 {
+
+    public bool hasThisStartedYet = false;
 
     public bool startGameImmediately;
 
@@ -33,6 +36,9 @@ public class PoolStateManager : Singleton<PoolStateManager>
     private PoolStateIdle _emptyState;
     private PoolStatePlayerTurn _playerTurnState;
     private PoolStateWaitingForEndOfTurn _waitingForEndOfTurnState;
+
+    [Header("Tutorial Annotations")]
+    public TextMeshProUGUI holdClickAnnotation;
 
     public PoolStateIdle EmptyState => _emptyState;
     public PoolStatePlayerTurn PlayerTurnState => _playerTurnState;
