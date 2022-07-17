@@ -29,6 +29,7 @@ public class ShopManager : Singleton<ShopManager>
     private void Awake()
     {
         InitializeSingleton();
+        ScoreManager.Score = 999999;
     }
 
     private void Start()
@@ -58,7 +59,7 @@ public class ShopManager : Singleton<ShopManager>
 
             if (!superHotIsEnabled)
             {
-                PoolStateManager._instance.cueBall.GetComponent<MeshRenderer>().material = newMaterial;
+                UpdateCueBallMaterial(newMaterial);
             }
             currentlySelectedCueBallMaterial = newMaterial;
         }
