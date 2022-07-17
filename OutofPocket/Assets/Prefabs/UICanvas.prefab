@@ -575,7 +575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5170799627309173765
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4154,6 +4154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cde7b17188b29d4e87c4b3d3df8d0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopPanel: {fileID: 1451244845669490997}
   cueBallRed: {fileID: 2100000, guid: 5223e0db0cab3ac4abb8bb5869ea2784, type: 2}
   cueBallGreen: {fileID: 2100000, guid: 0027d85430c83a243999413eeac8ac4d, type: 2}
   cueBallBlue: {fileID: 2100000, guid: 60451be33a4cb8d4c909790a8cbb3210, type: 2}

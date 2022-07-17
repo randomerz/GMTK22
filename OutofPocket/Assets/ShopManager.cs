@@ -5,6 +5,8 @@ using UnityEngine;
 public class ShopManager : Singleton<ShopManager>
 {
     [Header("References")]
+    [SerializeField] private GameObject shopPanel;
+
     [SerializeField] private Material cueBallRed;
     [SerializeField] private Material cueBallGreen;
     [SerializeField] private Material cueBallBlue;
@@ -114,5 +116,10 @@ public class ShopManager : Singleton<ShopManager>
             _instance.UpdateCueBallMaterial(_instance.currentlySelectedCueBallMaterial);
             _instance.UpdatePoolBallsMaterial(_instance.normalBallMaterial);
         }
+    }
+
+    public static void SetShopActive(bool isActive)
+    {
+        _instance.shopPanel.SetActive(isActive);
     }
 }

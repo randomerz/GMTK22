@@ -13,9 +13,6 @@ public class GameManager : Singleton<GameManager>
     public GameObject cueBall;
     public GameObject inGameUI;
 
-
-
-
     private State<GameManager> currentState;
 
     public bool currNarrationFinished;
@@ -544,7 +541,9 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Act2/Oppy/031_Shop");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            // TODO: SHOP STUFF ####################################################################################
+            // Activate Shop
+            ShopManager.SetShopActive(true);
+
             AudioManager.SetMusicParameter("High Rollers", "Act2_Plucks", 0);
             AudioManager.SetMusicParameter("High Rollers", "Base", 0);
             AudioManager.SetMusicParameter("High Rollers", "Bass", 0);
@@ -623,7 +622,9 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Act2/Oppy/044_Superhot");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            // SUPER HOT ####################################################################
+            // Enable Superhot Materials
+            ShopManager.SetSuperhotMode(true);
+
             AudioManager.SetMusicParameter("High Rollers", "Act2_Plucks", 1);
             AudioManager.SetMusicParameter("High Rollers", "Base", 3);
             AudioManager.SetMusicParameter("High Rollers", "Bass", 2);
@@ -697,6 +698,7 @@ public class GameManager : Singleton<GameManager>
 
             //Oppy: Well, I got to thinking. If adding these mechanics in hasn’t helped at all, why don’t we take away the ones that haven’t worked…
             context.DoNarrationAndSetFlag("Act3/Optimist/04_AddingMechanics");
+
             yield return new WaitUntil(() => { return context.currNarrationFinished; });    
 
             //Cynic: *interested* Ok…
@@ -833,4 +835,3 @@ public enum GameState
 {
     Default
 }
-

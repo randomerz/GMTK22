@@ -28,6 +28,7 @@ public class EndOfGame : Singleton<EndOfGame>
     {
         Debug.Log("END OF GAME");
         PoolStateManager.ChangeAllToShape(PoolBall.Shape.Sphere);
+        ShopManager.SetSuperhotMode(false);
         foreach (Transform poolBall in triangle.transform) 
         {
 
