@@ -76,8 +76,8 @@ public class Choices : Singleton<Choices>
 
     private void WaitForChoice(object sender, PoolBall.BallEventArgs e) 
     {
-        Debug.Log("Choices got pool ball event");
-        Debug.Log(e.pocket.name);
+        //Debug.Log("Choices got pool ball event");
+        //Debug.Log(e.pocket.name);
         if(!isActive) {
             return;
         }
