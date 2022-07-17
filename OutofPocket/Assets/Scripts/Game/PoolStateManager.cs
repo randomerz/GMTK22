@@ -10,6 +10,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
 {
 
     public bool hasThisStartedYet = false;
+    public bool tiltStuff = false;
 
     public bool startGameImmediately;
 
@@ -37,6 +38,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
 
     [Header("Tutorial Annotations")]
     public TextMeshProUGUI holdClickAnnotation;
+    public TextMeshProUGUI tiltingAnnotation;
 
     public PoolStateIdle EmptyState => _emptyState;
     public PoolStatePlayerTurn PlayerTurnState => _playerTurnState;
@@ -121,6 +123,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
             currState.ExitState();
         }
         currState = nextState;
+        tiltStuff = true;
         nextState.EnterState();
     }
 
