@@ -15,7 +15,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
     }
     public static ScoreMode scoreMode;
 
-    public bool hasThisStartedYet = false;
+    public bool playerHitBallForFirstTime = false;
 
     public bool startGameImmediately;
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using TMPro;
+
 [DisallowMultipleComponent]
 public class GameManager : Singleton<GameManager>
 {
@@ -14,6 +16,8 @@ public class GameManager : Singleton<GameManager>
     public GameObject cueBall;
     public GameObject inGameUI;
     public Juicer joooooooooooooooooooooos;
+
+    public TextMeshProUGUI pauseAnnotation;
 
     private State<GameManager> currentState;
 
@@ -32,6 +36,8 @@ public class GameManager : Singleton<GameManager>
         act1 = new Act1State(this);
         act2 = new Act2State(this);
         act3 = new Act3State(this);
+
+        pauseAnnotation.enabled = false;
     }
 
     public void Start()
@@ -41,7 +47,7 @@ public class GameManager : Singleton<GameManager>
 
         AudioManager.PlayMusic("High Rollers");
         Debug.Log("Switching act 1");
-        SwitchState(act1);
+        SwitchState(act2);
     }
 
     private void Update()
@@ -549,6 +555,7 @@ public class GameManager : Singleton<GameManager>
 
             // Activate Shop
             ShopManager.SetShopActive(true);
+            context.pauseAnnotation.enabled = true;
 
             AudioManager.SetMusicParameter("High Rollers", "Act2_Plucks", 0);
             AudioManager.SetMusicParameter("High Rollers", "Base", 0);

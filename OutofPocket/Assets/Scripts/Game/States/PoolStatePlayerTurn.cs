@@ -12,7 +12,7 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
     {
         Debug.Log("Player's Turn");
 
-        if (!context.hasThisStartedYet)
+        if (!context.playerHitBallForFirstTime)
         {
             // Enable tutorial stuff here
             context.holdClickAnnotation.enabled = true;
@@ -46,7 +46,7 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
     private void HandleMouseDrag(object sender, OOPInput.MouseDragEventArgs e)
     {
         //Set UI Indicators
-        if (!context.hasThisStartedYet)
+        if (!context.playerHitBallForFirstTime)
         {
             // This is where we would remove the click-and-drag prompt and
             // begin showing a release-mouse prompt
@@ -92,10 +92,10 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
 
         // Clear the Cue Ball drag tutorial if needed and start the next part of
         // the tutorial
-        if (!context.hasThisStartedYet)
+        if (!context.playerHitBallForFirstTime)
         {
             context.holdClickAnnotation.enabled = false;
-            context.hasThisStartedYet = true;
+            context.playerHitBallForFirstTime = true;
         }
 
         line.SetActive(false);
