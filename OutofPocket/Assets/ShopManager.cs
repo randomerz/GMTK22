@@ -6,6 +6,7 @@ public class ShopManager : Singleton<ShopManager>
 {
     [Header("References")]
     [SerializeField] private GameObject shopPanel;
+    [SerializeField] private GameObject billiardsTable;
 
     [SerializeField] private Material cueBallRed;
     [SerializeField] private Material cueBallGreen;
@@ -18,6 +19,8 @@ public class ShopManager : Singleton<ShopManager>
 
     [SerializeField] private Material feltNormal;
     [SerializeField] private Material feltSuperHot;
+
+    [SerializeField] private Material pocketNormal;
 
     [Header("Properties")]
     [SerializeField] private int colorChangeCost;
@@ -89,6 +92,43 @@ public class ShopManager : Singleton<ShopManager>
         }
     }
 
+    private void UpdatePoolTableFeltMaterial(Material newMaterial)
+    {
+        MeshRenderer mr = billiardsTable.GetComponent<MeshRenderer>();
+        Debug.Log($"BILLIARDS: {newMaterial}");
+        Material[] intMaterials = new Material[mr.materials.Length];
+        for (int i = 0; i < intMaterials.Length; i++)
+        {
+            if (i != 4)
+            {
+                intMaterials[i] = mr.materials[i];
+            } else
+            {
+                intMaterials[i] = newMaterial;
+            }
+        }
+        mr.materials = intMaterials;
+    }
+
+    private void UpdatePoolTablePocketMaterial(Material newMaterial)
+    {
+        MeshRenderer mr = billiardsTable.GetComponent<MeshRenderer>();
+        Debug.Log($"BILLIARDS: {newMaterial}");
+        Material[] intMaterials = new Material[mr.materials.Length];
+        for (int i = 0; i < intMaterials.Length; i++)
+        {
+            if (i != 0)
+            {
+                intMaterials[i] = mr.materials[i];
+            }
+            else
+            {
+                intMaterials[i] = newMaterial;
+            }
+        }
+        mr.materials = intMaterials;
+    }
+
     public void BuyStocks()
     {
         if (ScoreManager.Score >= stockCost)
@@ -111,10 +151,14 @@ public class ShopManager : Singleton<ShopManager>
         {
             _instance.UpdateCueBallMaterial(_instance.cueBallSuperHot);
             _instance.UpdatePoolBallsMaterial(_instance.normalBallMaterialSuperHot);
+            _instance.UpdatePoolTableFeltMaterial(_instance.feltSuperHot);
+            _instance.UpdatePoolTablePocketMaterial(_instance.feltSuperHot);
         } else
         {
             _instance.UpdateCueBallMaterial(_instance.currentlySelectedCueBallMaterial);
             _instance.UpdatePoolBallsMaterial(_instance.normalBallMaterial);
+            _instance.UpdatePoolTableFeltMaterial(_instance.feltNormal);
+            _instance.UpdatePoolTablePocketMaterial(_instance.pocketNormal);
         }
     }
 
