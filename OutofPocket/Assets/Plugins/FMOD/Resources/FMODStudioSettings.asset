@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: e7a046c753c3c3d4aacc91f6597f310d
   parentIdentifier: default
-  active: 0
+  active: 1
   Properties:
     LiveUpdate:
       Value: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
     CallbackHandler:
       Value: {fileID: 0}
       HasValue: 0
-  OutputTypeName: 
+  OutputTypeName: AUTODETECT
   threadAffinities:
     Value: []
     HasValue: 0
@@ -210,7 +210,75 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3abeb1429547a134480f4f2f1efc7e21, type: 3}
+  m_Script: {fileID: 11500000, guid: eef8d824ea7b63742966aaa0e94ac383, type: 3}
+  m_Name: FMODStudioSettings
+  m_EditorClassIdentifier: 
+  SwitchSettingsMigration: 1
+  HasSourceProject: 1
+  HasPlatforms: 1
+  sourceProjectPath: FMODAssets/OutofPocket/OutofPocket.fspro
+  sourceBankPath: FMODAssets/OutofPocket/Build
+  SourceBankPathUnformatted: 
+  BankRefreshCooldown: 5
+  ShowBankRefreshWindow: 1
+  AutomaticEventLoading: 1
+  BankLoadType: 0
+  AutomaticSampleLoading: 0
+  EncryptionKey: 
+  ImportType: 0
+  TargetAssetPath: FMODBanks
+  TargetBankFolder: 
+  EventLinkage: 0
+  LoggingLevel: 2
+  SpeakerModeSettings: []
+  SampleRateSettings: []
+  LiveUpdateSettings: []
+  OverlaySettings: []
+  LoggingSettings: []
+  BankDirectorySettings: []
+  VirtualChannelSettings: []
+  RealChannelSettings: []
+  Plugins: []
+  MasterBanks:
+  - Master
+  Banks:
+  - SFX
+  BanksToLoad: []
+  LiveUpdatePort: 9264
+  EnableMemoryTracking: 0
+  AndroidUseOBB: 0
+  MeterChannelOrdering: 0
+  StopEventsOutsideMaxDistance: 0
+  BoltUnitOptionsBuildPending: 0
+  EnableErrorCallback: 0
+  SharedLibraryUpdateStage: 0
+  SharedLibraryTimeSinceStart: 0
+  CurrentVersion: 131591
+  HideSetupWizard: 1
+  LastEventReferenceScanVersion: 131591
+  Platforms:
+  - {fileID: -7905036164269082398}
+  - {fileID: -7387553427109678122}
+  - {fileID: -4779690011392523652}
+  - {fileID: 11998339541589022}
+  - {fileID: 780403981651878095}
+  - {fileID: 1188416191394233572}
+  - {fileID: 2413546852533153415}
+  - {fileID: 2952300571669648731}
+  - {fileID: 4140484674564332491}
+  - {fileID: 5064868970700623252}
+  - {fileID: 9181937013227913956}
+  MigratedPlatforms: 0c000000150000000b0000000a00000009000000120000000800000005000000060000000200000001000000
+--- !u!114 &11998339541589022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9660e62d6232af242877f0cc2b90c63d, type: 3}
   m_Name: FMODStudioSettingsPlatform
   m_EditorClassIdentifier: 
   identifier: c88d16e5272a4e241b0ef0ac2e53b73d
@@ -635,7 +703,7 @@ MonoBehaviour:
       HasValue: 0
     Overlay:
       Value: 0
-      HasValue: 0
+      HasValue: 1
     Logging:
       Value: 0
       HasValue: 0
