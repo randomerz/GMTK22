@@ -243,8 +243,7 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Enable Tilting
-            TiltingTable table = context.poolTable.GetComponent<TiltingTable>();
-            table.TiltingEnabled = true;
+            PoolStateManager._instance.TiltingEnabled = true;
 
             //Oppy: Exactly! Now the player has control over where the balls� *erm * dice go
             context.DoNarrationAndSetFlag("Act1/Oppy/030_TiltActivate");
