@@ -29,8 +29,14 @@ public class PoolBall : MonoBehaviour
         public PoolBall ball;
         public GameObject pocket;
     }
+    public bool sunk;
+
     [SerializeField] private Shape shapeAtStart;
     [SerializeField] private List<ShapeMesh> shapeMeshes;
+
+    [Header("READ ONLY, DON'T NEED TO SET")]
+    public Vector3 initialPos;
+
     private Dictionary<Shape, GameObject> shapeMeshesDict;
 
     public static event System.EventHandler<BallHitEventArgs> ballHitEvent;
@@ -38,6 +44,7 @@ public class PoolBall : MonoBehaviour
 
     private void Awake()
     {
+        initialPos = transform.position;
         shapeMeshesDict = new Dictionary<Shape, GameObject>();
         shapeMeshes.ForEach(mesh =>
         {
@@ -57,6 +64,15 @@ public class PoolBall : MonoBehaviour
     {
         ballHitEvent -= DefaultHitEventHandler;
         ballInPocketEvent -= DefaultSunkEventHandler;
+    }
+
+    private void Update()
+    {
+        //Failsafe in case a ball gets out of bounds and doesn't hit the pocket trigger.
+        if (transform.position.y < -10)
+        {
+            sunk = true;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -104,6 +120,10 @@ public class PoolBall : MonoBehaviour
 
     private void DefaultSunkEventHandler(object sender, BallEventArgs e)
     {
+        if (e.ball == this)
+        {
+            sunk = true;
+        }
         //Debug.Log($"{e.ball.gameObject.name} Sunk!");
     }
 }
