@@ -145,7 +145,7 @@ public class PoolBall : MonoBehaviour
     {
         foreach(ShapeMesh mesh in shapeMeshes)
         {
-            if(mesh.gameObject.active)
+            if(mesh.gameObject.activeSelf)
             {
                 return mesh.gameObject;
             }
