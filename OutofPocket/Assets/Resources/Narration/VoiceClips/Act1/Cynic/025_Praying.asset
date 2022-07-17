@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 025_Praying
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 77ec60a0c6a01084bac7506180905c33, type: 3}
   _subtitle: "Okay, I still don\u2019t think there\u2019s enough control here. You\u2019re
     just hitting the cube and praying for a 6."
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 023_No2
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: ab252b825fce308458ff89fd690564f9, type: 3}
   _subtitle: "Hey, don\u2019t stress it. Graphics aren\u2019t everything. Most indie
     games I see, a little extra polish doesn\u2019t make a difference."
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

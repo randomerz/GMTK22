@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 031_Shop
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 163b8f3f14061454f98684133ae8bb1c, type: 3}
   _subtitle: "There\u2019s gotta be a way to link score and gameplay without any
     rough edges. How about we turn your score into currency that you can spend in
     a shop?"

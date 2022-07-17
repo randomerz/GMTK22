@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 027_OkScore
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 3a89f19e16a46f34795d7fa20cbd4320, type: 3}
   _subtitle: Ok, I want to talk about the score. Does it affect gameplay, or is it
     just for brownie points?
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

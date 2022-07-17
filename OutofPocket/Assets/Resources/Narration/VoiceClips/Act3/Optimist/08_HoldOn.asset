@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 08_HoldOn
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 6f7d3e090603b02479829784dd0e62f2, type: 3}
   _subtitle: Hold on. Wait, I was just messing with you, but this could actually
     be kind of interesting.
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

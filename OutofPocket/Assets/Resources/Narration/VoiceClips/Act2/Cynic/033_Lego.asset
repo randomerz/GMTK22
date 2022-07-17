@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 033_Lego
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 16470c88b7ff0ef4eb5daf2ef4b7326c, type: 3}
   _subtitle: "It\u2019s the visual equivalent of stepping on a lego brick. And nothing
     you can buy here is useful! It\u2019s just cosmetics!"
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 01_IveGotIt
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 146f68016eba61f45a76700d54a86c2b, type: 3}
   _subtitle: "Alright, I\u2019ve got it. So I\u2019ve tried adding a bunch of different
     mechanics to the game,"
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

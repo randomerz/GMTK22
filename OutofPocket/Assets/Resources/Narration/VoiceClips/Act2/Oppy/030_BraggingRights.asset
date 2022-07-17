@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 030_BraggingRights
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: d506a0caf4da30147a2a107eb0e8497d, type: 3}
   _subtitle: "Eh, I can see where you\u2019re coming from. Making the game arcade-style
     would be pretty neat. But\u2026 hear me out y\u2019all\u2026"
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

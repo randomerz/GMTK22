@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 001_Playtest
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: e82557432088df341aca39e9ba96e015, type: 3}
   _subtitle: "\u2026 and I\u2019ve already got someone playtesting it right now!"
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

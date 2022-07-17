@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 033_QTE
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 7806b51be6efeb04bb2c8e8e7ba42d4a, type: 3}
   _subtitle: "Sigh, That\u2019s not exciting! You completely removed any semblance
     of strategy your \u201Cgame\u201D once had. Now it\u2019s just a QTE of a bunch
     of cubes falling into holes. "

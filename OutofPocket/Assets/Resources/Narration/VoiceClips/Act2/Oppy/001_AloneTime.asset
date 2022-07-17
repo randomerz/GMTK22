@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 001_AloneTime
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: b31200dd7ea7e4045a6629e3a28d56eb, type: 3}
   _subtitle: "Well, looks like it\u2019s just you and me for a little bit. I guess
     now\u2019s a good time to get some feedback on the game! It\u2019s not over or
     anything, I just thought it\u2019d be nice right now. "

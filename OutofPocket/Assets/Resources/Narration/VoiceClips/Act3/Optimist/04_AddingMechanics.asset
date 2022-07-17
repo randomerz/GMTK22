@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 04_AddingMechanics
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: c73339eb07fb6a149943d0d5bace69cf, type: 3}
   _subtitle: "Well, I got to thinking. If adding these mechanics in hasn\u2019t helped
     at all, why don\u2019t we take away the ones that haven\u2019t worked\u2026"
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

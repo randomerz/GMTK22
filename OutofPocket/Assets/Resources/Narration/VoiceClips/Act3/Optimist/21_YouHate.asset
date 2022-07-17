@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 21_YouHate
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 69afd7701838d534d833138e0c84941e, type: 3}
   _subtitle: "I get that you hate my game, but there\u2019s obviously some people
     that would like it. "
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

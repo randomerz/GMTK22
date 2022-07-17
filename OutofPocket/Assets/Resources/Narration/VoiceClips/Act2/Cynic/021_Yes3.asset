@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 021_Yes3
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 70d09440e98c85c458addf8d29a58fdb, type: 3}
   _subtitle: "Some indies spend their 20s praying for the big names to notice them\u2026
     but their work gets buried in Steam and forgotten. Their careers always get the
     same ending."

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 24_SeeYouAround
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 106d88d1354a0c648b57618ed2dbe1c8, type: 3}
   _subtitle: "Thanks for showing me your game. I\u2019ll see you around."
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 003_PictureThis
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
-  _subtitle: "Crazy, right? Okay, so picture this\u2026*elevator ding sound*"
+  _audioClip: {fileID: 8300000, guid: f150a0d0f363b8f42b8aa1df7eae0fd3, type: 3}
+  _subtitle: "Crazy, right? Okay, so picture this\u2026"
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

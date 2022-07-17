@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 024_No3
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 30b2ae9cad7614943a49aa0481595b73, type: 3}
   _subtitle: Some people spend their 20s praying for the big names to notice them,
     but their work gets buried in Steam and forgotten. Their careers always get the
     same ending.

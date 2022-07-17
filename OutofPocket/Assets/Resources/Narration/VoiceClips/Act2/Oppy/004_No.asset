@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 004_No
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 82ba1c6ac7943d14b82ef80fc0b69c34, type: 3}
   _subtitle: "No? Well you kinda just did what I said. So I\u2019ll take that as
     a yes."
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

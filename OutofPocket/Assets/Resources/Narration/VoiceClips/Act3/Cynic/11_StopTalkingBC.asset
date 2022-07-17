@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 11_StopTalkingBC
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: 71708b52a401f7f41bccea9d68ac5d4b, type: 3}
   _subtitle: "B) you haven\u2019t solved any problems that I\u2019ve pointed out
     so far, and C) procedural generation here is, quite frankly, a terrible idea."
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

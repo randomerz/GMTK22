@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
   m_Name: 006_Story
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
+  _audioClip: {fileID: 8300000, guid: bfff600b8dfbca049a3881016bb24de8, type: 3}
   _subtitle: "A story. Good idea! That\u2019s the best part about games really. And
     you can play an important role in choosing where it goes!"
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}
