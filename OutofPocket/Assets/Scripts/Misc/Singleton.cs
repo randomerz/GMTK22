@@ -14,7 +14,7 @@ using System.Linq;
 public abstract class Singleton<T> : MonoBehaviour 
     where T : Singleton<T>
 {
-    protected static T _instance;
+    public static T _instance;
 
     /// <summary>
     /// This should be called in Awake inside of all singleton components. This sets up _instance to be the component instance,

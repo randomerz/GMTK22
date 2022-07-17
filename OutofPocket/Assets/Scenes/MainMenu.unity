@@ -1264,6 +1264,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6112620644026300872, guid: 2528ea87d22be524395c16c11b8a2525, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7380585653922605161, guid: 2528ea87d22be524395c16c11b8a2525, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -1696,7 +1700,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 57.003, y: 0, z: 0}
 --- !u!114 &1684293479 stripped
 MonoBehaviour:
@@ -1851,6 +1855,10 @@ PrefabInstance:
     - target: {fileID: 6582060743280095725, guid: e89c4cdcc12138e479110045d4cd8b99, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6985500486298694420, guid: e89c4cdcc12138e479110045d4cd8b99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e89c4cdcc12138e479110045d4cd8b99, type: 3}

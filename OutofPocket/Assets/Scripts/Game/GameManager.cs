@@ -19,6 +19,7 @@ public class GameManager : Singleton<GameManager>
     public FadeScript fade;
 
     public TextMeshProUGUI pauseAnnotation;
+    public TextMeshProUGUI powerupAnnotation;
 
     private State<GameManager> currentState;
 
@@ -39,6 +40,7 @@ public class GameManager : Singleton<GameManager>
         act3 = new Act3State(this);
 
         pauseAnnotation.enabled = false;
+        powerupAnnotation.enabled = false;
     }
 
     public void Start()
@@ -51,7 +53,6 @@ public class GameManager : Singleton<GameManager>
         SwitchState(act1);
 
         //TESTING MAKE SURE TO DELETE LATER #########################################################
-
     }
 
     private void Update()
@@ -115,32 +116,35 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Act1/Cynic/002_already");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Turn on lights
-            context.floor.SetActive(true);
 
             //Oppy Crazy, right? Okay, so picture this�*elevator ding sound*
             context.DoNarrationAndSetFlag("Act1/Oppy/003_PictureThis");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Turn on pool table
-            context.poolTable.SetActive(true);
+            //Turn on lights
+            context.floor.SetActive(true);
             AudioManager.SetMusicParameter("High Rollers", "Bass", 1);
 
             //Oppy A pool table
             context.DoNarrationAndSetFlag("Act1/Oppy/004_PoolTable");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
+            //Turn on pool table
+            context.poolTable.SetActive(true);
+
             //Oppy and, and it�s like your standard pool game you know
             context.DoNarrationAndSetFlag("Act1/Oppy/005_PoolGame");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Enable the pool game
             context.poolBallTriangle.SetActive(true);
             context.cueBall.SetActive(true);
 
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
 
             //Oppy �except, they�re not actually balls, they�re dice!
             context.DoNarrationAndSetFlag("Act1/Oppy/006_DICE");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Change all balls to dice
             PoolStateManager.ChangeAllToShape(PoolBall.Shape.Dice);
@@ -151,7 +155,7 @@ public class GameManager : Singleton<GameManager>
             playerPutBallInPocket = false;
             PoolBall.ballInPocketEvent += PutBallInPocket;  //Start keeping track of if the player pocketed the die.
 
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //ShopManager.SetSuperhotMode(true);
 
             //Cynic: Dice?
             context.DoNarrationAndSetFlag("Act1/Cynic/007_Dice");
@@ -357,6 +361,8 @@ public class GameManager : Singleton<GameManager>
         private Choices c;
         private bool madeDecision;
         private bool wasDecisionLeft;
+
+        private bool playerPutBallInPocket;
 
         public Act2State(GameManager ctx) : base(ctx)
         {
@@ -597,6 +603,14 @@ public class GameManager : Singleton<GameManager>
                 BigCue._instance.AbilityEnabled = true;
             }
 
+            context.pauseAnnotation.enabled = false;
+            context.powerupAnnotation.enabled = true;
+
+            //Player needs to pocket ball w/ powerups to progress.
+            playerPutBallInPocket = false;
+            PoolBall.ballInPocketEvent += PutBallInPocket;
+            yield return new WaitUntil(() => playerPutBallInPocket);
+            PoolBall.ballInPocketEvent -= PutBallInPocket;
 
             // Cynic: What a surprise. The powerups do nothing to change the gameplay. In fact, they�re really annoying to use! You should -
             context.DoNarrationAndSetFlag("Act2/Cynic/036_WhatASurprise");
@@ -677,6 +691,11 @@ public class GameManager : Singleton<GameManager>
                 madeDecision = true;
                 wasDecisionLeft = e.choice;
             };
+        }
+
+        private void PutBallInPocket(object sender, PoolBall.BallEventArgs e)
+        {
+            playerPutBallInPocket = true;
         }
     }
     #endregion

@@ -32,6 +32,7 @@ public class PoolBall : MonoBehaviour
 
     [SerializeField] private Shape shapeAtStart;
     [SerializeField] private List<ShapeMesh> shapeMeshes;
+    [SerializeField] private GameObject defaultPocketSunk;
 
     [Header("READ ONLY, DON'T NEED TO SET")]
     public Vector3 initialPos;
@@ -69,9 +70,15 @@ public class PoolBall : MonoBehaviour
     private void Update()
     {
         //Failsafe in case a ball gets out of bounds and doesn't hit the pocket trigger.
-        if (transform.position.y < -10)
+        if (transform.position.y < -10 && !sunk)
         {
             sunk = true;
+            AudioManager.PlaySound("BallPocketed");
+            ballInPocketEvent?.Invoke(this, new BallEventArgs
+            {
+                ball = this,
+                pocket = defaultPocketSunk
+            });
         }
     }
 
@@ -108,8 +115,9 @@ public class PoolBall : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Pocket"))
+        if (other.CompareTag("Pocket") && !sunk)
         {
+            sunk = true;
             AudioManager.PlaySound("BallPocketed");
             ballInPocketEvent?.Invoke(this, new BallEventArgs
             {
@@ -150,10 +158,6 @@ public class PoolBall : MonoBehaviour
 
     private void DefaultSunkEventHandler(object sender, BallEventArgs e)
     {
-        if (e.ball == this)
-        {
-            sunk = true;
-        }
         Debug.Log($"{e.ball.gameObject.name} Sunk! Pokcet {e.pocket.gameObject.name}");
     }
     public GameObject GetCurShape()

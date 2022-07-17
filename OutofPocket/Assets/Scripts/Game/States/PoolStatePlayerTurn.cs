@@ -80,6 +80,14 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
 
         if (Physics.Raycast(ray, out RaycastHit endRaycastHit, float.MaxValue, LayerMask.GetMask("CameraToTable")))
         {
+            if (ShopManager._instance.superHotIsEnabled)
+            {
+                lr.startColor = Color.black;
+                lr.endColor = Color.black;
+            } else
+            {
+
+            }
             lr.SetPosition(0, new Vector3(cueball.transform.position.x, .1f, cueball.transform.position.z));
             lr.SetPosition(1, endRaycastHit.point - translate);
         }

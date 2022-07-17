@@ -1,208 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8971948552805190664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/High Rollers/Act2_Interlude
-  m_EditorClassIdentifier: 
-  Name: Act2_Interlude
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1623195655
-    data2: 2981103304
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-6579487950850796877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/High Rollers/Mel
-  m_EditorClassIdentifier: 
-  Name: Mel
-  StudioPath: 
-  Min: 0
-  Max: 2
-  Default: 0
-  ID:
-    data1: 282048256
-    data2: 843963652
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-3847028836042309486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/BallPocketed
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/BallPocketed
-  Guid:
-    Data1: 964595355
-    Data2: 1221604357
-    Data3: -415179872
-    Data4: 2049523290
-  Banks:
-  - {fileID: 7205788237900067251}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-2928473035393703700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/OutofPocket/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 637936502953627031
-  FileSizes:
-  - Name: Desktop
-    Value: 2412064
-  Exists: 1
---- !u!114 &-2640393578199133045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/BallHitTable
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/BallHitTable
-  Guid:
-    Data1: 303546274
-    Data2: 1190537315
-    Data3: 1004574137
-    Data4: -417335834
-  Banks:
-  - {fileID: 7205788237900067251}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-644078356461339502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/High Rollers/Act2_Fill
-  m_EditorClassIdentifier: 
-  Name: Act2_Fill
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 103781062
-    data2: 3721537387
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 2484893955820386864}
-  - {fileID: -2928473035393703700}
-  - {fileID: 7205788237900067251}
-  EditorEvents:
-  - {fileID: 1799878616577071770}
-  - {fileID: 7534098691425293206}
-  - {fileID: 815880691184834986}
-  - {fileID: 2946495144860993390}
-  - {fileID: 8878828669291939605}
-  - {fileID: 2924876939070639357}
-  - {fileID: -3847028836042309486}
-  - {fileID: -2640393578199133045}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -2928473035393703700}
-  StringsBanks:
-  - {fileID: 2484893955820386864}
-  cacheTime: 637936502953637044
-  cacheVersion: 131591
---- !u!114 &257539226345362748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/High Rollers/Act3_End
-  m_EditorClassIdentifier: 
-  Name: Act3_End
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1072175761
-    data2: 190418303
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &815880691184834986
+--- !u!114 &-8445844627940397137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,7 +19,7 @@ MonoBehaviour:
     Data3: 1148217781
     Data4: 1196479792
   Banks:
-  - {fileID: 7205788237900067251}
+  - {fileID: -5789763736393611998}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -229,7 +27,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &852960622701250815
+--- !u!114 &-7882399346018419806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Act2EndNote
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Act2EndNote
+  Guid:
+    Data1: 533068301
+    Data2: 1141323979
+    Data3: 391746724
+    Data4: -1270429857
+  Banks:
+  - {fileID: -5789763736393611998}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6329422021539429126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -253,7 +78,27 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &1529163353469174875
+--- !u!114 &-5789763736393611998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: FMODAssets/OutofPocket/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 637936509499853965
+  FileSizes:
+  - Name: Desktop
+    Value: 70240
+  Exists: 1
+--- !u!114 &-5025968197138350042
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,21 +108,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/High Rollers/Act2_Drum
+  m_Name: parameter:/High Rollers/Act3_End
   m_EditorClassIdentifier: 
-  Name: Act2_Drum
+  Name: Act3_End
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 2404848179
-    data2: 2020181428
+    data1: 1072175761
+    data2: 190418303
   Type: 1
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &1799878616577071770
+--- !u!114 &-4691820718141526451
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,34 +132,134 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/High Rollers
+  m_Name: event:/SFX/BallHitTable
   m_EditorClassIdentifier: 
-  Path: event:/Music/High Rollers
+  Path: event:/SFX/BallHitTable
   Guid:
-    Data1: 119961345
-    Data2: 1204930576
-    Data3: 2005477529
-    Data4: 490070583
+    Data1: 303546274
+    Data2: 1190537315
+    Data3: 1004574137
+    Data4: -417335834
   Banks:
-  - {fileID: -2928473035393703700}
-  IsStream: 1
+  - {fileID: -5789763736393611998}
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 852960622701250815}
-  - {fileID: 7138259790989246617}
-  - {fileID: -644078356461339502}
-  - {fileID: 257539226345362748}
-  - {fileID: -6579487950850796877}
-  - {fileID: -8971948552805190664}
-  - {fileID: 5624512192337086462}
-  - {fileID: 8570212535069125172}
-  - {fileID: 4465776775979677109}
-  - {fileID: 1529163353469174875}
+  IsOneShot: 1
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 28800
---- !u!114 &2484893955820386864
+  Length: 0
+--- !u!114 &-4346043076283489925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/BallPocketed
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/BallPocketed
+  Guid:
+    Data1: 964595355
+    Data2: 1221604357
+    Data3: -415179872
+    Data4: 2049523290
+  Banks:
+  - {fileID: -5789763736393611998}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3007014081977249003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/CueStrike
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/CueStrike
+  Guid:
+    Data1: 689381189
+    Data2: 1176376365
+    Data3: -671562331
+    Data4: 177031429
+  Banks:
+  - {fileID: -5789763736393611998}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-314916843921363221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/High Rollers/Act2_Interlude
+  m_EditorClassIdentifier: 
+  Name: Act2_Interlude
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1623195655
+    data2: 2981103304
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 182486490777095322}
+  - {fileID: 6411617578846054512}
+  - {fileID: -5789763736393611998}
+  EditorEvents:
+  - {fileID: 9045920198370400948}
+  - {fileID: -7882399346018419806}
+  - {fileID: -8445844627940397137}
+  - {fileID: 4446271344347644968}
+  - {fileID: -3007014081977249003}
+  - {fileID: 415836626722445570}
+  - {fileID: -4346043076283489925}
+  - {fileID: -4691820718141526451}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 6411617578846054512}
+  StringsBanks:
+  - {fileID: 182486490777095322}
+  cacheTime: 637936509499853965
+  cacheVersion: 131591
+--- !u!114 &182486490777095322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -329,12 +274,12 @@ MonoBehaviour:
   Path: FMODAssets/OutofPocket/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637936502953627031
+  lastModified: 637936509499843951
   FileSizes:
   - Name: Desktop
     Value: 1702
   Exists: 1
---- !u!114 &2924876939070639357
+--- !u!114 &415836626722445570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -353,7 +298,7 @@ MonoBehaviour:
     Data3: 1117555869
     Data4: 648041665
   Banks:
-  - {fileID: 7205788237900067251}
+  - {fileID: -5789763736393611998}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -361,58 +306,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &2946495144860993390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/BallHitHard
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/BallHitHard
-  Guid:
-    Data1: 965409053
-    Data2: 1204388365
-    Data3: -1997607762
-    Data4: -1416542132
-  Banks:
-  - {fileID: 7205788237900067251}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &4465776775979677109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/High Rollers/Act3_Reprise
-  m_EditorClassIdentifier: 
-  Name: Act3_Reprise
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 778170529
-    data2: 3200012827
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &5624512192337086462
+--- !u!114 &2927301979340412008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -436,7 +330,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &7138259790989246617
+--- !u!114 &3667022092498522155
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -446,41 +340,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/High Rollers/Juice
+  m_Name: parameter:/High Rollers/Act2_Fill
   m_EditorClassIdentifier: 
-  Name: Juice
+  Name: Act2_Fill
   StudioPath: 
   Min: 0
-  Max: 2
+  Max: 1
   Default: 0
   ID:
-    data1: 2192562337
-    data2: 3318028181
+    data1: 103781062
+    data2: 3721537387
   Type: 1
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &7205788237900067251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/OutofPocket/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 637936502953637044
-  FileSizes:
-  - Name: Desktop
-    Value: 70240
-  Exists: 1
---- !u!114 &7534098691425293206
+--- !u!114 &4446271344347644968
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -490,16 +364,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Act2EndNote
+  m_Name: event:/SFX/BallHitHard
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Act2EndNote
+  Path: event:/SFX/BallHitHard
   Guid:
-    Data1: 533068301
-    Data2: 1141323979
-    Data3: 391746724
-    Data4: -1270429857
+    Data1: 965409053
+    Data2: 1204388365
+    Data3: -1997607762
+    Data4: -1416542132
   Banks:
-  - {fileID: 7205788237900067251}
+  - {fileID: -5789763736393611998}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -507,7 +381,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &8570212535069125172
+--- !u!114 &4977390800129697848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -531,7 +405,123 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &8878828669291939605
+--- !u!114 &6411617578846054512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODAssets/OutofPocket/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637936509499833946
+  FileSizes:
+  - Name: Desktop
+    Value: 2412064
+  Exists: 1
+--- !u!114 &7496884545531637942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/High Rollers/Mel
+  m_EditorClassIdentifier: 
+  Name: Mel
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 282048256
+    data2: 843963652
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7578071101230609046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/High Rollers/Act3_Reprise
+  m_EditorClassIdentifier: 
+  Name: Act3_Reprise
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 778170529
+    data2: 3200012827
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7813866802536977563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/High Rollers/Act2_Drum
+  m_EditorClassIdentifier: 
+  Name: Act2_Drum
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2404848179
+    data2: 2020181428
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8966795267387520561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/High Rollers/Juice
+  m_EditorClassIdentifier: 
+  Name: Juice
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 2192562337
+    data2: 3318028181
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &9045920198370400948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -541,20 +531,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/CueStrike
+  m_Name: event:/Music/High Rollers
   m_EditorClassIdentifier: 
-  Path: event:/SFX/CueStrike
+  Path: event:/Music/High Rollers
   Guid:
-    Data1: 689381189
-    Data2: 1176376365
-    Data3: -671562331
-    Data4: 177031429
+    Data1: 119961345
+    Data2: 1204930576
+    Data3: 2005477529
+    Data4: 490070583
   Banks:
-  - {fileID: 7205788237900067251}
-  IsStream: 0
+  - {fileID: 6411617578846054512}
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6329422021539429126}
+  - {fileID: 8966795267387520561}
+  - {fileID: 3667022092498522155}
+  - {fileID: -5025968197138350042}
+  - {fileID: 7496884545531637942}
+  - {fileID: -314916843921363221}
+  - {fileID: 2927301979340412008}
+  - {fileID: 4977390800129697848}
+  - {fileID: 7578071101230609046}
+  - {fileID: 7813866802536977563}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 28800
