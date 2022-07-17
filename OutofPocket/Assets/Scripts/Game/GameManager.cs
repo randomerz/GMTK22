@@ -365,6 +365,8 @@ public class GameManager : Singleton<GameManager>
 
             // Oppy: Okay, how about this. Shoot a dice into the far left pocket there to say �yes�, and the far right pocket to say �no�
             context.DoNarrationAndSetFlag("Act2/Oppy/002_YesNo");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
             SetUpChoice("Yes", "No");
             yield return new WaitUntil(() => { return madeDecision; });
 
@@ -384,6 +386,8 @@ public class GameManager : Singleton<GameManager>
 
             // Oppy: Hmmm, this could actually be a pretty interesting mechanic. I bet there�s something we could do with it�
             context.DoNarrationAndSetFlag("Act2/Oppy/005_Interesting");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
             SetUpChoice("Tell a Story", "Not really");
             AudioManager.SetMusicParameter("High Rollers", "Bass", 2);
             yield return new WaitUntil(() => { return madeDecision; });
@@ -408,6 +412,8 @@ public class GameManager : Singleton<GameManager>
 
             // Oppy: Oh uh
             context.DoNarrationAndSetFlag("Act2/Oppy/009_OhUh");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
             SetUpChoice("Truth", "Lie");
             AudioManager.SetMusicParameter("High Rollers", "Act2_Plucks", 1);
             yield return new WaitUntil(() => { return madeDecision; });
@@ -420,6 +426,8 @@ public class GameManager : Singleton<GameManager>
 
                 // Cynic: Story? You think a bloody game about pool and dice needs a story? AND you wanna make it dynamic??
                 context.DoNarrationAndSetFlag("Act2/Cynic/011_Truth2");
+                yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
                 SetUpChoice("Passive", "Aggrssive");
                 yield return new WaitUntil(() => { return madeDecision; });
 
@@ -456,6 +464,8 @@ public class GameManager : Singleton<GameManager>
 
                 // Cynic: Do they feel good now? I�m gonna be honest I don�t think I notice a difference
                 context.DoNarrationAndSetFlag("Act2/Cynic/018_Lie2");
+                yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
                 SetUpChoice("Yes", "No");
                 yield return new WaitUntil(() => { return madeDecision; });
 
@@ -504,6 +514,8 @@ public class GameManager : Singleton<GameManager>
 
             // Oppy: Ya know, I didn�t think about that one.
             context.DoNarrationAndSetFlag("Act2/Oppy/028_DidntThinkAbout");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
             SetUpChoice("Gameplay", "Bragging Rights");
             yield return new WaitUntil(() => { return madeDecision; });
 
@@ -545,6 +557,8 @@ public class GameManager : Singleton<GameManager>
 
             // Oppy: Ok then, we�ll add powerups! What do you think would be cooler, a slow-mo cue ball, or a giant one?
             context.DoNarrationAndSetFlag("Act2/Oppy/035_Powerups");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
             SetUpChoice("Slow-Mo Ball", "Giant Ball");
             yield return new WaitUntil(() => { return madeDecision; });
 
@@ -572,6 +586,8 @@ public class GameManager : Singleton<GameManager>
 
             // Cynic: *exasperated* That�s true! Let�s ask the one who�s actually playing. What do you think about the mechanic?
             context.DoNarrationAndSetFlag("Act2/Cynic/039_ThatsTrue");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
             SetUpChoice("Like 'em", "Hate 'em");
             yield return new WaitUntil(() => { return madeDecision; });
 
