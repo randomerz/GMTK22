@@ -8,14 +8,23 @@ public class GameManager : Singleton<GameManager>
     private State<GameManager> currentState;
 
     #region State Definitions
-    private DefaultState defaultState;
+    private Act1State act1;
+    private Act2State act2;
+    private Act3State act3;
     #endregion
 
     private void Awake()
     {
         InitializeSingleton();
 
-        defaultState = new DefaultState(this);
+        act1 = new Act1State(this);
+        act2 = new Act2State(this);
+        act3 = new Act3State(this);
+    }
+
+    private void Start()
+    {
+        SwitchState(act1);
     }
 
     private void Update()
@@ -23,15 +32,6 @@ public class GameManager : Singleton<GameManager>
         currentState?.UpdateState();
     }
 
-    public void SwitchState(GameState a_gameState)
-    {
-        switch (a_gameState) 
-        {
-            case GameState.Default:
-                SwitchState(defaultState);
-                break;
-        }
-    }
     private void SwitchState(State<GameManager> a_state)
     {
         if (this.currentState != null)
@@ -44,11 +44,55 @@ public class GameManager : Singleton<GameManager>
     }
 
     #region State Classes
-    public class DefaultState : State<GameManager>
+    public class Act1State : State<GameManager>
     {
-        public DefaultState(GameManager ctx) : base(ctx)
+        public Act1State(GameManager ctx) : base(ctx)
         {
-        }      
+        }
+
+        public override void EnterState()
+        {
+            context.StartCoroutine(DoAct1());
+        }
+
+        public IEnumerator DoAct1()
+        {
+            yield return null;
+        }
+    }
+
+    public class Act2State : State<GameManager>
+    {
+        public Act2State(GameManager ctx) : base(ctx)
+        {
+        }
+
+        public override void EnterState()
+        {
+            context.StartCoroutine(DoAct2());
+        }
+
+        public IEnumerator DoAct2()
+        {
+            yield return null;
+        }
+    }
+
+    public class Act3State : State<GameManager>
+    {
+        public Act3State(GameManager ctx) : base(ctx)
+        {
+        }
+
+        public override void EnterState()
+        {
+            context.StartCoroutine(DoAct3());
+        }
+
+        public IEnumerator DoAct3()
+        {
+            yield return null;   
+        }
     }
     #endregion
 }

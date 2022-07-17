@@ -29,13 +29,13 @@ public class PoolBall : MonoBehaviour
         public PoolBall ball;
         public GameObject pocket;
     }
-    public bool sunk;
 
     [SerializeField] private Shape shapeAtStart;
     [SerializeField] private List<ShapeMesh> shapeMeshes;
 
     [Header("READ ONLY, DON'T NEED TO SET")]
     public Vector3 initialPos;
+    public bool sunk;
 
     private Dictionary<Shape, GameObject> shapeMeshesDict;
 
@@ -79,11 +79,24 @@ public class PoolBall : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PoolBall"))
         {
+            if (collision.relativeVelocity.magnitude > 2){
+                Debug.Log("Big Hit");
+                AudioManager.PlaySound("BallHitHard");
+            }else{
+                Debug.Log("Normal Hit");
+                AudioManager.PlaySound("BallHit");
+            }
+
+            
             ballHitEvent?.Invoke(this, new BallHitEventArgs
             {
                 ball = this,
                 hitBy = collision.gameObject
             }); ;
+        }
+        else if (collision.gameObject.CompareTag("Wall")){
+            Debug.Log("Wall Hit");
+            AudioManager.PlaySound("BallHitWall");
         }
     }
 
@@ -91,10 +104,12 @@ public class PoolBall : MonoBehaviour
     {
         if (other.CompareTag("Pocket"))
         {
+            Debug.Log("Ball Pocketed");
+            AudioManager.PlaySound("BallPocketed");
             ballInPocketEvent?.Invoke(this, new BallEventArgs
             {
                 ball = this,
-                pocket = other.gameObject
+                pocket = other.gameObject.transform.parent.gameObject
             });
         }
     }
@@ -125,5 +140,16 @@ public class PoolBall : MonoBehaviour
             sunk = true;
         }
         //Debug.Log($"{e.ball.gameObject.name} Sunk!");
+    }
+    public GameObject GetCurShape()
+    {
+        foreach(ShapeMesh mesh in shapeMeshes)
+        {
+            if(mesh.gameObject.active)
+            {
+                return mesh.gameObject;
+            }
+        }
+        return null;
     }
 }
