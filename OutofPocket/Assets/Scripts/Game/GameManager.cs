@@ -90,16 +90,10 @@ public class GameManager : Singleton<GameManager>
             context.poolGameManager.gameObject.SetActive(false);
             context.inGameUI.SetActive(false);
 
-<<<<<<< HEAD
             //Oppy ï¿½ and Iï¿½ve already got someone playtesting it right now!
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
-=======
-            //Oppy … and I’ve already got someone playtesting it right now!
             //context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             //yield return new WaitUntil(() => { return context.currNarrationFinished; });
->>>>>>> 6eebe515b17013b3b6a037b8d9b631916bf1fa25
-
+            
             ////Cynic already?
             //context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             //yield return new WaitUntil(() => { return context.currNarrationFinished; });
@@ -149,7 +143,7 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => playerPutBallInPocket);
             PoolBall.ballInPocketEvent -= PutBallInPocket;
 
-            //Cynic: That’s stupid.
+            //Cynic: Thatï¿½s stupid.
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
@@ -157,15 +151,15 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: I said that’s stupid. How does changing them from balls to cubes make the game more about skill?
+            //Cynic: I said thatï¿½s stupid. How does changing them from balls to cubes make the game more about skill?
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Oppy: Well…
+            //Oppy: Wellï¿½
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: Weren’t pool balls made to be balls for a reason?
+            //Cynic: Werenï¿½t pool balls made to be balls for a reason?
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
@@ -173,11 +167,11 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: Just because something is new doesn’t make it better. You can’t just mash two ideas together and expect it to be fun.
+            //Cynic: Just because something is new doesnï¿½t make it better. You canï¿½t just mash two ideas together and expect it to be fun.
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Oppy: But I haven’t even told you about the numbers!
+            //Oppy: But I havenï¿½t even told you about the numbers!
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
@@ -189,7 +183,7 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: Okay I really need to stop you there. Having “possibilities” is not the same as having “ideas”. *upbeat * Be decisive and pick one!Can you settle on one for christ’s sake ?
+            //Cynic: Okay I really need to stop you there. Having ï¿½possibilitiesï¿½ is not the same as having ï¿½ideasï¿½. *upbeat * Be decisive and pick one!Can you settle on one for christï¿½s sake ?
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
@@ -204,7 +198,7 @@ public class GameManager : Singleton<GameManager>
             playerPutBallInPocket = false;
             PoolBall.ballInPocketEvent += PutBallInPocket;  //Start keeping track of if the player pocketed the die.
 
-            //Cynic: So its like a random chance to get 1 - 6 points…
+            //Cynic: So its like a random chance to get 1 - 6 pointsï¿½
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
@@ -220,11 +214,11 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: Okay, I still don’t think there’s enough control here. You’re just hitting the cube and praying for a 6.
+            //Cynic: Okay, I still donï¿½t think thereï¿½s enough control here. Youï¿½re just hitting the cube and praying for a 6.
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Oppy: Hmm… I have an idea
+            //Oppy: Hmmï¿½ I have an idea
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
@@ -236,7 +230,7 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: So… tilt controls ?
+            //Cynic: Soï¿½ tilt controls ?
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
@@ -244,18 +238,18 @@ public class GameManager : Singleton<GameManager>
             TiltingTable table = context.poolTable.GetComponent<TiltingTable>();
             table.TiltingEnabled = true;
 
-            //Oppy: Exactly! Now the player has control over where the balls… *erm * dice go
+            //Oppy: Exactly! Now the player has control over where the ballsï¿½ *erm * dice go
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: Hmmm… so the player is tilting the table? And they can use this strategically as another way to get the dice in?
+            //Cynic: Hmmmï¿½ so the player is tilting the table? And they can use this strategically as another way to get the dice in?
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //[Cut off if player tilts a bunch of dice in, else skip]
             yield return new WaitUntil(() => { return PoolStateManager._instance.numBallsSunk > 5; });
 
-            //Cynic: No no no! You see how many they just got in? That’s not skill
+            //Cynic: No no no! You see how many they just got in? Thatï¿½s not skill
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
@@ -263,23 +257,23 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: Sigh, That’s not exciting! You completely removed any semblance of strategy your “game” once had. Now it’s just a QTE of a bunch of cubes falling into holes.
+            //Cynic: Sigh, Thatï¿½s not exciting! You completely removed any semblance of strategy your ï¿½gameï¿½ once had. Now itï¿½s just a QTE of a bunch of cubes falling into holes.
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Oppy: Oh. Huh. Well, nothing that a little juice and polish can’t fix! Here, it just needs a little more … uh… 
+            //Oppy: Oh. Huh. Well, nothing that a little juice and polish canï¿½t fix! Here, it just needs a little more ï¿½ uhï¿½ 
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: I’m sure that’ll do wonders for the gameplay a little more ?
+            //Cynic: Iï¿½m sure thatï¿½ll do wonders for the gameplay a little more ?
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Oppy: Oh.Huh.Well, nothing that a little juice and polish can’t fix!Here, it just needs a little more … uh… 
+            //Oppy: Oh.Huh.Well, nothing that a little juice and polish canï¿½t fix!Here, it just needs a little more ï¿½ uhï¿½ 
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: I’m sure that’ll do wonders for the gameplay a little more ?
+            //Cynic: Iï¿½m sure thatï¿½ll do wonders for the gameplay a little more ?
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
@@ -299,15 +293,15 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: Well uh, aesthetics are… important.Look kid, I’m gonna go grab a coffee.If you’ve got more to say, I guess stick around and I’ll be back.But I gotta take a break.
+            //Cynic: Well uh, aesthetics areï¿½ important.Look kid, Iï¿½m gonna go grab a coffee.If youï¿½ve got more to say, I guess stick around and Iï¿½ll be back.But I gotta take a break.
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Oppy: Oh, uh okay. Don’t worry, I’ll be right here!
+            //Oppy: Oh, uh okay. Donï¿½t worry, Iï¿½ll be right here!
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Cynic: I’m sure you will… *footstep sounds *
+            //Cynic: Iï¿½m sure you willï¿½ *footstep sounds *
             context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
         }
