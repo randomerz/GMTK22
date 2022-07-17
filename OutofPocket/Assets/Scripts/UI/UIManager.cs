@@ -47,10 +47,11 @@ public class UIManager : Singleton<UIManager>
     private IEnumerator IFadeInAndMoveUpText()
     {
         subtitleCanvasGroup.alpha = 0;
+        subtitleText.alpha = 1;
         while (subtitleCanvasGroup.alpha < 0.99f)
         {
             subtitleCanvasGroup.alpha = Mathf.Lerp(subtitleCanvasGroup.alpha, 1, subtitleFadeInSpeed * Time.deltaTime);
-            subtitleText.rectTransform.position = new Vector2(subtitleText.rectTransform.position.x, -50 + subtitleText.alpha * 100);
+            subtitleText.rectTransform.position = new Vector2(subtitleText.rectTransform.position.x, -50 + subtitleCanvasGroup.alpha * 50);
             yield return null;
         }
     }
