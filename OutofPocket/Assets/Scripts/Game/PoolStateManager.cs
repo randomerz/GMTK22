@@ -10,13 +10,14 @@ public class PoolStateManager : Singleton<PoolStateManager>
 {
 
     public bool hasThisStartedYet = false;
-    public bool tiltStuff = false;
+    public bool triggerTilting = false;
 
     public bool startGameImmediately;
 
     [Header("References")]
     public CueBall cueBall;
     public Collider gameArenaCollider;
+    public TiltingTable tiltingTable;
 
     [Header("Cue Ball Shot Power")]
     public float screenDeltaToPower;
@@ -41,6 +42,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
     [Header("Tutorial Annotations")]
     public TextMeshProUGUI holdClickAnnotation;
     public TextMeshProUGUI tiltingAnnotation;
+
     public PoolStateIdle EmptyState => _emptyState;
     public PoolStatePlayerTurn PlayerTurnState => _playerTurnState;
     public PoolStateWaitingForEndOfTurn WaitingForEndOfTurnState => _waitingForEndOfTurnState;
@@ -62,7 +64,8 @@ public class PoolStateManager : Singleton<PoolStateManager>
             {
                 ScoreManager._instance.ShowScore();
                 ScoreManager.Score = 0;
-            } else
+            }
+            else
             {
                 ScoreManager._instance.HideScore();
                 ScoreManager.Score = 0;
@@ -105,11 +108,17 @@ public class PoolStateManager : Singleton<PoolStateManager>
             SwitchState(_emptyState);
         }
         ScoreEnabled = true;    //For Testing
+        tiltingAnnotation.enabled = false;
     }
 
     private void Update()
     {
         currState?.UpdateState();
+        if (OOPInput.vertical != 0 || OOPInput.horizontal != 0)
+        {
+            tiltingAnnotation.gameObject.SetActive(false);
+            triggerTilting = false;
+        }
     }
 
     private void FixedUpdate()
@@ -134,7 +143,6 @@ public class PoolStateManager : Singleton<PoolStateManager>
             currState.ExitState();
         }
         currState = nextState;
-        tiltStuff = true;
         nextState.EnterState();
     }
 

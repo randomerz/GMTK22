@@ -21782,7 +21782,7 @@ GameObject:
   - component: {fileID: 3193695845255996593}
   m_Layer: 0
   m_Name: TopColliderSide (3)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22051,7 +22051,7 @@ GameObject:
   - component: {fileID: 3930178949489858841}
   m_Layer: 0
   m_Name: TopColliderSide
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22181,7 +22181,7 @@ GameObject:
   - component: {fileID: 5880147939649983722}
   m_Layer: 0
   m_Name: TopColliderSide (1)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22450,7 +22450,7 @@ GameObject:
   - component: {fileID: 6985500484358495578}
   m_Layer: 0
   m_Name: TopColliderFarLeft
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22547,7 +22547,7 @@ GameObject:
   - component: {fileID: 6985500484621690694}
   m_Layer: 0
   m_Name: TopColliderFarRight
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22741,7 +22741,7 @@ GameObject:
   - component: {fileID: 6985500484776317465}
   m_Layer: 0
   m_Name: TopColliderMain
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28146,7 +28146,7 @@ GameObject:
   - component: {fileID: 2104266876873827773}
   m_Layer: 0
   m_Name: TopColliderSide (2)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

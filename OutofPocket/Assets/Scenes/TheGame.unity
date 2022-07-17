@@ -326,6 +326,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1e242086a6399c49a1ffc82c68de040, type: 3}
+--- !u!114 &54681497 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1594437979, guid: f1e242086a6399c49a1ffc82c68de040, type: 3}
+  m_PrefabInstance: {fileID: 54681496}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &123767532
 Mesh:
   m_ObjectHideFlags: 0
@@ -2291,6 +2302,10 @@ PrefabInstance:
       propertyPath: popUpForce
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 981231797711066855, guid: 8e1481ac2e3f201478a831cebc3a3e5c, type: 3}
+      propertyPath: tiltingAnnotation
+      value: 
+      objectReference: {fileID: 54681497}
     - target: {fileID: 981231797711066855, guid: 8e1481ac2e3f201478a831cebc3a3e5c, type: 3}
       propertyPath: holdClickAnnotation
       value: 

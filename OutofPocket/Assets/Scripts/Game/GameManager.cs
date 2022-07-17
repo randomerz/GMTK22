@@ -114,19 +114,24 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
+            //Enable the pool game
             context.poolBallTriangle.SetActive(true);
             context.cueBall.SetActive(true);
             context.poolGameManager.gameObject.SetActive(true);
             context.inGameUI.SetActive(true);
 
-            yield return new WaitUntil(() => { return turnCompleted; })
+            //Wait until player made a turn.
+            turnCompleted = false;
+            CueBall.ballShot += BallHitFirstTime;   //Scuffy me Luffy 
+            yield return new WaitUntil(() => { return turnCompleted; });
+            CueBall.ballShot -= BallHitFirstTime;
 
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
 
             playerPutBallInPocket = false;
-            yield return new WaitUntil(())
+            yield return new WaitUntil(() => playerPutBallInPocket);
 
 
             //Cynic
@@ -136,6 +141,11 @@ public class GameManager : Singleton<GameManager>
 
 
 
+        }
+
+        private void BallHitFirstTime(object sender, CueBall.BallShotEventArgs e)
+        {
+            turnCompleted = true;
         }
     }
     #endregion
