@@ -10017,6 +10017,34 @@ MonoBehaviour:
   cueTrail: {fileID: 1656378543359158430}
   impactParticleSystem: {fileID: 4605432644685041926}
   cueHitParticles: {fileID: 7887875205893374327}
+--- !u!114 &8534299286226393876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446447359031965274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ef0a9ba144a10a4fb8c7f5f3babc7e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceleration: {x: 1, y: 1, z: 1}
+  TargetObject: {fileID: 0}
+  EnableAbility: 0
+--- !u!114 &5035083096474220352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446447359031965274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50bb2b82416a28642b92c42691633402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceleration: 0.2
 --- !u!4 &7976007512542698645 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 781171758254662709, guid: dc2564cfadc298d41b7d50e1b1732ce8, type: 3}
