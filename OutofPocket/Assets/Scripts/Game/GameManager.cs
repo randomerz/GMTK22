@@ -5,7 +5,18 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class GameManager : Singleton<GameManager>
 {
+    [Header("References")]
+    public GameObject poolTable;
+    public PoolStateManager poolGameManager;
+    public GameObject poolBallTriangle;
+    public GameObject cueBall;
+
+
+
+
     private State<GameManager> currentState;
+
+    public bool currNarrationFinished;
 
     #region State Definitions
     private Act1State act1;
@@ -43,6 +54,14 @@ public class GameManager : Singleton<GameManager>
         this.currentState.EnterState();
     }
 
+    public void DoNarrationAndSetFlag(string path)
+    {
+        currNarrationFinished = false;
+        NarrationManager.PlayVoiceClip(path, () => {
+            currNarrationFinished = true;
+        });
+    }
+
     #region State Classes
 
     #region Act1
@@ -59,7 +78,12 @@ public class GameManager : Singleton<GameManager>
 
         public IEnumerator DoAct1()
         {
-            yield return null;
+            NarrationManager.PlayVoiceClip("Optimist/HelloWelcomeTo.asset");
+            yield return new WaitUntil(() =>
+            {
+                return context.currNarrationFinished;
+            });
+            Debug.Log("Narration Finished!");
         }
     }
     #endregion
@@ -83,7 +107,7 @@ public class GameManager : Singleton<GameManager>
     }
     #endregion
 
-    #region 3
+    #region Act 3
     public class Act3State : State<GameManager>
     {
         public Act3State(GameManager ctx) : base(ctx)
