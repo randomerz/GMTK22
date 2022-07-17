@@ -91,26 +91,28 @@ public class GameManager : Singleton<GameManager>
             context.inGameUI.SetActive(false);
 
             //Oppy ... and I've already got someone playtesting it right now!
-            context.DoNarrationAndSetFlag("Act1/Oppy/001Playtest");
+            context.DoNarrationAndSetFlag("Act1/Oppy/001_Playtest");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Cynic already?
             context.DoNarrationAndSetFlag("Act1/Cynic/002_already");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
+            //Turn on lights
+            context.floor.SetActive(true);
+
             //Oppy Crazy, right? Okay, so picture this�*elevator ding sound*
             context.DoNarrationAndSetFlag("Act1/Oppy/003_PictureThis");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Turn on lights
-            context.floor.SetActive(true);
+
+
+            //Turn on pool table
+            context.poolTable.SetActive(true);
 
             //Oppy A pool table
             context.DoNarrationAndSetFlag("Act1/Oppy/004_PoolTable");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
-
-            //Turn on pool table
-            context.poolTable.SetActive(true);
 
             //Oppy and, and it�s like your standard pool game you know
             context.DoNarrationAndSetFlag("Act1/Oppy/005_PoolGame");
