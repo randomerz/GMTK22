@@ -27876,6 +27876,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6985500486298694421}
   - component: {fileID: 1554601560104466179}
+  - component: {fileID: 8796705856587323580}
   m_Layer: 0
   m_Name: PoolTable
   m_TagString: Untagged
@@ -27921,6 +27922,22 @@ MonoBehaviour:
   choice2Pockets:
   - {fileID: 571587160389535508}
   - {fileID: 571587158905199446}
+--- !u!114 &8796705856587323580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6985500486298694420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e517306a0111d7747971488b49755d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accel: 5
+  maxXTilt: 10
+  maxZTilt: 5
+  TiltingEnabled: 1
 --- !u!1 &6985500486410492984
 GameObject:
   m_ObjectHideFlags: 0

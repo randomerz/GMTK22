@@ -29,13 +29,13 @@ public class PoolBall : MonoBehaviour
         public PoolBall ball;
         public GameObject pocket;
     }
-    public bool sunk;
 
     [SerializeField] private Shape shapeAtStart;
     [SerializeField] private List<ShapeMesh> shapeMeshes;
 
     [Header("READ ONLY, DON'T NEED TO SET")]
     public Vector3 initialPos;
+    public bool sunk;
 
     private Dictionary<Shape, GameObject> shapeMeshesDict;
 

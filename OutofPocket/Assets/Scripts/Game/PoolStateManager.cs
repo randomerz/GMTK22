@@ -132,6 +132,8 @@ public class PoolStateManager : Singleton<PoolStateManager>
         numBallsSunk = 0;
         foreach (PoolBall pb in _poolBalls)
         {
+            Rigidbody rb = pb.GetComponent<Rigidbody>();
+            rb.velocity = Vector3.zero;
             pb.transform.position = pb.initialPos;
             pb.gameObject.SetActive(true);
             pb.sunk = false;
