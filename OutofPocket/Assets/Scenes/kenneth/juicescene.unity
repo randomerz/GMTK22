@@ -2709,6 +2709,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 1699
       objectReference: {fileID: 0}
+    - target: {fileID: 1656378543359158430, guid: e8907dbb2ff910d4bba5cb76e2d93017, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4781577761162845669, guid: e8907dbb2ff910d4bba5cb76e2d93017, type: 3}
       propertyPath: shapeAtStart
       value: 2

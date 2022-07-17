@@ -1027,7 +1027,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3342
+  m_Name: pb_Mesh-145330
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1786,7 +1786,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-207000
+  m_Name: pb_Mesh-3222
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2269,7 +2269,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3318
+  m_Name: pb_Mesh-145298
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3913,6 +3913,22 @@ PrefabInstance:
     - target: {fileID: 771357310221443665, guid: e8907dbb2ff910d4bba5cb76e2d93017, type: 3}
       propertyPath: m_VersionIndex
       value: 1702
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656378543359158430, guid: e8907dbb2ff910d4bba5cb76e2d93017, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656378543359158430, guid: e8907dbb2ff910d4bba5cb76e2d93017, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656378543359158430, guid: e8907dbb2ff910d4bba5cb76e2d93017, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1656378543359158430, guid: e8907dbb2ff910d4bba5cb76e2d93017, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1656378543359158430, guid: e8907dbb2ff910d4bba5cb76e2d93017, type: 3}
       propertyPath: m_Materials.Array.data[0]
