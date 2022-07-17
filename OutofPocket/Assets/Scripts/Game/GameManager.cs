@@ -49,6 +49,9 @@ public class GameManager : Singleton<GameManager>
         AudioManager.PlayMusic("High Rollers");
         Debug.Log("Switching act 1");
         SwitchState(act1);
+
+        //TESTING MAKE SURE TO DELETE LATER #########################################################
+
     }
 
     private void Update()
@@ -585,10 +588,12 @@ public class GameManager : Singleton<GameManager>
             if (wasDecisionLeft)
             {
                 // TODO: POWER STUFF ####################################################################################
+                BulletTime._instance.AbilityEnabled = true;
             }
             else
             {
                 // TODO: POWER STUFF ####################################################################################
+                BigCue._instance.AbilityEnabled = true;
             }
 
 
