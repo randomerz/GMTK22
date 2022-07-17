@@ -74,7 +74,10 @@ public class NarrationManager : Singleton<NarrationManager>
 
     public static void SetVolume(float volume)
     {
-        _instance.audioSource.volume = volume;
+        if (_instance != null && _instance.audioSource != null)
+        {
+            _instance.audioSource.volume = volume;
+        }
     }
 }
 

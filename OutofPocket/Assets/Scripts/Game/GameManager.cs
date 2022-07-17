@@ -108,6 +108,8 @@ public class GameManager : Singleton<GameManager>
 
             //Oppy ... and I've already got someone playtesting it right now!
             context.DoNarrationAndSetFlag("Act1/Oppy/001_Playtest");
+            yield return null;
+            AudioManager.SetMusicParameter("High Rollers", "Base", 1);
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
             AudioManager.SetMusicParameter("High Rollers", "Base", 1);
 
