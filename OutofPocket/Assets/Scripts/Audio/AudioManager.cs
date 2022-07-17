@@ -19,6 +19,8 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField] private Slider sfxSlider;
     [SerializeField] private Slider musicSlider;
 
+    private static FMOD.Studio.Bus masterBus;
+    private static FMOD.ChannelGroup masterGroup;
     private static FMOD.Studio.Bus sfxBus;
     private static FMOD.Studio.Bus musicBus;
 
@@ -83,6 +85,8 @@ public class AudioManager : Singleton<AudioManager>
     private void Start()
     {
         // Web is async so we do this in start
+        masterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");
+        masterBus.lockChannelGroup();
         sfxBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX Bus");
         musicBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music Bus");
 
@@ -193,5 +197,11 @@ public class AudioManager : Singleton<AudioManager>
         {
             s.emitter.Stop();
         }
+    }
+
+    public static void SetPitch(float pitch)
+    {
+        Debug.Log("Getting channel group: " + masterBus.getChannelGroup(out masterGroup));
+        masterGroup.setPitch(pitch);
     }
 }
