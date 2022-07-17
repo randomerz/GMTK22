@@ -5,7 +5,7 @@ using UnityEngine;
 public class WalkingMan : MonoBehaviour
 {
     [SerializeField] private float speed = 20f;
-    private float timeTilWalk = 20;
+    private float timeTilWalk = 50;
     private Vector3 startingLocation;
 
     // Start is called before the first frame update

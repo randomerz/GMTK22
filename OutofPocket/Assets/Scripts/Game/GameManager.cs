@@ -104,8 +104,7 @@ public class GameManager : Singleton<GameManager>
             //Oppy Crazy, right? Okay, so picture this�*elevator ding sound*
             context.DoNarrationAndSetFlag("Act1/Oppy/003_PictureThis");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
-
-
+            
 
             //Turn on pool table
             context.poolTable.SetActive(true);
@@ -140,7 +139,9 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Oppy: Yeah, so I got to thinking about making a pool game with a twist...
-            context.DoNarrationAndSetFlag("Act1/Oppy/008_DiceExpl");
+            context.DoNarrationAndSetFlag("Act1/Oppy/008.1_DiceExpl1");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            context.DoNarrationAndSetFlag("Act1/Oppy/008.2_DiceExpl2");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Wait until ball in pocket.
