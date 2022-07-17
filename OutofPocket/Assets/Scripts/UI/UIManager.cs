@@ -57,4 +57,10 @@ public class UIManager : Singleton<UIManager>
             yield return null;
         }
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quitting Game");
+        Application.Quit();
+    }
 }
