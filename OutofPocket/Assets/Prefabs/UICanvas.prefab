@@ -4259,10 +4259,10 @@ MonoBehaviour:
   feltNormal: {fileID: 2100008, guid: b670f9e3fd3f6422e9d3de4feab83eb8, type: 3}
   feltSuperHot: {fileID: 2100000, guid: d28efcf6ad11b9c4287d92f1f462354a, type: 2}
   pocketNormal: {fileID: 0}
-  redCost: 0
-  greenCost: 0
-  blueCost: 0
-  stockCost: 0
+  redCost: 10
+  greenCost: 50
+  blueCost: 1000
+  stockCost: 5
   superHotIsEnabled: 0
 --- !u!1 &8823636383623905819
 GameObject:

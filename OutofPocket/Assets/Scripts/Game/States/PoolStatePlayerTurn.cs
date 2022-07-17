@@ -59,7 +59,6 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
             line.AddComponent<LineRenderer>();
         }
 
-        CueBall cueball = GameObject.Find("CueCube").GetComponent<CueBall>();
         line.SetActive(true);
         LineRenderer lr = line.GetComponent<LineRenderer>();
         lr.material = new Material(Shader.Find("Sprites/Default"));
@@ -71,7 +70,7 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
         Vector3 translate = new Vector3();
         if (Physics.Raycast(ray, out RaycastHit startRaycastHit, float.MaxValue, LayerMask.GetMask("CameraToTable")))
         {
-            translate = startRaycastHit.point - cueball.transform.position;
+            translate = startRaycastHit.point - context.cueBall.transform.position;
 
             translate.y = -.5f;
         }
@@ -88,7 +87,7 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
             {
 
             }
-            lr.SetPosition(0, new Vector3(cueball.transform.position.x, .1f, cueball.transform.position.z));
+            lr.SetPosition(0, new Vector3(context.cueBall.transform.position.x, .1f, context.cueBall.transform.position.z));
             lr.SetPosition(1, endRaycastHit.point - translate);
         }
 
