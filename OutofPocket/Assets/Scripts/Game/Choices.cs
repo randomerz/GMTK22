@@ -59,16 +59,16 @@ public class Choices : Singleton<Choices>
     {
         return _instance;
     }
-    void Activate() 
+    public void Activate() 
     {
         isActive = true;
     }
-    void Deactivate()
+    public void Deactivate()
     {
         isActive = false;
         SetChoiceText("","");
     }
-    void SetChoiceText(string t1, string t2)
+    public void SetChoiceText(string t1, string t2)
     {
         leftText.GetComponent<TextMeshPro>().text = t1;
         rightText.GetComponent<TextMeshPro>().text = t2;
