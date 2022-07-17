@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="ParameterPreset" id="{378593e7-0c40-4174-827e-bbd7eed9809b}">
+	<object class="ParameterPreset" id="{a8970fbf-3bc3-4afe-9281-140b93db9658}">
 		<property name="name">
-			<value>Act2_Drum</value>
+			<value>Act3_End</value>
 		</property>
 		<relationship name="folder">
 			<destination>{f191cfa6-1091-4281-b318-22978aada2a3}</destination>
 		</relationship>
 		<relationship name="parameter">
-			<destination>{6036a7fe-75c5-45c1-a657-b0d91a705ecf}</destination>
+			<destination>{a53a3c79-3cdd-4e3c-8b57-557996d83dba}</destination>
 		</relationship>
 	</object>
-	<object class="GameParameter" id="{6036a7fe-75c5-45c1-a657-b0d91a705ecf}">
+	<object class="GameParameter" id="{a53a3c79-3cdd-4e3c-8b57-557996d83dba}">
 		<property name="parameterType">
 			<value>1</value>
 		</property>

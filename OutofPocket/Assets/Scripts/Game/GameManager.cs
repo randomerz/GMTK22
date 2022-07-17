@@ -652,13 +652,19 @@ public class GameManager : Singleton<GameManager>
         {
             //Oppy: *determined* Alright, I’ve got it. So I’ve tried adding a bunch of different mechanics to the game, 
             context.DoNarrationAndSetFlag("Act3/Optimist/01_IveGotIt");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });    
+            AudioManager.SetMusicParameter("High Rollers", "Act2_Plucks", 0);
+            AudioManager.SetMusicParameter("High Rollers", "Bass", 0);
+            AudioManager.SetMusicParameter("High Rollers", "Base", 4);
+            AudioManager.SetMusicParameter("High Rollers", "Act2_Fill", 1);
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
             //but none of them have actually solved the core problem of “how do we make dice with pool work.”
             context.DoNarrationAndSetFlag("Act3/Optimist/02_CoreProblem");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });    
             
             //Cynic: *interested* Go on.
             context.DoNarrationAndSetFlag("Act3/Cynic/03_GoOn");
+            AudioManager.SetMusicParameter("High Rollers", "Act2_Fill", 0);
+            AudioManager.SetMusicParameter("High Rollers", "Act2_Drum", 1);
             yield return new WaitUntil(() => { return context.currNarrationFinished; });    
 
             //Oppy: Well, I got to thinking. If adding these mechanics in hasn’t helped at all, why don’t we take away the ones that haven’t worked…
@@ -670,7 +676,8 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });   
 
             //Oppy: *laughing* and add procedural generation!
-            context.DoNarrationAndSetFlag("Act3/Optimist/06_ProcGen");    
+            context.DoNarrationAndSetFlag("Act3/Optimist/06_ProcGen");
+            AudioManager.SetMusicParameter("High Rollers", "Act2_Drum", 0);
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Cynic: NO!
@@ -681,7 +688,9 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Act3/Optimist/08_HoldOn");    
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
             //The pockets could get repositioned randomly every time you play-
-            context.DoNarrationAndSetFlag("Act3/Optimist/09_PocketReposition");    
+            context.DoNarrationAndSetFlag("Act3/Optimist/09_PocketReposition");
+            AudioManager.SetMusicParameter("High Rollers", "Base", 0);
+            AudioManager.PlaySound("Act2EndNote");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Cynic: Ok, stop talking and just - just listen to me! A) you haven’t gotten rid of the mechanics that you said were causing problems,
@@ -720,6 +729,7 @@ public class GameManager : Singleton<GameManager>
             
             //*silence*
             yield return new WaitUntil(() => { return madeDecision; });
+            AudioManager.SetMusicParameter("High Rollers", "Act3_Reprise", 1);
 
             //Oppy: Did you ever ask yourself why I stuck around even though I hated your advice? You’re one of my favorite designers.
             context.DoNarrationAndSetFlag("Act3/Optimist/19_AskYourself");
@@ -758,7 +768,10 @@ public class GameManager : Singleton<GameManager>
             context.GetComponent<EndOfGame>().EndOfGameify();
 
             //Oppy: It’s something I came up with when we were talking. All the balls have slightly different interactions with everything.
-            context.DoNarrationAndSetFlag("Act3/Optimist/27_Final1");    
+            context.DoNarrationAndSetFlag("Act3/Optimist/27_Final1");
+            AudioManager.SetMusicParameter("High Rollers", "Act3_Reprise", 0);
+            AudioManager.SetMusicParameter("High Rollers", "Act3_End", 1);
+
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
             //Oppy: Yeah, I like how this plays. But which one should be worth the most? What if we…
             context.DoNarrationAndSetFlag("Act3/Optimist/28_Final2");    
