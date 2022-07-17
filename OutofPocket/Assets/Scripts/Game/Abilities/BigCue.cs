@@ -17,7 +17,7 @@ public class BigCue : Singleton<BigCue> {
   }
 
   void Update(){
-        Debug.Log($"UPDATING BigCue????? {AbilityEnabled}");
+        //Debug.Log($"UPDATING BigCue????? {AbilityEnabled}");
         if (AbilityEnabled)
         {
             Vector3 scale = TargetObject.localScale;

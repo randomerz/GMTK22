@@ -13,7 +13,7 @@ public class BulletTime : Singleton<BulletTime> {
   }
 
   void Update(){
-        Debug.Log($"UPDATING BulletTime????? {AbilityEnabled}");
+        //Debug.Log($"UPDATING BulletTime????? {AbilityEnabled}");
         if (AbilityEnabled)
         {
             if (Input.GetKey(KeyCode.Space))
