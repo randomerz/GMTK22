@@ -135,7 +135,6 @@ public class AudioManager : Singleton<AudioManager>
         }
         
         FMODUnity.RuntimeManager.PlayOneShot(s.fmodEvent, volumeMultiplier);
-        Debug.Log("Play Sound: " + name);
     }
 
     public static void PlayMusic(string name, bool stopOtherTracks = true)
