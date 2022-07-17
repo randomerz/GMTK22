@@ -22,6 +22,8 @@ public class UIManager : Singleton<UIManager>
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             mainPanel.SetActive(!mainPanel.activeInHierarchy);
+
+            GameManager._instance.pauseAnnotation.enabled = false;
         }
     }
 

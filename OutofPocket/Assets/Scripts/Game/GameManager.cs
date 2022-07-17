@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using TMPro;
+
 [DisallowMultipleComponent]
 public class GameManager : Singleton<GameManager>
 {
@@ -14,6 +16,9 @@ public class GameManager : Singleton<GameManager>
     public GameObject cueBall;
     public GameObject inGameUI;
     public Juicer joooooooooooooooooooooos;
+    public FadeScript fade;
+
+    public TextMeshProUGUI pauseAnnotation;
 
     private State<GameManager> currentState;
 
@@ -32,6 +37,8 @@ public class GameManager : Singleton<GameManager>
         act1 = new Act1State(this);
         act2 = new Act2State(this);
         act3 = new Act3State(this);
+
+        pauseAnnotation.enabled = false;
     }
 
     public void Start()
@@ -549,6 +556,7 @@ public class GameManager : Singleton<GameManager>
 
             // Activate Shop
             ShopManager.SetShopActive(true);
+            context.pauseAnnotation.enabled = true;
 
             AudioManager.SetMusicParameter("High Rollers", "Act2_Plucks", 0);
             AudioManager.SetMusicParameter("High Rollers", "Base", 0);
@@ -816,6 +824,8 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             yield return  new WaitForSeconds(0.5f);
+            context.fade.FadeOut();
+            yield return new WaitForSeconds(1);
             SceneManager.LoadSceneAsync("Credits");
  
             
