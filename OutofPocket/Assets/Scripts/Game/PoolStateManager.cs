@@ -153,7 +153,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
         nextState.EnterState();
     }
 
-    public void StartGame()
+    public static void StartGame()
     {
         //foreach (PoolBall pb in _poolBalls)
         //{
@@ -162,14 +162,14 @@ public class PoolStateManager : Singleton<PoolStateManager>
         ResetGame();
     }
 
-    public void ResetGame()
+    public static void ResetGame()
     {
-        numBallsSunk = 0;
-        foreach (PoolBall pb in _poolBalls)
+        _instance.numBallsSunk = 0;
+        foreach (PoolBall pb in _instance._poolBalls)
         {
             pb.ResetBall();
         }
-        SwitchState(_playerTurnState);
+        _instance.SwitchState(_instance._playerTurnState);
     }
 
     public void ResetCueBall()

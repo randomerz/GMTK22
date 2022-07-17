@@ -117,27 +117,36 @@ public class GameManager : Singleton<GameManager>
             //Enable the pool game
             context.poolBallTriangle.SetActive(true);
             context.cueBall.SetActive(true);
-            context.poolGameManager.gameObject.SetActive(true);
-            context.inGameUI.SetActive(true);
-
-            //Wait until player made a turn.
-            turnCompleted = false;
-            PoolStateManager.TurnEnded += SetTurnCompleted;   //Scuffy me Luffy 
-            yield return new WaitUntil(() => { return turnCompleted; });
-            PoolStateManager.TurnEnded -= SetTurnCompleted;
 
             //Oppy …except, they’re not actually balls, they’re dice!
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
+            //Change all balls to dice
             PoolStateManager.ChangeAllToShape(PoolBall.Shape.Dice);
+            PoolStateManager.ResetGame();
+            context.poolGameManager.gameObject.SetActive(true);            //Enable the game and the controls.
+            context.inGameUI.SetActive(true);
+            turnCompleted = false;
+            PoolStateManager.TurnEnded += SetTurnCompleted;   //Start keeping track of the turn (Scuffy me Luffy)
 
+            //Cynic: Dice?
+            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
+            //Oppy: Yeah, so I got to thinking about making a pool game with a twist ...
+            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
+            //Wait until ball in pocket.
             playerPutBallInPocket = false;
+            PoolBall.ballInPocketEvent += PutBallInPocket;
             yield return new WaitUntil(() => playerPutBallInPocket);
+            PoolBall.ballInPocketEvent -= PutBallInPocket;
 
-
-            //Cynic
+            //Cynic: That’s stupid.
+            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Oppy
 
@@ -149,6 +158,11 @@ public class GameManager : Singleton<GameManager>
         private void SetTurnCompleted(object sender, System.EventArgs e)
         {
             turnCompleted = true;
+        }
+
+        private void PutBallInPocket(object sender, PoolBall.BallEventArgs e)
+        {
+            playerPutBallInPocket = true;
         }
     }
     #endregion

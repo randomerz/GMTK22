@@ -17,7 +17,7 @@ public class PoolStateIdle : State<PoolStateManager>
         //This is only for testing purposes (delete later)
         if (OOPInput.horizontal > 0)
         {
-            context.StartGame();
+            PoolStateManager.StartGame();
         }
     }
 }
