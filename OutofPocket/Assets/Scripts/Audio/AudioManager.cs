@@ -154,14 +154,12 @@ public class AudioManager : Singleton<AudioManager>
                 music.emitter.Stop();
             }
         }
-        try {
-        Debug.Log("Playing music!");
-        m.emitter.Play();
-        }
-        catch (Exception e)
+
+        try
         {
-            
-        }
+            Debug.Log("Playing music!");
+            m.emitter.Play();
+        } catch (Exception) { };
     }
 
     public static void SetMusicParameter(string name, string parameterName, float value)
