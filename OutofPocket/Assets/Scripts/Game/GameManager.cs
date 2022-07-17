@@ -154,8 +154,10 @@ public class GameManager : Singleton<GameManager>
 
             playerPutBallInPocket = false;
             PoolBall.ballInPocketEvent += PutBallInPocket;  //Start keeping track of if the player pocketed the die.
+            
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //ShopManager.SetSuperhotMode(true);
+            ShopManager.SetSuperhotMode(true);
 
             //Cynic: Dice?
             context.DoNarrationAndSetFlag("Act1/Cynic/007_Dice");

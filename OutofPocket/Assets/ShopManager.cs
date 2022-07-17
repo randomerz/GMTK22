@@ -157,6 +157,7 @@ public class ShopManager : Singleton<ShopManager>
     {
         Debug.Log(_instance.currentlySelectedCueBallMaterial);
         _instance.superHotIsEnabled = enabled;
+        SuperHotAudio.isSuperHotOn = enabled;
         if (enabled)
         {
             _instance.UpdateCueBallMaterial(_instance.cueBallSuperHot);
