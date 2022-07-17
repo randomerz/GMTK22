@@ -2,6 +2,8 @@
 
 public class PoolStatePlayerTurn : State<PoolStateManager>
 {
+    GameObject line = new GameObject();
+    bool dragging = false;
     public PoolStatePlayerTurn(PoolStateManager ctx) : base(ctx)
     {
     }
@@ -26,13 +28,45 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
 
     private void HandleMouseDrag(object sender, OOPInput.MouseDragEventArgs e)
     {
+
         //Set UI Indicators
+        if (!dragging)
+        {
+            dragging = true;
+            line.AddComponent<LineRenderer>();
+        }
+
+        CueBall cueball = GameObject.Find("CueCube").GetComponent<CueBall>();
+        line.SetActive(true);
+        LineRenderer lr = line.GetComponent<LineRenderer>();
+        lr.material = new Material(Shader.Find("Sprites/Default"));
+        lr.startWidth = .1f;
+        lr.endWidth = .1f;
+
+        //Get the difference we need for startPos
+        Ray ray = Camera.main.ScreenPointToRay(e.startPos);
+        Vector3 translate = new Vector3();
+        if (Physics.Raycast(ray, out RaycastHit startRaycastHit, float.MaxValue, LayerMask.GetMask("CameraToTable")))
+        {
+            translate = startRaycastHit.point - cueball.transform.position;
+
+            translate.y = -.5f;
+        }
+
+        ray = Camera.main.ScreenPointToRay(e.endPos);
+
+        if (Physics.Raycast(ray, out RaycastHit endRaycastHit, float.MaxValue, LayerMask.GetMask("CameraToTable")))
+        {
+            lr.SetPosition(0, new Vector3(cueball.transform.position.x, .1f, cueball.transform.position.z));
+            lr.SetPosition(1, endRaycastHit.point - translate);
+        }
+
     }
 
     private void HandleMouseDragEnd(object sender, OOPInput.MouseDragEventArgs e)
     {
         //Disable UI
-
+        line.SetActive(false);
 
         //Debug.Log($"Mouse Drag Ended! startPos: {e.startPos} endPos: {e.endPos}");
         EnableBallPhysics();
