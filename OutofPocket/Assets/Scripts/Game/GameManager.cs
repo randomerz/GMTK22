@@ -117,32 +117,35 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Act1/Cynic/002_already");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Turn on lights
-            context.floor.SetActive(true);
 
             //Oppy Crazy, right? Okay, so picture this�*elevator ding sound*
             context.DoNarrationAndSetFlag("Act1/Oppy/003_PictureThis");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            //Turn on pool table
-            context.poolTable.SetActive(true);
+            //Turn on lights
+            context.floor.SetActive(true);
             AudioManager.SetMusicParameter("High Rollers", "Bass", 1);
 
             //Oppy A pool table
             context.DoNarrationAndSetFlag("Act1/Oppy/004_PoolTable");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
+            //Turn on pool table
+            context.poolTable.SetActive(true);
+
             //Oppy and, and it�s like your standard pool game you know
             context.DoNarrationAndSetFlag("Act1/Oppy/005_PoolGame");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Enable the pool game
             context.poolBallTriangle.SetActive(true);
             context.cueBall.SetActive(true);
 
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
 
             //Oppy �except, they�re not actually balls, they�re dice!
             context.DoNarrationAndSetFlag("Act1/Oppy/006_DICE");
+            yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Change all balls to dice
             PoolStateManager.ChangeAllToShape(PoolBall.Shape.Dice);
@@ -152,8 +155,6 @@ public class GameManager : Singleton<GameManager>
 
             playerPutBallInPocket = false;
             PoolBall.ballInPocketEvent += PutBallInPocket;  //Start keeping track of if the player pocketed the die.
-
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //ShopManager.SetSuperhotMode(true);
 
