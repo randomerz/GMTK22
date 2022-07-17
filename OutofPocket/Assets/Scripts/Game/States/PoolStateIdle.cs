@@ -2,6 +2,7 @@
 
 public class PoolStateIdle : State<PoolStateManager>
 {
+
     public PoolStateIdle(PoolStateManager ctx) : base(ctx)
     {
     }

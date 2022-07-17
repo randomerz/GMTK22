@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448a49a9f38a5034f96cf53a21af0ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialPos: {x: 0, y: 0, z: 0}
   shapeAtStart: 1
   shapeMeshes:
   - type: 0
@@ -1150,7 +1151,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1654
+  m_VersionIndex: 1660
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

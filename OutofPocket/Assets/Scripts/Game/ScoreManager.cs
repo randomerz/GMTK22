@@ -13,8 +13,10 @@ public class ScoreManager : Singleton<ScoreManager>
     // Use IsMoneyTime to toggle the score setting from Score to Money
     public static bool IsMoneyTime { get => _isMoneyTime; set => _isMoneyTime = value; }
 
-
-
+    private void Awake()
+    {
+        InitializeSingleton();
+    }
 
     void Update()
     {
@@ -28,6 +30,16 @@ public class ScoreManager : Singleton<ScoreManager>
 
         }
         
+    }
+
+    public void ShowScore()
+    {
+        scoreText.enabled = true;
+    }
+
+    public void HideScore()
+    {
+        scoreText.enabled = false;
     }
 
     /// <summary>

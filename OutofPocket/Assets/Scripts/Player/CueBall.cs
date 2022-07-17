@@ -44,6 +44,8 @@ public class CueBall : MonoBehaviour
 
     public void ShootBall(float shotPower, float popUpForce, Vector2 dir)
     {
+        Debug.Log("Cue Strike");
+        AudioManager.PlaySound("CueStrike");
         Vector3 force = shotPower * new Vector3(dir.x, 0, dir.y);
         rb.AddForceAtPosition(force, shotSpot.position, ForceMode.VelocityChange);   //Independent of mass.
         rb.AddForceAtPosition(popUpForce * Vector3.up, popUpSpot.position, ForceMode.VelocityChange);

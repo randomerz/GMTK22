@@ -44,6 +44,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4361066c5f4560f4bb855a909aaa55d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  narrationAudioSources: []
-  sfxAudioSources: []
-  musicAudioSources: []
+  narration: []
+  sounds:
+  - name: BallHit
+    fmodEvent:
+      Guid:
+        Data1: -111281895
+        Data2: 1256117089
+        Data3: 1148217781
+        Data4: 1196479792
+      Path: event:/SFX/BallHit
+    emitter: {fileID: 0}
+  - name: BallHitHard
+    fmodEvent:
+      Guid:
+        Data1: 965409053
+        Data2: 1204388365
+        Data3: -1997607762
+        Data4: -1416542132
+      Path: event:/SFX/BallHitHard
+    emitter: {fileID: 0}
+  - name: BallHitWall
+    fmodEvent:
+      Guid:
+        Data1: 1817657681
+        Data2: 1315427443
+        Data3: 1117555869
+        Data4: 648041665
+      Path: event:/SFX/BallHitWall
+    emitter: {fileID: 0}
+  - name: BallPocketed
+    fmodEvent:
+      Guid:
+        Data1: 964595355
+        Data2: 1221604357
+        Data3: -415179872
+        Data4: 2049523290
+      Path: event:/SFX/BallPocketed
+    emitter: {fileID: 0}
+  - name: CueStrike
+    fmodEvent:
+      Guid:
+        Data1: 689381189
+        Data2: 1176376365
+        Data3: -671562331
+        Data4: 177031429
+      Path: event:/SFX/CueStrike
+    emitter: {fileID: 0}
+  music:
+  - name: High Rollers
+    fmodEvent:
+      Guid:
+        Data1: 119961345
+        Data2: 1204930576
+        Data3: 2005477529
+        Data4: 490070583
+      Path: event:/High Rollers
+    emitter: {fileID: 0}
+  narrationSlider: {fileID: 0}
+  sfxSlider: {fileID: 0}
+  musicSlider: {fileID: 0}
