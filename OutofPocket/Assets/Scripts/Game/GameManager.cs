@@ -90,15 +90,9 @@ public class GameManager : Singleton<GameManager>
             context.poolGameManager.gameObject.SetActive(false);
             context.inGameUI.SetActive(false);
 
-<<<<<<< HEAD
-            //Oppy ï¿½ and Iï¿½ve already got someone playtesting it right now!
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
-=======
             //Oppy … and I’ve already got someone playtesting it right now!
             //context.DoNarrationAndSetFlag("Act1/Oppy/001Playtest");
             //yield return new WaitUntil(() => { return context.currNarrationFinished; });
->>>>>>> 6eebe515b17013b3b6a037b8d9b631916bf1fa25
 
             ////Cynic already?
             //context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
