@@ -47,7 +47,7 @@ public class GameManager : Singleton<GameManager>
 
         AudioManager.PlayMusic("High Rollers");
         Debug.Log("Switching act 1");
-        SwitchState(act2);
+        SwitchState(act1);
     }
 
     private void Update()
