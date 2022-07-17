@@ -318,6 +318,8 @@ public class GameManager : Singleton<GameManager>
             //Cynic: I�m sure you will� *footstep sounds *
             context.DoNarrationAndSetFlag("Act1/Cynic/041_Act1Finish");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
+            context.SwitchState(context.act2);
         }
 
         private void SetTurnCompleted(object sender, System.EventArgs e)
@@ -616,6 +618,9 @@ public class GameManager : Singleton<GameManager>
             // Cynic: I can�t say I didn�t see this coming. You haven�t actually addressed the core issues of the game, so none of your problems were solved. You just created new ones!
             context.DoNarrationAndSetFlag("Act2/Cynic/047_DidntSeeItComing");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
+
+            context.SwitchState(context.act3);
+
         }
 
         private void SetUpChoice(string textLeft, string textRight)
