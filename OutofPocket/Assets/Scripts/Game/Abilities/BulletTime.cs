@@ -16,16 +16,17 @@ public class BulletTime : Singleton<BulletTime> {
         //Debug.Log($"UPDATING BulletTime????? {AbilityEnabled}");
         if (AbilityEnabled)
         {
+            float newScale = Time.timeScale;
             if (Input.GetKey(KeyCode.Space))
             {
-                Time.timeScale -= acceleration * Time.fixedDeltaTime;
+                newScale -= acceleration * Time.fixedDeltaTime;
                 GameManager._instance.powerupAnnotation.enabled = false;
             }
             else
             {
-                Time.timeScale += acceleration * Time.fixedDeltaTime;
+                newScale += acceleration * Time.fixedDeltaTime;
             }
-            Time.timeScale = Mathf.Clamp(Time.timeScale, minTimeScale, 1f);
+            Time.timeScale = Mathf.Clamp(newScale, minTimeScale, 1f);
         }
   }
 }
