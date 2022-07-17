@@ -29,23 +29,25 @@ public class FadeScript : MonoBehaviour
     {
         if(t<fadeTimer)
         {
-            t+=Time.deltaTime;
+            t+=Time.deltaTime*fadeDur;
 
             float alph = 0f;
             if(fadeType)
-            {alph=Mathf.Lerp(0f, fadeTimer, t);}
-            else {alph=Mathf.Lerp(fadeTimer, 0f, t);}
+            {alph=Mathf.Lerp(0f, 1f, t);}
+            else {alph=Mathf.Lerp(1f, 0f, t);}
             GetComponent<Image>().color = new Color(0f, 0f, 0f, alph);
         }
     }
     public void FadeOut()
     {
+        t=0;
         fadeType = true;
-        fadeTimer = fadeDur;
+        fadeTimer = 1;
     }
     public void FadeIn()
     {
+        t=0;
         fadeType = false;
-        fadeTimer = fadeDur;
+        fadeTimer = 1;
     }
 }
