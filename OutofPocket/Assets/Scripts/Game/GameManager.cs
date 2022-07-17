@@ -91,13 +91,14 @@ public class GameManager : Singleton<GameManager>
             context.inGameUI.SetActive(false);
 
             //Oppy � and I�ve already got someone playtesting it right now!
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
-            yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            //context.DoNarrationAndSetFlag("Act1/Oppy/001Playtest");
+            //yield return new WaitUntil(() => { return context.currNarrationFinished; });
+            
 =======
             //Oppy � and I�ve already got someone playtesting it right now!
             //context.DoNarrationAndSetFlag("Act1/Oppy/001Playtest");
             //yield return new WaitUntil(() => { return context.currNarrationFinished; });
-            
+
             ////Cynic already?
             //context.DoNarrationAndSetFlag("Pessimist/HelloWelcomeTo");
             //yield return new WaitUntil(() => { return context.currNarrationFinished; });
