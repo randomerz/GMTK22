@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/boomo zone/Narration 1.unity
+    guid: da7d294f5f22abf42b8eefe7240d8657
   m_configObjects: {}

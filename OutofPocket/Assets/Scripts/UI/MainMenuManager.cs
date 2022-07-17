@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public GameObject options;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,5 +26,10 @@ public class MainMenuManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void ToggleOptions()
+    {
+        options.SetActive(!options.activeSelf);
     }
 }

@@ -26,7 +26,7 @@ public class PoolStateWaitingForEndOfTurn : State<PoolStateManager>
     public override void FixedUpdateState()
     {
         //Determine when the turn should end. (physics simulation will take care of the rest)
-        if (elapsedTimeSinceEnter > context.minDelayBetweenShots && (BallsStoppedMovingOrSunk() || elapsedTimeSinceEnter > context.maxDelayBetweenShots))
+        if (elapsedTimeSinceEnter > context.minDelayBetweenShots && (BallsStoppedMovingOrSunk())) //|| elapsedTimeSinceEnter > context.maxDelayBetweenShots))
         {
             StopAllBalls();
             context.SwitchState(context.PlayerTurnState);
@@ -38,7 +38,8 @@ public class PoolStateWaitingForEndOfTurn : State<PoolStateManager>
         foreach (PoolBall ball in context.PoolBalls)
         {
             Rigidbody rb = ball.GetComponent<Rigidbody>();
-            if (rb != null && rb.velocity.magnitude > context.ballVelStopThreshold) {
+            if (rb != null && rb.velocity.magnitude > context.ballVelStopThreshold && !ball.sunk)
+            { 
                 return false;
             }
         }
