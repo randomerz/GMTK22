@@ -12,6 +12,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject poolBallTriangle;
     public GameObject cueBall;
     public GameObject inGameUI;
+    public Juicer joooooooooooooooooooooos;
 
 
 
@@ -88,6 +89,7 @@ public class GameManager : Singleton<GameManager>
 
         public IEnumerator DoAct1()
         {
+            Juicer jooooooooooooooooooooos = context.joooooooooooooooooooooos;
             context.floor.SetActive(false);
             context.poolTable.SetActive(false);
             context.poolBallTriangle.SetActive(false);
@@ -299,13 +301,14 @@ public class GameManager : Singleton<GameManager>
 
             //Screenshake is added (ADD THIS!!!!!!!!!!!!!!)
             AudioManager.SetMusicParameter("High Rollers", "Juice", 1);
-
+            jooooooooooooooooooooos.juiceMultiplier=0.25f;
             //Oppy: and now, the cherry on top: , and just a little bitta particle effects as the cherry on top!
             context.DoNarrationAndSetFlag("Act1/Oppy/037_ParticleEffects");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             //Particle effects added (ADD THIS!!!!!!!!!!!!!!)
             AudioManager.SetMusicParameter("High Rollers", "Juice", 2);
+            jooooooooooooooooooooos.juiceMultiplier=0.5f;
 
             //Oppy: mwa! Magnifique!
             context.DoNarrationAndSetFlag("Act1/Oppy/038_Magnifique");
@@ -360,6 +363,8 @@ public class GameManager : Singleton<GameManager>
         {
             //Disable tilting
             PoolStateManager._instance.TiltingEnabled = false;
+            context.joooooooooooooooooooooos.juiceMultiplier=0f;
+
 
             // Oppy: Well, looks like it�s just you and me for a little bit. I guess now�s a good time to get some feedback on the game! It�s not over or anything, I just thought it�d be nice right now.
             context.DoNarrationAndSetFlag("Act2/Oppy/001_AloneTime");
@@ -753,6 +758,7 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Act3/Cynic/18_MoreMechanics");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
             //All the pockets get marked with “I’m still here”
+            yield return new WaitForSeconds(2);
             SetUpChoice("I'm still here", "I'm still here");
             
             //*silence*
@@ -793,6 +799,7 @@ public class GameManager : Singleton<GameManager>
 
 
             //The game becomes regular pool except with different physics on all the balls.
+            PoolStateManager.ResetGame();
             EndOfGame._instance.EndOfGameify();
 
             //Oppy: It’s something I came up with when we were talking. All the balls have slightly different interactions with everything.

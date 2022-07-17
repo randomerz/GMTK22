@@ -1730,6 +1730,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1720105886}
+    - target: {fileID: 995582431916117724, guid: fd4baf44b7c4010ef894948eb9384832, type: 3}
+      propertyPath: triangle
+      value: 
+      objectReference: {fileID: 1686013681}
     - target: {fileID: 3837783300158963139, guid: fd4baf44b7c4010ef894948eb9384832, type: 3}
       propertyPath: m_Name
       value: CueBallResetTrigger
