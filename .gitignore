@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
-[Mm]emoryCaptures/
+/OutofPocket/[Ll]ibrary/
+/OutofPocket/[Tt]emp/
+/OutofPocket/[Oo]bj/
+/OutofPocket/[Bb]uild/
+/OutofPocket/[Bb]uilds/
+/OutofPocket/[Ll]ogs/
+/OutofPocket/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 ![Aa]ssets/**/*.meta
@@ -61,6 +61,7 @@ crashlytics-build.properties
 
 #UZA SETTINGZU
 EditorUserSettings.asset
+[Uu]serSettings/
 
 # Never ignore DLLs in the FMOD subfolder.
 ![Aa]ssets/Plugins/FMOD/libs/*
