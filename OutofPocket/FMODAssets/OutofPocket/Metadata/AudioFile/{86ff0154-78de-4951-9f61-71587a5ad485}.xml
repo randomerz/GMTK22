@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{86ff0154-78de-4951-9f61-71587a5ad485}">
+		<property name="assetPath">
+			<value>gmtk22_act_3_reprise_fixed.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>12.355918367346939</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8f2e1481-4274-4210-ad94-da0eb1090cf7}</destination>
+		</relationship>
+	</object>
+</objects>

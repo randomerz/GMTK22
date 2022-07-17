@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-public class EndOfGame : MonoBehaviour
+public class EndOfGame : Singleton<EndOfGame>
 {
     private GameObject triangle;
     public PhysicMaterial[] randomMats = new PhysicMaterial[3];
@@ -11,7 +11,8 @@ public class EndOfGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        triangle = GameObject.Find("/Triangle");
+        InitializeSingleton();
+        triangle = GameObject.Find("/PoolTable/Triangle");
         random = new System.Random(); 
     }
 
@@ -27,6 +28,7 @@ public class EndOfGame : MonoBehaviour
     {
         Debug.Log("END OF GAME");
         PoolStateManager.ChangeAllToShape(PoolBall.Shape.Sphere);
+        ShopManager.SetSuperhotMode(false);
         foreach (Transform poolBall in triangle.transform) 
         {
 

@@ -18,16 +18,13 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
             context.holdClickAnnotation.enabled = true;
         }
 
-        if (context.triggerTilting)
-        {
-            context.tiltingAnnotation.enabled = true;
-            context.tiltingTable.TiltingEnabled = true;
-        }
-
         if (context.CueBallSunk)
         {
             context.ResetCueBall();
         }
+
+        EnableBallPhysics();
+
         OOPInput.mouseDragOngoing += HandleMouseDrag;
         OOPInput.mouseDragEnd += HandleMouseDragEnd;
     }
@@ -104,7 +101,6 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
         line.SetActive(false);
 
         //Debug.Log($"Mouse Drag Ended! startPos: {e.startPos} endPos: {e.endPos}");
-        EnableBallPhysics();
 
         //Calculate shot trajectory from mouse position and shoot ball.
         Vector2 currMouseDelta = e.startPos - e.endPos;

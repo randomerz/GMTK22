@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{f41de740-f906-4d0b-9b33-5088b44c15f8}">
+		<property name="assetPath">
+			<value>gmtk22_juice_1.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>12.564897959183673</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8f2e1481-4274-4210-ad94-da0eb1090cf7}</destination>
+		</relationship>
+	</object>
+</objects>

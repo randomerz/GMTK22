@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{261d2078-bfb3-46db-87b3-4dca5a7bfe9f}">
+		<property name="name">
+			<value>Act2_Plucks</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f191cfa6-1091-4281-b318-22978aada2a3}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{456415c5-22ef-44db-a0da-f6eca142c496}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{456415c5-22ef-44db-a0da-f6eca142c496}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

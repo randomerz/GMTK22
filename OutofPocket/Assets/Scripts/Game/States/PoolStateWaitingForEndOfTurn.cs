@@ -24,10 +24,12 @@ public class PoolStateWaitingForEndOfTurn : State<PoolStateManager>
     {
         foreach (PoolBall ball in ballsOutsideArena)
         {
-            ball.ResetBall();
+            if (!context.TiltingEnabled)
+            {
+                ball.ResetBall();
+            }
         }
         ballsOutsideArena.Clear();
-        context.triggerTilting = true;
     }
 
     public override void UpdateState()

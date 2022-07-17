@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{a0886ed8-8eb0-4758-b7b2-8714815c7b03}">
+		<property name="name">
+			<value>Act2_Interlude</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f191cfa6-1091-4281-b318-22978aada2a3}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{061f9ab2-f485-4807-961e-975138a7a159}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{061f9ab2-f485-4807-961e-975138a7a159}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

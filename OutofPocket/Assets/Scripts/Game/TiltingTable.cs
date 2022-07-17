@@ -27,12 +27,13 @@ public class TiltingTable : MonoBehaviour
     // Doesnt work
     void Update()
     {
+
+        //float xtilt = 10f;
+        //float ztilt = 0f;
+        float xTarget = 0;
+        float zTarget = 0;
         if (TiltingEnabled)
         {
-            //float xtilt = 10f;
-            //float ztilt = 0f;
-            float xTarget = 0;
-            float zTarget = 0;
             if (OOPInput.vertical < 0)
             {
                 //Debug.Log("Hello!");
@@ -51,21 +52,22 @@ public class TiltingTable : MonoBehaviour
             {
                 zTarget += maxZTilt;
             }
-            //Debug.Log(xtilt);
-            if (lastXTarget != xTarget || lastZTarget != zTarget)
-            {
-                startRot = transform.rotation;
-                t = 0;
-                //Debug.Log("Resetting Target");
-            }
-
-            transform.rotation = Quaternion.Slerp(startRot, Quaternion.Euler(xTarget, 0, zTarget), t);
-            //Debug.Log(Quaternion.Slerp(startRot, Quaternion.Euler(xTarget, 0, zTarget), t));
-            //xt += Time.deltaTime * accel;
-            //zt += Time.deltaTime * accel;
-            t += Time.deltaTime * accel;
-            lastXTarget = xTarget;
-            lastZTarget = zTarget;
         }
+        //Debug.Log(xtilt);
+        if (lastXTarget != xTarget || lastZTarget != zTarget)
+        {
+            startRot = transform.rotation;
+            t = 0;
+            //Debug.Log("Resetting Target");
+        }
+
+        transform.rotation = Quaternion.Slerp(startRot, Quaternion.Euler(xTarget, 0, zTarget), t);
+        //Debug.Log(Quaternion.Slerp(startRot, Quaternion.Euler(xTarget, 0, zTarget), t));
+        //xt += Time.deltaTime * accel;
+        //zt += Time.deltaTime * accel;
+        t += Time.deltaTime * accel;
+        lastXTarget = xTarget;
+        lastZTarget = zTarget;
+        
     }
 }

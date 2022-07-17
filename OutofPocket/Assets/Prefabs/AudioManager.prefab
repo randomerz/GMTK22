@@ -100,6 +100,15 @@ MonoBehaviour:
         Data4: 177031429
       Path: event:/SFX/CueStrike
     emitter: {fileID: 0}
+  - name: Act2EndNote
+    fmodEvent:
+      Guid:
+        Data1: 533068301
+        Data2: 1141323979
+        Data3: 391746724
+        Data4: -1270429857
+      Path: event:/SFX/Act2EndNote
+    emitter: {fileID: 0}
   music:
   - name: High Rollers
     fmodEvent:
@@ -108,7 +117,7 @@ MonoBehaviour:
         Data2: 1204930576
         Data3: 2005477529
         Data4: 490070583
-      Path: event:/High Rollers
+      Path: event:/Music/High Rollers
     emitter: {fileID: 0}
   narrationSlider: {fileID: 0}
   sfxSlider: {fileID: 0}

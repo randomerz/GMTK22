@@ -121,6 +121,7 @@ public class PoolBall : MonoBehaviour
 
     public void ResetBall()
     {
+        Debug.Log("Reset Ball");
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         transform.position = initialPos;
@@ -153,7 +154,7 @@ public class PoolBall : MonoBehaviour
         {
             sunk = true;
         }
-        //Debug.Log($"{e.ball.gameObject.name} Sunk!");
+        Debug.Log($"{e.ball.gameObject.name} Sunk! Pokcet {e.pocket.gameObject.name}");
     }
     public GameObject GetCurShape()
     {
