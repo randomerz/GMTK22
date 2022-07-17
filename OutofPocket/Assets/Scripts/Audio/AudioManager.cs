@@ -78,7 +78,11 @@ public class AudioManager : Singleton<AudioManager>
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
+    }
 
+    private void Start()
+    {
+        // Web is async so we do this in start
         sfxBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX Bus");
         musicBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music Bus");
 
@@ -94,6 +98,8 @@ public class AudioManager : Singleton<AudioManager>
         narrationSlider.value = NarrationVolume;
         sfxSlider.value = SfxVolume;
         musicSlider.value = MusicVolume;
+
+        PlayMusic("High Rollers");
     }
 
     public static void PlayNarration(string name)
@@ -129,6 +135,7 @@ public class AudioManager : Singleton<AudioManager>
         }
         
         FMODUnity.RuntimeManager.PlayOneShot(s.fmodEvent, volumeMultiplier);
+        Debug.Log("Play Sound: " + name);
     }
 
     public static void PlayMusic(string name, bool stopOtherTracks = true)
