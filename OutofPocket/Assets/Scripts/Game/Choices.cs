@@ -63,7 +63,7 @@ public class Choices : Singleton<Choices>
     {
         isActive = true;
     }
-    void Deactivate()
+    public void Deactivate()
     {
         isActive = false;
         SetChoiceText("","");
