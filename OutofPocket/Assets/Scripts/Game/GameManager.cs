@@ -344,7 +344,7 @@ public class GameManager : Singleton<GameManager>
         // author: boomo
         public IEnumerator DoAct2()
         {
-            // Oppy: Well, looks like it’s just you and me for a little bit.
+            // Oppy: Well, looks like it’s just you and me for a little bit. I guess now’s a good time to get some feedback on the game! It’s not over or anything, I just thought it’d be nice right now.
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
