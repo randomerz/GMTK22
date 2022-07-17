@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64167b556be6a394d9b6e1bb86e41f0a, type: 3}
-  m_Name: 002already
+  m_Name: 015_NewNotBetter
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 0}
-  _subtitle: already?
+  _subtitle: "Just because something is new doesn\u2019t make it better. You can\u2019t
+    just mash two ideas together and expect it to be fun."
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}
