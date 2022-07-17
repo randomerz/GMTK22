@@ -38,7 +38,7 @@ public class Juicer : MonoBehaviour
     }
 
     private void OnHit(object sender, CueBall.BallShotEventArgs e) {
-        CameraShake.Shake(juiceMultiplier,1.0f);
+        CameraShake.Shake(juiceMultiplier,0.8f);
         Smack();
     }
 
@@ -70,16 +70,18 @@ public class Juicer : MonoBehaviour
     }
     
     private void Yay(GameObject pkt) {
-        ParticleSystem sparkles = pkt.GetComponentInChildren<ParticleSystem>();;
-        var sparklesMain = sparkles.main;
-        var sparkleEm = sparkles.emission;
-        sparklesMain.startSpeed = Random.Range(33.3f * juiceMultiplier, 66.6f * juiceMultiplier);
-        sparkleEm.SetBursts(
-                new ParticleSystem.Burst[]
-                {
-                    new ParticleSystem.Burst(0.0f, 166.6f * juiceMultiplier),
-                });
-        sparkles.Play();
+        if(juiceMultiplier > 0.0f) {
+            ParticleSystem sparkles = pkt.GetComponentInChildren<ParticleSystem>();;
+            var sparklesMain = sparkles.main;
+            var sparkleEm = sparkles.emission;
+            sparklesMain.startSpeed = Random.Range(33.3f * juiceMultiplier, 66.6f * juiceMultiplier);
+            sparkleEm.SetBursts(
+                    new ParticleSystem.Burst[]
+                    {
+                        new ParticleSystem.Burst(0.0f, 166.6f * juiceMultiplier),
+                    });
+            sparkles.Play();
+        }
     }
     private void Spark(float modifier,short numParticles) {
         if(juiceMultiplier > 0.0f) {
