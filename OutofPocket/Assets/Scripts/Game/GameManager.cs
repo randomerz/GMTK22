@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [DisallowMultipleComponent]
 public class GameManager : Singleton<GameManager>
@@ -814,7 +815,7 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Act3/Optimist/28_Final2");    
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            yield return  new WaitForSeconds(0.5);
+            yield return  new WaitForSeconds(0.5f);
             SceneManager.LoadSceneAsync("Credits");
  
             
