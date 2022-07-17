@@ -46,7 +46,6 @@ public class GameManager : Singleton<GameManager>
     public void Start()
     {
         // TEMP! Move it to main menu!!!
-        Debug.Log("Switching act 1");
 
         AudioManager.PlayMusic("High Rollers");
         Debug.Log("Switching act 1");
@@ -109,6 +108,8 @@ public class GameManager : Singleton<GameManager>
 
             //Oppy ... and I've already got someone playtesting it right now!
             context.DoNarrationAndSetFlag("Act1/Oppy/001_Playtest");
+            yield return null;
+            AudioManager.SetMusicParameter("High Rollers", "Base", 1);
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
             AudioManager.SetMusicParameter("High Rollers", "Base", 1);
 
@@ -678,6 +679,7 @@ public class GameManager : Singleton<GameManager>
 
             // Cynic: I can�t say I didn�t see this coming. You haven�t actually addressed the core issues of the game, so none of your problems were solved. You just created new ones!
             context.DoNarrationAndSetFlag("Act2/Cynic/047_DidntSeeItComing");
+            ShopManager.SetSuperhotMode(false);
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             context.SwitchState(context.act3);
