@@ -79,7 +79,7 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
         {
             lr.SetPosition(0, new Vector3(cueball.transform.position.x, .1f, cueball.transform.position.z));
             lr.SetPosition(1, endRaycastHit.point - translate);
-        
+        }
 
     }
 
