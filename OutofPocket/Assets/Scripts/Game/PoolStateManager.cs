@@ -134,6 +134,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
         {
             pb.transform.position = pb.initialPos;
             pb.gameObject.SetActive(true);
+            pb.sunk = false;
         }
         SwitchState(_playerTurnState);
     }

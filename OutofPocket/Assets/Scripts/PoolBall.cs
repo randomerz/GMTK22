@@ -32,6 +32,7 @@ public class PoolBall : MonoBehaviour
 
     [Header("READ ONLY, DON'T NEED TO SET")]
     public Vector3 initialPos;
+    public bool sunk;
 
     [SerializeField] private Shape shapeAtStart;
     [SerializeField] private List<ShapeMesh> shapeMeshes;
@@ -64,6 +65,15 @@ public class PoolBall : MonoBehaviour
         ballInPocketEvent -= DefaultSunkEventHandler;
     }
 
+    private void Update()
+    {
+        //Failsafe in case a ball gets out of bounds and doesn't hit the pocket trigger.
+        if (transform.position.y < -10)
+        {
+            sunk = true;
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("PoolBall"))
@@ -82,7 +92,8 @@ public class PoolBall : MonoBehaviour
         {
             ballInPocketEvent?.Invoke(this, new BallEventArgs
             {
-                ball = this
+                ball = this,
+                pocket = other.gameObject
             });
         }
     }
@@ -108,6 +119,10 @@ public class PoolBall : MonoBehaviour
 
     private void DefaultSunkEventHandler(object sender, BallEventArgs e)
     {
+        if (e.ball == this)
+        {
+            sunk = true;
+        }
         //Debug.Log($"{e.ball.gameObject.name} Sunk!");
     }
 }
