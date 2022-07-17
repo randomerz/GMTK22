@@ -70,13 +70,13 @@ public class Juicer : MonoBehaviour
     }
 
     private void Smack() {
-        if(juiceMultiplier > 0.4f) {
+        if(juiceMultiplier > 0.29f) {
             cueHitParticles.Play();
         }
     }
     
     private void Yay(GameObject pkt) {
-        if(juiceMultiplier > 0.4f) {
+        if(juiceMultiplier > 0.29f) {
             ParticleSystem sparkles = pkt.GetComponentInChildren<ParticleSystem>();;
             var sparklesMain = sparkles.main;
             var sparkleEm = sparkles.emission;
@@ -90,7 +90,7 @@ public class Juicer : MonoBehaviour
         }
     }
     private void Spark(float modifier,short numParticles) {
-        if(juiceMultiplier > 0.4f) {
+        if(juiceMultiplier > 0.29f) {
             var em = impactParticleSystem.emission;
             var main = impactParticleSystem.main;
             main.startSpeed = Random.Range(1.0f, 20.0f * modifier * juiceMultiplier);
