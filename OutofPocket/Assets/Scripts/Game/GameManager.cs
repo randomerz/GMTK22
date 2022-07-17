@@ -491,7 +491,7 @@ public class GameManager : Singleton<GameManager>
 
 
             // Oppy: I feel like there�s a story associated with what you�re saying.
-            context.DoNarrationAndSetFlag("Act2/Oppy/025_MoreTolt");
+            context.DoNarrationAndSetFlag("Act2/Oppy/025_MoreToIt");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Cynic: Yeah, it�s a pretty short story that goes a little something like this: that�s none of your business.
