@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{a836d882-ade1-45a7-b9df-4d9ea5b5312b}">
+		<property name="name">
+			<value>Act3_Reprise</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f191cfa6-1091-4281-b318-22978aada2a3}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{42e93cd6-121d-48e5-9f3b-9962bf8a8da7}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{42e93cd6-121d-48e5-9f3b-9962bf8a8da7}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
