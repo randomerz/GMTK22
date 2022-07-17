@@ -90,10 +90,19 @@ public class AudioManager : Singleton<AudioManager>
         sfxBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX Bus");
         musicBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music Bus");
 
-
-        NarrationVolume = PlayerPrefs.GetFloat("narrationVolume");
-        SfxVolume = PlayerPrefs.GetFloat("sfxVolume");
-        MusicVolume = PlayerPrefs.GetFloat("musicVolume");
+        
+        if (PlayerPrefs.HasKey("narrationVolume"))
+        {
+            NarrationVolume = PlayerPrefs.GetFloat("narrationVolume");
+            SfxVolume = PlayerPrefs.GetFloat("sfxVolume");
+            MusicVolume = PlayerPrefs.GetFloat("musicVolume");
+        }
+        else
+        {
+            NarrationVolume = 0.5f;
+            SfxVolume = 0.5f;
+            MusicVolume = 0.5f;
+        }
 
         narrationSlider.onValueChanged.AddListener((volume) => NarrationVolume = volume);
         sfxSlider.onValueChanged.AddListener((volume) => SfxVolume = volume);
