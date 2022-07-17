@@ -73,6 +73,15 @@ MonoBehaviour:
         Data4: 648041665
       Path: event:/SFX/BallHitWall
     emitter: {fileID: 0}
+  - name: BallHitTable
+    fmodEvent:
+      Guid:
+        Data1: 303546274
+        Data2: 1190537315
+        Data3: 1004574137
+        Data4: -417335834
+      Path: event:/SFX/BallHitTable
+    emitter: {fileID: 0}
   - name: BallPocketed
     fmodEvent:
       Guid:

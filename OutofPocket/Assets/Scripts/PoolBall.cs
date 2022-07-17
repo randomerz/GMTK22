@@ -92,11 +92,17 @@ public class PoolBall : MonoBehaviour
                 hitBy = collision.gameObject
             });
         }
-        else if (collision.gameObject.CompareTag("Wall")) {
+        else if (collision.gameObject.CompareTag("Wall"))
+        {
             float volume = collision.relativeVelocity.magnitude / 15;
             volume = Mathf.Clamp(volume, 0, 1);
-            Debug.Log("vol: " + volume + " mag: " + collision.relativeVelocity.magnitude);
             AudioManager.PlaySound("BallHitWall", volume);
+        }
+        else if (collision.gameObject.CompareTag("Floor"))
+        {
+            float volume = collision.relativeVelocity.magnitude / 15;
+            volume = Mathf.Clamp(volume, 0, 1);
+            AudioManager.PlaySound("BallHitTable", volume);
         }
     }
 
