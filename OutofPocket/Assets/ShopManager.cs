@@ -31,7 +31,7 @@ public class ShopManager : Singleton<ShopManager>
     private int stocksOwned = 0;
     private Material currentlySelectedCueBallMaterial;
 
-    private bool superHotIsEnabled;
+    public bool superHotIsEnabled;  //Don't change back to private plz
 
 
     private void Awake()

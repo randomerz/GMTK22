@@ -53,7 +53,6 @@ public class GameManager : Singleton<GameManager>
         SwitchState(act1);
 
         //TESTING MAKE SURE TO DELETE LATER #########################################################
-
     }
 
     private void Update()
