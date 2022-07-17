@@ -79,24 +79,24 @@ public class PoolBall : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PoolBall"))
         {
-            if (collision.relativeVelocity.magnitude > 2){
-                Debug.Log("Big Hit");
+            if (collision.relativeVelocity.magnitude > 10) {
                 AudioManager.PlaySound("BallHitHard");
-            }else{
-                Debug.Log("Normal Hit");
+            } else {
                 AudioManager.PlaySound("BallHit");
             }
 
-            
+
             ballHitEvent?.Invoke(this, new BallHitEventArgs
             {
                 ball = this,
                 hitBy = collision.gameObject
-            }); ;
+            });
         }
-        else if (collision.gameObject.CompareTag("Wall")){
-            Debug.Log("Wall Hit");
-            AudioManager.PlaySound("BallHitWall");
+        else if (collision.gameObject.CompareTag("Wall")) {
+            float volume = collision.relativeVelocity.magnitude / 15;
+            volume = Mathf.Clamp(volume, 0, 1);
+            Debug.Log("vol: " + volume + " mag: " + collision.relativeVelocity.magnitude);
+            AudioManager.PlaySound("BallHitWall", volume);
         }
     }
 
@@ -104,7 +104,6 @@ public class PoolBall : MonoBehaviour
     {
         if (other.CompareTag("Pocket"))
         {
-            Debug.Log("Ball Pocketed");
             AudioManager.PlaySound("BallPocketed");
             ballInPocketEvent?.Invoke(this, new BallEventArgs
             {
