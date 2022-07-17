@@ -36,7 +36,7 @@ public class CueBallReset : MonoBehaviour
     }
     IEnumerator resetCB(Collider other)
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         if(other.transform.parent.transform.position.y < -3.5)
         {
             Debug.Log("reset cue ball from outside");

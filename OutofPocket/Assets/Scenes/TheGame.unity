@@ -1646,6 +1646,14 @@ PrefabInstance:
       propertyPath: poolBallTriangle
       value: 
       objectReference: {fileID: 1686013681}
+    - target: {fileID: 2464254980495208278, guid: 9ce62ef2c17cb5e488b1fc24b6cb2336, type: 3}
+      propertyPath: jooooooooooooooooooooos
+      value: 
+      objectReference: {fileID: 1621634882}
+    - target: {fileID: 2464254980495208278, guid: 9ce62ef2c17cb5e488b1fc24b6cb2336, type: 3}
+      propertyPath: joooooooooooooooooooooos
+      value: 
+      objectReference: {fileID: 1621634882}
     - target: {fileID: 2464254980495208279, guid: 9ce62ef2c17cb5e488b1fc24b6cb2336, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1730,6 +1738,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 1720105886}
+    - target: {fileID: 995582431916117724, guid: fd4baf44b7c4010ef894948eb9384832, type: 3}
+      propertyPath: triangle
+      value: 
+      objectReference: {fileID: 1686013681}
     - target: {fileID: 3837783300158963139, guid: fd4baf44b7c4010ef894948eb9384832, type: 3}
       propertyPath: m_Name
       value: CueBallResetTrigger
@@ -4025,6 +4037,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 615745752503453838, guid: e8907dbb2ff910d4bba5cb76e2d93017, type: 3}
   m_PrefabInstance: {fileID: 1621634876}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1621634882 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4063067267538505875, guid: e8907dbb2ff910d4bba5cb76e2d93017, type: 3}
+  m_PrefabInstance: {fileID: 1621634876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 280304683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 480f54ab791924feb9b05291bfc27a92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1680634935
 PrefabInstance:
   m_ObjectHideFlags: 0
