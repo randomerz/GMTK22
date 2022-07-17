@@ -17,10 +17,10 @@ public class EndOfGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time > 1 && Time.time < 1.25)
-        {
-            EndOfGameify();
-        }
+        // if(Time.time > 1 && Time.time < 1.25)
+        // {
+        //     EndOfGameify();
+        // }
     }
     public void EndOfGameify()
     {
