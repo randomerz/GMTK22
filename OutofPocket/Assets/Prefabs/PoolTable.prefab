@@ -27937,7 +27937,7 @@ MonoBehaviour:
   accel: 5
   maxXTilt: 10
   maxZTilt: 5
-  TiltingEnabled: 1
+  TiltingEnabled: 0
 --- !u!1 &6985500486410492984
 GameObject:
   m_ObjectHideFlags: 0

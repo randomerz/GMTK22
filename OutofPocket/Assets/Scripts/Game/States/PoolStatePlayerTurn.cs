@@ -22,13 +22,12 @@ public class PoolStatePlayerTurn : State<PoolStateManager>
 
     public override void ExitState()
     {
-        OOPInput.mouseDragOngoing += HandleMouseDrag;
+        OOPInput.mouseDragOngoing -= HandleMouseDrag;
         OOPInput.mouseDragEnd -= HandleMouseDragEnd;
     }
 
     private void HandleMouseDrag(object sender, OOPInput.MouseDragEventArgs e)
     {
-
         //Set UI Indicators
         if (!dragging)
         {
