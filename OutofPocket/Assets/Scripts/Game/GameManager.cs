@@ -401,7 +401,7 @@ public class GameManager : Singleton<GameManager>
 
 
             // Cynic: Hey, I�m back. What'd I miss
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Cynic/008_ImBack");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Oppy: Oh uh
@@ -417,7 +417,7 @@ public class GameManager : Singleton<GameManager>
                 yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                 // Cynic: Story? You think a bloody game about pool and dice needs a story? AND you wanna make it dynamic??
-                context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                context.DoNarrationAndSetFlag("Act2/Cynic/011_Truth2");
                 SetUpChoice("Passive", "Aggrssive");
                 yield return new WaitUntil(() => { return madeDecision; });
 
@@ -428,11 +428,11 @@ public class GameManager : Singleton<GameManager>
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                     // Cynic: The problem with a branching story with multiple endings is that it always leaves the player wondering whether they got the �real� ending or not.
-                    context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                    context.DoNarrationAndSetFlag("Act2/Cynic/013_Passive2");
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                     // Cynic: I hate to say it, but most times when a story branches out, its only superficial. It always comes to the same ending.
-                    context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                    context.DoNarrationAndSetFlag("Act2/Cynic/014_Passive3");
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
                 }
                 else
@@ -442,7 +442,7 @@ public class GameManager : Singleton<GameManager>
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                     // Cynic: Well, maybe if you spent more than 5 seconds on each idea you�d get more out of me. Rapid firinge ideas like these always comes to the same ending
-                    context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                    context.DoNarrationAndSetFlag("Act2/Cynic/016_Aggressive2");
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
                 }
             }
@@ -453,7 +453,7 @@ public class GameManager : Singleton<GameManager>
                 yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                 // Cynic: Do they feel good now? I�m gonna be honest I don�t think I notice a difference
-                context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                context.DoNarrationAndSetFlag("Act2/Cynic/018_Lie2");
                 SetUpChoice("Yes", "No");
                 yield return new WaitUntil(() => { return madeDecision; });
 
@@ -464,11 +464,11 @@ public class GameManager : Singleton<GameManager>
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                     // Cynic: Hmm. well if you�re sure. A lot of improvements that seem huge to you go unnoticed by almost every player. 
-                    context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                    context.DoNarrationAndSetFlag("Act2/Cynic/020_Yes2");
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                     // Cynic: Some indies spend their 20s praying for the big names to notice them� but their work gets buried in Steam and forgotten. Their careers always get the same ending.
-                    context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                    context.DoNarrationAndSetFlag("Act2/Cynic/021_Yes3");
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
                 }
                 else
@@ -478,11 +478,11 @@ public class GameManager : Singleton<GameManager>
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                     // Cynic: Hey, don�t stress about it. Graphics aren�t everything. Most indie games I see, a little extra polish doesn�t make a difference. 
-                    context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                    context.DoNarrationAndSetFlag("Act2/Cynic/023_No2");
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                     // Cynic: Some people spend their 20s praying for the big names to notice them, but their work gets buried in Steam and forgotten. Their careers always get the same ending.
-                    context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                    context.DoNarrationAndSetFlag("Act2/Cynic/024_No3");
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
                 }
             }
@@ -493,11 +493,11 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Cynic: Yeah, it�s a pretty short story that goes a little something like this: that�s none of your business.
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Cynic/026_Yeah");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Cynic: Ok, I want to talk about the score. Does it affect gameplay, or is it just for brownie points?
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Cynic/027_OkScore");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Oppy: Ya know, I didn�t think about that one.
@@ -534,11 +534,11 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Cynic: It�s the visual equivalent of stepping on a lego brick. And nothing you can buy here is useful! It�s just cosmetics! 
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Cynic/033_Lego");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Cynic: You�ve succeeded in making the score valuable, but only superficially. I really think you should make some changes to the gameplay.
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Cynic/034_ValuableScore");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Oppy: Ok then, we�ll add powerups! What do you think would be cooler, a slow-mo cue ball, or a giant one?
@@ -557,7 +557,7 @@ public class GameManager : Singleton<GameManager>
 
 
             // Cynic: What a surprise. The powerups do nothing to change the gameplay. In fact, they�re really annoying to use! You should -
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Cynic/036_WhatASurprise");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Oppy: Excuse you! This is my game; I�ll put in whatever I want. How are you so sure this won�t work?
@@ -569,7 +569,7 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Cynic: *exasperated* That�s true! Let�s ask the one who�s actually playing. What do you think about the mechanic?
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Cynic/039_ThatsTrue");
             SetUpChoice("Like 'em", "Hate 'em");
             yield return new WaitUntil(() => { return madeDecision; });
 
@@ -591,7 +591,7 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Cynic: Everybody shush he�s about to make a breakthrough
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Cynic/043_EverybodyShush");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Oppy: We�ll combine this game� with superhot!
@@ -613,8 +613,8 @@ public class GameManager : Singleton<GameManager>
             context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
-            // Oppy: I can�t say I didn�t see this coming. You haven�t actually addressed the core issues of the game, so none of your problems were solved. You just created new ones!
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            // Cynic: I can�t say I didn�t see this coming. You haven�t actually addressed the core issues of the game, so none of your problems were solved. You just created new ones!
+            context.DoNarrationAndSetFlag("Act2/Cynic/047_DidntSeeItComing");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
         }
 
