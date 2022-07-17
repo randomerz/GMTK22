@@ -235,7 +235,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-43860
+  m_Name: pb_Mesh-55160
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -505,7 +505,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-43884
+  m_Name: pb_Mesh-55184
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -808,7 +808,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-43956
+  m_Name: pb_Mesh-55256
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1172,7 +1172,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-43836
+  m_Name: pb_Mesh-55136
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1336,7 +1336,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-43908
+  m_Name: pb_Mesh-55208
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1655,7 +1655,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-43932
+  m_Name: pb_Mesh-55232
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1929,6 +1929,14 @@ PrefabInstance:
       propertyPath: popUpForce
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 981231797711066855, guid: 8e1481ac2e3f201478a831cebc3a3e5c, type: 3}
+      propertyPath: tiltingTable
+      value: 
+      objectReference: {fileID: 2111716321}
+    - target: {fileID: 981231797711066855, guid: 8e1481ac2e3f201478a831cebc3a3e5c, type: 3}
+      propertyPath: tiltingAnnotation
+      value: 
+      objectReference: {fileID: 1594437979}
     - target: {fileID: 981231797711066855, guid: 8e1481ac2e3f201478a831cebc3a3e5c, type: 3}
       propertyPath: holdClickAnnotation
       value: 
@@ -2447,6 +2455,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1594437979 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1594437979, guid: f1e242086a6399c49a1ffc82c68de040, type: 3}
+  m_PrefabInstance: {fileID: 3282920146198294495}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1618893123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3196,6 +3215,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2111716321 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8796705856587323580, guid: e89c4cdcc12138e479110045d4cd8b99, type: 3}
+  m_PrefabInstance: {fileID: 4299062914018792538}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e517306a0111d7747971488b49755d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2118132963
 GameObject:
   m_ObjectHideFlags: 0
@@ -3377,6 +3407,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 274241037}
     m_Modifications:
+    - target: {fileID: 1594437977, guid: f1e242086a6399c49a1ffc82c68de040, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594437978, guid: f1e242086a6399c49a1ffc82c68de040, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 362.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594437978, guid: f1e242086a6399c49a1ffc82c68de040, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 87.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594437979, guid: f1e242086a6399c49a1ffc82c68de040, type: 3}
+      propertyPath: m_text
+      value: Use the WASD or arrow keys to tilt the table
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594437979, guid: f1e242086a6399c49a1ffc82c68de040, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3282920145397080539, guid: f1e242086a6399c49a1ffc82c68de040, type: 3}
       propertyPath: m_Pivot.x
       value: 0

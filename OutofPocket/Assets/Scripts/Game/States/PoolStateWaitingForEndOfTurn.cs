@@ -6,6 +6,7 @@ public class PoolStateWaitingForEndOfTurn : State<PoolStateManager>
 {
     private float elapsedTimeSinceEnter;
 
+
     private List<PoolBall> ballsOutsideArena;
 
     public PoolStateWaitingForEndOfTurn(PoolStateManager ctx) : base(ctx)
@@ -26,6 +27,7 @@ public class PoolStateWaitingForEndOfTurn : State<PoolStateManager>
             ball.ResetBall();
         }
         ballsOutsideArena.Clear();
+        context.triggerTilting = true;
     }
 
     public override void UpdateState()
