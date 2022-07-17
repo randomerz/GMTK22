@@ -225,8 +225,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: FMODAssets/OutofPocket/OutofPocket.fspro
-  sourceBankPath: FMODAssets/OutofPocket/Build
+  sourceProjectPath: 
+  sourceBankPath: 
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -248,10 +248,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks:
-  - Master
-  Banks:
-  - SFX
+  MasterBanks: []
+  Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
@@ -277,7 +275,7 @@ MonoBehaviour:
   - {fileID: 4140484674564332491}
   - {fileID: 5064868970700623252}
   - {fileID: 9181937013227913956}
-  MigratedPlatforms: 0c000000150000000b0000000a00000009000000120000000800000005000000060000000200000001000000
+  MigratedPlatforms: 08000000090000000b000000050000000600000015000000120000000a0000000c0000000200000001000000
 --- !u!114 &11998339541589022
 MonoBehaviour:
   m_ObjectHideFlags: 0
