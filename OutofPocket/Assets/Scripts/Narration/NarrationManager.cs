@@ -71,6 +71,11 @@ public class NarrationManager : Singleton<NarrationManager>
         onComplete?.Invoke();
         OnVoiceClipFinished?.Invoke();
     }
+
+    public static void SetVolume(float volume)
+    {
+        _instance.audioSource.volume = volume;
+    }
 }
 
 /// <summary>

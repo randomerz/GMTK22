@@ -31,6 +31,7 @@ public class AudioManager : Singleton<AudioManager>
         {
             narrationVolume = Mathf.Clamp(value, 0, 1);
             narration.ForEach(source => source.volume = narrationVolume);
+            NarrationManager.SetVolume(narrationVolume);
             PlayerPrefs.SetFloat("narrationVolume", narrationVolume);
         }
     }
