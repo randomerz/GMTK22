@@ -27,7 +27,12 @@ public class PoolBall : MonoBehaviour
     public class BallEventArgs
     {
         public PoolBall ball;
+        public GameObject pocket;
     }
+
+    [Header("READ ONLY, DON'T NEED TO SET")]
+    public Vector3 initialPos;
+
     [SerializeField] private Shape shapeAtStart;
     [SerializeField] private List<ShapeMesh> shapeMeshes;
     private Dictionary<Shape, GameObject> shapeMeshesDict;
@@ -37,6 +42,7 @@ public class PoolBall : MonoBehaviour
 
     private void Awake()
     {
+        initialPos = transform.position;
         shapeMeshesDict = new Dictionary<Shape, GameObject>();
         shapeMeshes.ForEach(mesh =>
         {
