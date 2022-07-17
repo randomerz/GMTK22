@@ -369,19 +369,19 @@ public class GameManager : Singleton<GameManager>
             if (wasDecisionLeft)
             {
                 // Oppy: Yes! You can give feedback. That�s perfect
-                context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                context.DoNarrationAndSetFlag("Act2/Oppy/003_Yes");
                 yield return new WaitUntil(() => { return context.currNarrationFinished; });
             }
             else
             {
                 // Oppy: No? Well you kinda just did what I said. So I�ll take that as a yes
-                context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                context.DoNarrationAndSetFlag("Act2/Oppy/004_No");
                 yield return new WaitUntil(() => { return context.currNarrationFinished; });
             }
 
 
             // Oppy: Hmmm, this could actually be a pretty interesting mechanic. I bet there�s something we could do with it�
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Oppy/005_Interesting");
             SetUpChoice("Tell a Story", "Not really");
             AudioManager.SetMusicParameter("High Rollers", "Bass", 2);
             yield return new WaitUntil(() => { return madeDecision; });
@@ -389,13 +389,13 @@ public class GameManager : Singleton<GameManager>
             if (wasDecisionLeft)
             {
                 // Oppy: A story. Good idea! That�s the best part about games really. And you can play an important role in choosing where it goes!
-                context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                context.DoNarrationAndSetFlag("Act2/Oppy/006_Story");
                 yield return new WaitUntil(() => { return context.currNarrationFinished; });
             }
             else
             {
                 // Oppy: Ahh, cmon, you can see the potential! I bet this would work great with a branching story
-                context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                context.DoNarrationAndSetFlag("Act2/Oppy/007_Nothing");
                 yield return new WaitUntil(() => { return context.currNarrationFinished; });
             }
 
@@ -405,7 +405,7 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Oppy: Oh uh
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Oppy/009_OhUh");
             SetUpChoice("Truth", "Lie");
             AudioManager.SetMusicParameter("High Rollers", "Act2_Plucks", 1);
             yield return new WaitUntil(() => { return madeDecision; });
@@ -413,7 +413,7 @@ public class GameManager : Singleton<GameManager>
             if (wasDecisionLeft)
             {
                 // Oppy: I was thinking, maybe the game could use more story. We can use the different pockets to give the player choices in how the story plays out
-                context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                context.DoNarrationAndSetFlag("Act2/Oppy/010_Truth1");
                 yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                 // Cynic: Story? You think a bloody game about pool and dice needs a story? AND you wanna make it dynamic??
@@ -424,7 +424,7 @@ public class GameManager : Singleton<GameManager>
                 if (wasDecisionLeft)
                 {
                     // Oppy:  I- I don�t know. I just thought� every game needs a story, you know? And since it�s a game, why not make it dynamic?
-                    context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                    context.DoNarrationAndSetFlag("Act2/Oppy/012_Passive1");
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                     // Cynic: The problem with a branching story with multiple endings is that it always leaves the player wondering whether they got the �real� ending or not.
@@ -438,7 +438,7 @@ public class GameManager : Singleton<GameManager>
                 else
                 {
                     // Oppy: Woah, calm down. If I wanted someone to yell at me I would�ve gotten the boss. You won�t even hear me out before you shut me down.
-                    context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                    context.DoNarrationAndSetFlag("Act2/Oppy/015_Aggressive1");
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                     // Cynic: Well, maybe if you spent more than 5 seconds on each idea you�d get more out of me. Rapid firinge ideas like these always comes to the same ending
@@ -449,7 +449,7 @@ public class GameManager : Singleton<GameManager>
             else
             {
                 // Oppy: Oh uh, nothing much has changed really. I was just er uh, tightening the graphics a bit
-                context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                context.DoNarrationAndSetFlag("Act2/Oppy/017_Lie1");
                 yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                 // Cynic: Do they feel good now? I�m gonna be honest I don�t think I notice a difference
@@ -460,7 +460,7 @@ public class GameManager : Singleton<GameManager>
                 if (wasDecisionLeft)
                 {
                     // Oppy:  yes! Yes they definitely feel better to me.
-                    context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                    context.DoNarrationAndSetFlag("Act2/Oppy/019_Yes1");
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                     // Cynic: Hmm. well if you�re sure. A lot of improvements that seem huge to you go unnoticed by almost every player. 
@@ -474,7 +474,7 @@ public class GameManager : Singleton<GameManager>
                 else
                 {
                     // Oppy: No� they really aren�t much better.
-                    context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                    context.DoNarrationAndSetFlag("Act2/Oppy/022_No1");
                     yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
                     // Cynic: Hey, don�t stress about it. Graphics aren�t everything. Most indie games I see, a little extra polish doesn�t make a difference. 
@@ -489,7 +489,7 @@ public class GameManager : Singleton<GameManager>
 
 
             // Oppy: I feel like there�s a story associated with what you�re saying.
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Oppy/025_MoreTolt");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Cynic: Yeah, it�s a pretty short story that goes a little something like this: that�s none of your business.
@@ -501,26 +501,26 @@ public class GameManager : Singleton<GameManager>
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // Oppy: Ya know, I didn�t think about that one.
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Oppy/028_DidntThinkAbout");
             SetUpChoice("Gameplay", "Bragging Rights");
             yield return new WaitUntil(() => { return madeDecision; });
 
             if (wasDecisionLeft)
             {
                 // Oppy: Yeah, I gotta agree with that choice.
-                context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                context.DoNarrationAndSetFlag("Act2/Oppy/029_Gameplay");
                 yield return new WaitUntil(() => { return context.currNarrationFinished; });
             }
             else
             {
                 // Oppy: Eh, I can see where you�re coming from. Making the game arcade-style would be pretty neat. But� hear me out y�all�
-                context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+                context.DoNarrationAndSetFlag("Act2/Oppy/030_BraggingRights");
                 yield return new WaitUntil(() => { return context.currNarrationFinished; });
             }
 
 
             // Oppy: There�s gotta be a way to link score and gameplay without any rough edges. How about we turn your score into currency that you can spend in a shop?
-            context.DoNarrationAndSetFlag("Optimist/HelloWelcomeTo");
+            context.DoNarrationAndSetFlag("Act2/Oppy/031_Shop");
             yield return new WaitUntil(() => { return context.currNarrationFinished; });
 
             // TODO: SHOP STUFF ####################################################################################
