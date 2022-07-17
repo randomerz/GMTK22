@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 002_already
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bcf6615538830d049aa048d910391e1f, type: 3}
-  _subtitle: already?
+  _subtitle: Already?
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}
