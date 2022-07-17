@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 030_TiltActivate
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: cd0d483263edfba47b33bb1ff33bb578, type: 3}
-  _subtitle: "Exactly! Now the player has control over where the balls\u2026 *erm*
-    dice go"
+  _subtitle: "Exactly! Now the player has control over where the balls\u2026 dice
+    go"
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

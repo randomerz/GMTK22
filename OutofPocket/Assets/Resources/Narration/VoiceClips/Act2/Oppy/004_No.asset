@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 004_No
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 82ba1c6ac7943d14b82ef80fc0b69c34, type: 3}
-  _subtitle: "No? Well you kinda just did what I said. So I\u2019ll take that as
-    a yes."
+  _subtitle: No? Well... I mean you kinda just shot it in there... I mean that kinda...
+    nevermind...
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

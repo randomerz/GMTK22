@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 23_DoWhatYouWant
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 2f5c15bbd752327429abf9cd8e87027f, type: 3}
-  _subtitle: "You do what you want. But I don\u2019t want to help you if you\u2019re
+  _subtitle: "You do what you want, kid. But I don\u2019t want to help you if you\u2019re
     not going to listen to me."
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 010_What
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 0d41fe9fcd3fa9545a50efbd264b690e, type: 3}
-  _subtitle: '*pause for a moment* what?'
+  _subtitle: What?
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

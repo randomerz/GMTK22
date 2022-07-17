@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 020_Pocket
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: d9a9786bd54b63f46bc54caa622d4dd7, type: 3}
-  _subtitle: When you pocket something, you earn however many points are on the top
-    face of the die!
+  _subtitle: Ok, ok, how about when you pocket something, you earn however many points
+    are on the top face of the die!
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

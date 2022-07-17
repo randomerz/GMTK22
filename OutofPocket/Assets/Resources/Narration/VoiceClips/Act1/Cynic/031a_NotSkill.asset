@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 031a_NotSkill
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: bb3976f6c44f9a741919bb7666232a4e, type: 3}
-  _subtitle: "No no no! You see how many they just got in? That\u2019s not skill"
+  _subtitle: "No no no! You see how many they just got in? That\u2019s not skill."
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

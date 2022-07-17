@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: 21_YouHate
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 69afd7701838d534d833138e0c84941e, type: 3}
-  _subtitle: "I get that you hate my game, but there\u2019s obviously some people
-    that would like it. "
+  _subtitle: 'I get that you hate my game, but obviously some people would like it. '
   _color: {r: 0.68235296, g: 0.8156863, b: 1, a: 0}

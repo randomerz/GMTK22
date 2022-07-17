@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 041_Act1Finish
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: ffc609c4df0cb5c4eb943856ef26235e, type: 3}
-  _subtitle: "I\u2019m sure you will\u2026 *footstep sounds*"
+  _subtitle: "I\u2019m sure you will\u2026"
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

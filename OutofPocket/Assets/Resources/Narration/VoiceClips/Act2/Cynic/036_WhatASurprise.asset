@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: 34ff97bd442acef44a6c36c7d5d513cc, type: 3}
   _subtitle: "What a surprise. The powerups do nothing to change the gameplay. In
-    fact, they\u2019re really annoying to use! You should -"
+    fact, they\u2019re really annoying! You should -"
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}

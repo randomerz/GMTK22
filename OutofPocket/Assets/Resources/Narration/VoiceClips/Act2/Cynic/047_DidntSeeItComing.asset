@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: 047_DidntSeeItComing
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 8300000, guid: b7b6d928eb2eeba42b4fd6d08c2c2355, type: 3}
-  _subtitle: "I can\u2019t say I didn\u2019t see this coming. You haven\u2019t actually
-    addressed the core issues of the game, so none of your problems were solved.
-    You just created new ones!"
+  _subtitle: "You haven\u2019t actually addressed the core issues of the game, so
+    none of your problems were solved. In fact, you just created new ones!"
   _color: {r: 1, g: 0.5882353, b: 0.5882353, a: 0}
