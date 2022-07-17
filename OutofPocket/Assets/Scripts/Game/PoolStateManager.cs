@@ -8,9 +8,14 @@ using TMPro;
 //Call StartGame() to start the pool game (make sure everything is set in inspector)
 public class PoolStateManager : Singleton<PoolStateManager>
 {
+    public enum ScoreMode
+    {
+        ONLY_ONES,
+        RANDOM
+    }
+    public static ScoreMode scoreMode;
 
     public bool hasThisStartedYet = false;
-    public bool triggerTilting = false;
 
     public bool startGameImmediately;
 
@@ -76,6 +81,29 @@ public class PoolStateManager : Singleton<PoolStateManager>
     }
     private bool _scoreEnabled;
 
+    public bool TiltingEnabled
+    {
+        get
+        {
+            return _tiltEnabled;
+        }
+
+        set
+        {
+            _tiltEnabled = value;
+            if (value)
+            {
+                tiltingTable.TiltingEnabled = true;
+                tiltingAnnotation.enabled = true;
+            } else
+            {
+                tiltingTable.TiltingEnabled = false;
+            }
+        }
+    }
+    private bool _tiltEnabled;
+
+
     private State<PoolStateManager> currState;
 
     private void Awake()
@@ -109,17 +137,16 @@ public class PoolStateManager : Singleton<PoolStateManager>
         {
             SwitchState(_emptyState);
         }
-        ScoreEnabled = true;    //For Testing
         tiltingAnnotation.enabled = false;
     }
 
     private void Update()
     {
         currState?.UpdateState();
-        if (OOPInput.vertical != 0 || OOPInput.horizontal != 0)
+
+        if (TiltingEnabled && OOPInput.horizontal != 0 || OOPInput.vertical != 0)
         {
-            tiltingAnnotation.gameObject.SetActive(false);
-            triggerTilting = false;
+            tiltingAnnotation.enabled = false;
         }
     }
 
@@ -153,7 +180,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
         nextState.EnterState();
     }
 
-    public void StartGame()
+    public static void StartGame()
     {
         //foreach (PoolBall pb in _poolBalls)
         //{
@@ -162,14 +189,14 @@ public class PoolStateManager : Singleton<PoolStateManager>
         ResetGame();
     }
 
-    public void ResetGame()
+    public static void ResetGame()
     {
-        numBallsSunk = 0;
-        foreach (PoolBall pb in _poolBalls)
+        _instance.numBallsSunk = 0;
+        foreach (PoolBall pb in _instance._poolBalls)
         {
             pb.ResetBall();
         }
-        SwitchState(_playerTurnState);
+        _instance.SwitchState(_instance._playerTurnState);
     }
 
     public void ResetCueBall()
@@ -201,7 +228,15 @@ public class PoolStateManager : Singleton<PoolStateManager>
             numBallsSunk++;
             if (ScoreEnabled)
             {
-                ScoreManager.AddRandomAmountOfScore();
+                switch (scoreMode)
+                {
+                    case ScoreMode.ONLY_ONES:
+                        ScoreManager.Score += 1;
+                        break;
+                    case ScoreMode.RANDOM:
+                        ScoreManager.AddRandomAmountOfScore();
+                        break;
+                }
             }
 
             if (numBallsSunk >= _poolBalls.Length - 1)
