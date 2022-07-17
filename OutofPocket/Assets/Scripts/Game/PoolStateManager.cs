@@ -14,7 +14,9 @@ public class PoolStateManager : Singleton<PoolStateManager>
 
     public bool startGameImmediately;
 
+    [Header("References")]
     public CueBall cueBall;
+    public Collider gameArenaCollider;
 
     [Header("Cue Ball Shot Power")]
     public float screenDeltaToPower;
@@ -116,6 +118,16 @@ public class PoolStateManager : Singleton<PoolStateManager>
         currState?.FixedUpdateState();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        currState?.OnTriggerEnter(other);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        currState?.OnTriggerExit(other);
+    }
+
     public void SwitchState(State<PoolStateManager> nextState)
     {
         if (currState != null)
@@ -141,11 +153,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
         numBallsSunk = 0;
         foreach (PoolBall pb in _poolBalls)
         {
-            Rigidbody rb = pb.GetComponent<Rigidbody>();
-            rb.velocity = Vector3.zero;
-            pb.transform.position = pb.initialPos;
-            pb.gameObject.SetActive(true);
-            pb.sunk = false;
+            pb.ResetBall();
         }
         SwitchState(_playerTurnState);
     }

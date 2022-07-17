@@ -114,6 +114,15 @@ public class PoolBall : MonoBehaviour
         }
     }
 
+    public void ResetBall()
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        transform.position = initialPos;
+        gameObject.SetActive(true);
+        sunk = false;
+    }
+
     public void ChangeShape(Shape shape)
     {
         shapeMeshes.ForEach(mesh =>

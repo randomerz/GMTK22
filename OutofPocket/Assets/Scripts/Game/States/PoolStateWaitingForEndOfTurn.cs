@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 
+using System.Collections.Generic;
+
 public class PoolStateWaitingForEndOfTurn : State<PoolStateManager>
 {
     private float elapsedTimeSinceEnter;
+
+    private List<PoolBall> ballsOutsideArena;
 
     public PoolStateWaitingForEndOfTurn(PoolStateManager ctx) : base(ctx)
     {
@@ -12,10 +16,16 @@ public class PoolStateWaitingForEndOfTurn : State<PoolStateManager>
     {
         Debug.Log("Waiting for turn to end. (no player input allowed)");
         elapsedTimeSinceEnter = 0;
+        ballsOutsideArena = new List<PoolBall>();
     }
 
     public override void ExitState()
     {
+        foreach (PoolBall ball in ballsOutsideArena)
+        {
+            ball.ResetBall();
+        }
+        ballsOutsideArena.Clear();
     }
 
     public override void UpdateState()
@@ -30,6 +40,24 @@ public class PoolStateWaitingForEndOfTurn : State<PoolStateManager>
         {
             StopAllBalls();
             context.SwitchState(context.PlayerTurnState);
+        }
+    }
+
+    public override void OnTriggerEnter(Collider other)
+    {
+        PoolBall pb = other.GetComponent<PoolBall>();
+        if (pb != null && other.CompareTag("GameArena"))
+        {
+            ballsOutsideArena.Remove(other.GetComponent<PoolBall>());
+        }
+    }
+
+    public override void OnTriggerExit(Collider other)
+    {
+        PoolBall pb = other.GetComponent<PoolBall>();
+        if (pb != null && other.CompareTag("GameArena"))
+        {
+            ballsOutsideArena.Add(other.GetComponent<PoolBall>());
         }
     }
 

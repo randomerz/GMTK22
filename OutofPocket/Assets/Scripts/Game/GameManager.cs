@@ -44,6 +44,8 @@ public class GameManager : Singleton<GameManager>
     }
 
     #region State Classes
+
+    #region Act1
     public class Act1State : State<GameManager>
     {
         public Act1State(GameManager ctx) : base(ctx)
@@ -60,7 +62,9 @@ public class GameManager : Singleton<GameManager>
             yield return null;
         }
     }
+    #endregion
 
+    #region Act2 
     public class Act2State : State<GameManager>
     {
         public Act2State(GameManager ctx) : base(ctx)
@@ -77,7 +81,9 @@ public class GameManager : Singleton<GameManager>
             yield return null;
         }
     }
+    #endregion
 
+    #region 3
     public class Act3State : State<GameManager>
     {
         public Act3State(GameManager ctx) : base(ctx)
@@ -94,6 +100,8 @@ public class GameManager : Singleton<GameManager>
             yield return null;   
         }
     }
+    #endregion
+
     #endregion
 }
 
