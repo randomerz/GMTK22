@@ -55,6 +55,7 @@ public class PoolStateManager : Singleton<PoolStateManager>
     public static event System.EventHandler TurnEnded;
 
     public PoolBall[] PoolBalls => _poolBalls;
+    private int resetTimer = 0;
     public bool CueBallSunk { get; set; }
 
     public bool ScoreEnabled
@@ -154,6 +155,23 @@ public class PoolStateManager : Singleton<PoolStateManager>
 
     private void FixedUpdate()
     {
+        resetTimer = (resetTimer + 1) % 200;
+        if(resetTimer == 0)
+        {
+            int c = 0;
+            foreach(PoolBall pb in _poolBalls)
+            {
+                if(pb.sunk)
+                {
+                    c++;
+                }
+
+            }
+            if(c>=_poolBalls.Length-1)
+            {
+                ResetGame();
+            }
+        }
         currState?.FixedUpdateState();
     }
 

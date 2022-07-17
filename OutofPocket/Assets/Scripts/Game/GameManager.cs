@@ -224,6 +224,8 @@ public class GameManager : Singleton<GameManager>
             //*Wait until ball in pocket.
             yield return new WaitUntil(() => playerPutBallInPocket);
             PoolBall.ballInPocketEvent -= PutBallInPocket;
+            PoolStateManager.scoreMode = PoolStateManager.ScoreMode.RANDOM;
+
 
             //Cynic:
             context.DoNarrationAndSetFlag("Act1/Cynic/023_Empty");
@@ -356,6 +358,9 @@ public class GameManager : Singleton<GameManager>
         // author: boomo
         public IEnumerator DoAct2()
         {
+            //Disable tilting
+            PoolStateManager._instance.TiltingEnabled = false;
+
             // Oppy: Well, looks like it�s just you and me for a little bit. I guess now�s a good time to get some feedback on the game! It�s not over or anything, I just thought it�d be nice right now.
             context.DoNarrationAndSetFlag("Act2/Oppy/001_AloneTime");
             AudioManager.SetMusicParameter("High Rollers", "Base", 3);

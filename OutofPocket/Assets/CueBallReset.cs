@@ -8,6 +8,8 @@ public class CueBallReset : MonoBehaviour
     [SerializeField]
     private GameObject cueBall;
     [SerializeField]
+    private GameObject triangle;
+    [SerializeField]
     private PoolStateManager manager;
     void Start()
     {
@@ -26,6 +28,10 @@ public class CueBallReset : MonoBehaviour
         if(other.transform.parent.gameObject == cueBall)
         {
             StartCoroutine(resetCB(other));
+        }
+        else if (other.transform.parent.parent.gameObject == triangle)
+        {
+            other.transform.parent.gameObject.GetComponent<PoolBall>().sunk = true;
         }
     }
     IEnumerator resetCB(Collider other)
