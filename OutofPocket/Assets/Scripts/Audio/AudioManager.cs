@@ -41,7 +41,7 @@ public class AudioManager : Singleton<AudioManager>
         set
         {
             sfxVolume = Mathf.Clamp(value, 0, 1);
-            musicBus.setVolume(sfxVolume);
+            sfxBus.setVolume(sfxVolume);
             PlayerPrefs.SetFloat("sfxVolume", sfxVolume);
         }
     }
